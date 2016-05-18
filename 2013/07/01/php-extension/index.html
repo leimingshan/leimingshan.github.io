@@ -4,22 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Mingshan Lei&#39;s Blog</title>
+    <title>PHP扩展相关 | Mingshan Lei&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Mingshan Lei">
     
 
     
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mingshan Lei's Blog">
-<meta property="og:url" content="http://leimingshan.github.io/index.html">
+    <meta name="description" content="##PHP扩展的介绍下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   
+PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   
+有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP扩展相关">
+<meta property="og:url" content="http://leimingshan.github.io/2013/07/01/php-extension/index.html">
 <meta property="og:site_name" content="Mingshan Lei's Blog">
-<meta property="og:description">
+<meta property="og:description" content="##PHP扩展的介绍下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   
+PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   
+有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹">
+<meta property="og:updated_time" content="2016-05-18T07:21:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mingshan Lei's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="PHP扩展相关">
+<meta name="twitter:description" content="##PHP扩展的介绍下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   
+PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   
+有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹">
 
     
     <link rel="alternative" href="/atom.xml" title="Mingshan Lei&#39;s Blog" type="application/atom+xml">
@@ -73,70 +80,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/05/18/hello-world/" title="Hello World" itemprop="url">Hello World</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Mingshan Lei" target="_blank" itemprop="author">Mingshan Lei</a>
-		
-  <p class="article-time">
-    <time datetime="2016-05-18T06:26:50.000Z" itemprop="datePublished"> Published 2016-05-18</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2013/07/01/php-extension/" title="PHP扩展相关" itemprop="url">PHP扩展相关</a>
@@ -150,9 +97,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <p>##PHP扩展的介绍<br>下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   </p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			
+		
+		</div>
+		
+		<p>##PHP扩展的介绍<br>下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   </p>
 <p>PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   </p>
 <p>有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。  </p>
 <p>在PHP中构建扩展模块，主要有以下三种方式：</p>
@@ -192,14 +146,9 @@
 <p><code>&lt;?php</code><br><code>echo hello(1,2);</code><br><code>phpinfo();</code><br><code>?&gt;</code></p>
 </li>
 </ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
@@ -212,226 +161,51 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://leimingshan.github.io/2013/07/01/php-extension/" data-title="PHP扩展相关 | Mingshan Lei&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2013/06/27/jekyll-bootstrap/" title="jekyll bootstrap" itemprop="url">jekyll bootstrap</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Mingshan Lei" target="_blank" itemprop="author">Mingshan Lei</a>
-		
-  <p class="article-time">
-    <time datetime="2013-06-26T16:00:00.000Z" itemprop="datePublished"> Published 2013-06-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>##关于jekyll bootstrap<br>详细的内容参考<a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">官方帮助文档</a></p>
-<p>这里列出比较常用的命令：</p>
-<pre><code>jekyll --server //在本地启动服务
-rake post title=&quot;Hello World&quot; //新建一个小文章，标题为Hello World
-rake page name=&quot;about.md&quot; //新建一个页面about.md
-</code></pre><p><a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>也是很不错的一个框架，有时间可以尝试一下。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2013/06/26/hard-days/" title="制定计划-继续前行" itemprop="url">制定计划-继续前行</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Mingshan Lei" target="_blank" itemprop="author">Mingshan Lei</a>
-		
-  <p class="article-time">
-    <time datetime="2013-06-25T16:00:00.000Z" itemprop="datePublished"> Published 2013-06-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>##制定计划</p>
-<p>最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。</p>
-<ol>
-<li>小论文的选题</li>
-<li>毕设论文项目的进展</li>
-<li>各个网站的发展目标和一些设想</li>
-<li>暑假的时间安排</li>
-</ol>
-<p>这几天的时间大部分都放在Web相关方面了，还是比较感兴趣的，学习了一些建站的内容，手里也搜集了几个域名，以后也许能用得上。也希望可以把Web的一些东西应用到毕设论文中去。</p>
-<p>Github也逐渐用起来了，现在还很初步，还在学习的过程中。</p>
-<p>另外，毕设项目没有什么特别的进展，Libevent的加入还是有许多困难，整体的改动还需要动很多代码，一直没敢下手，也没有特别好的思路，比较苦恼。</p>
-<p>暑假也没有具体的安排，现在来看找实习基本是give up了，虽然挺不甘心的，但是时间上已经这样了，也没有办法，还是把时间安排到其他事情上去吧。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Diary/">Diary</a>
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/05/18/hello-world/" title="Hello World">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Hello World</span>
+</a>
 </div>
 
 
+<div class="next">
+<a href="/2013/06/27/jekyll-bootstrap/"  title="jekyll bootstrap">
+ <strong>下一篇：</strong><br/> 
+ <span>jekyll bootstrap
+</span>
+</a>
 </div>
 
+</nav>
 
-
-
-<div class="comments-count">
 	
-</div>
 
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2013/06/18/my-first-blog/" title="欢迎来到Github pages" itemprop="url">欢迎来到Github pages</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Mingshan Lei" target="_blank" itemprop="author">Mingshan Lei</a>
-		
-  <p class="article-time">
-    <time datetime="2013-06-17T16:00:00.000Z" itemprop="datePublished"> Published 2013-06-18</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>#标题1 This is a test of Markdown</p>
-<p>##标题2  欢迎进入 Welcome</p>
-<p>###标题3 Markdown</p>
-<p>####标题4<br>这里是测试信息<code>test info</code></p>
-<pre><code>test
-test
-code
-code
-codecode here
-</code></pre><blockquote>
-<p>block</p>
-</blockquote>
-<ol>
-<li>hello not in order</li>
-<li>hello</li>
-<li><p>hello</p>
-</li>
-<li><p>test</p>
-</li>
-<li>code</li>
-<li>hello</li>
-</ol>
-<p><em>single asterisks</em></p>
-<p><em>single underscores</em></p>
-<p><strong>double asterisks</strong></p>
-<p><strong>double underscores</strong></p>
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from<br><a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/study/">study</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ 
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -597,12 +371,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -673,4 +524,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
