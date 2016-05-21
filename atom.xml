@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2016-05-18T06:26:50.000Z</updated>
+  <updated>2016-05-21T05:32:11.000Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://leimingshan.github.io/2016/05/18/hello-world/"/>
     <id>http://leimingshan.github.io/2016/05/18/hello-world/</id>
     <published>2016-05-18T06:26:50.000Z</published>
-    <updated>2016-05-18T06:26:50.000Z</updated>
+    <updated>2016-05-21T05:32:11.000Z</updated>
     
     <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -35,7 +35,9 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
@@ -47,12 +49,11 @@
     <link href="http://leimingshan.github.io/2013/07/01/php-extension/"/>
     <id>http://leimingshan.github.io/2013/07/01/php-extension/</id>
     <published>2013-06-30T16:00:00.000Z</published>
-    <updated>2016-05-18T07:21:23.000Z</updated>
+    <updated>2016-05-21T05:31:49.000Z</updated>
     
     <content type="html">&lt;p&gt;##PHP扩展的介绍&lt;br&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
 &lt;p&gt;PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   &lt;/p&gt;
-&lt;p&gt;有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。  &lt;/p&gt;
-&lt;p&gt;在PHP中构建扩展模块，主要有以下三种方式：&lt;/p&gt;
+&lt;p&gt;有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在PHP中构建扩展模块，主要有以下三种方式：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;External Modules：外部模块，也就是编译成共享库，用dl()函数动态加载。&lt;/p&gt;
 &lt;p&gt;好处：&lt;br&gt;(1)不需要重新编译整个PHP&lt;br&gt;(2)PHP体积小，因为不需要编译进PHP&lt;/p&gt;
@@ -94,12 +95,15 @@
     <summary type="html">
     
       &lt;p&gt;##PHP扩展的介绍&lt;br&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
-&lt;p&gt;PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件
+&lt;p&gt;PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   &lt;/p&gt;
+&lt;p&gt;有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。&lt;br&gt;
     
     </summary>
     
       <category term="php" scheme="http://leimingshan.github.io/categories/php/"/>
     
+    
+      <category term="php" scheme="http://leimingshan.github.io/tags/php/"/>
     
   </entry>
   
@@ -108,7 +112,7 @@
     <link href="http://leimingshan.github.io/2013/06/27/jekyll-bootstrap/"/>
     <id>http://leimingshan.github.io/2013/06/27/jekyll-bootstrap/</id>
     <published>2013-06-26T16:00:00.000Z</published>
-    <updated>2016-05-18T07:20:55.000Z</updated>
+    <updated>2016-05-21T05:31:07.000Z</updated>
     
     <content type="html">&lt;p&gt;##关于jekyll bootstrap&lt;br&gt;详细的内容参考&lt;a href=&quot;http://jekyllbootstrap.com/usage/jekyll-quick-start.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这里列出比较常用的命令：&lt;/p&gt;
@@ -125,6 +129,8 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     </summary>
     
     
+      <category term="jekyll" scheme="http://leimingshan.github.io/tags/jekyll/"/>
+    
   </entry>
   
   <entry>
@@ -132,7 +138,7 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     <link href="http://leimingshan.github.io/2013/06/26/hard-days/"/>
     <id>http://leimingshan.github.io/2013/06/26/hard-days/</id>
     <published>2013-06-25T16:00:00.000Z</published>
-    <updated>2016-05-18T07:20:59.000Z</updated>
+    <updated>2016-05-21T05:31:17.000Z</updated>
     
     <content type="html">&lt;p&gt;##制定计划&lt;/p&gt;
 &lt;p&gt;最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。&lt;/p&gt;
@@ -142,6 +148,7 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
 &lt;li&gt;各个网站的发展目标和一些设想&lt;/li&gt;
 &lt;li&gt;暑假的时间安排&lt;/li&gt;
 &lt;/ol&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;这几天的时间大部分都放在Web相关方面了，还是比较感兴趣的，学习了一些建站的内容，手里也搜集了几个域名，以后也许能用得上。也希望可以把Web的一些东西应用到毕设论文中去。&lt;/p&gt;
 &lt;p&gt;Github也逐渐用起来了，现在还很初步，还在学习的过程中。&lt;/p&gt;
 &lt;p&gt;另外，毕设项目没有什么特别的进展，Libevent的加入还是有许多困难，整体的改动还需要动很多代码，一直没敢下手，也没有特别好的思路，比较苦恼。&lt;/p&gt;
@@ -157,7 +164,7 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
 &lt;li&gt;毕设论文项目的进展&lt;/li&gt;
 &lt;li&gt;各个网站的发展目标和一些设想&lt;/li&gt;
 &lt;li&gt;暑假的时间安排&lt;/li&gt;
-
+&lt;/ol&gt;
     
     </summary>
     
@@ -171,12 +178,12 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     <link href="http://leimingshan.github.io/2013/06/18/my-first-blog/"/>
     <id>http://leimingshan.github.io/2013/06/18/my-first-blog/</id>
     <published>2013-06-17T16:00:00.000Z</published>
-    <updated>2016-05-18T07:20:27.000Z</updated>
+    <updated>2016-05-21T05:30:19.000Z</updated>
     
     <content type="html">&lt;p&gt;#标题1 This is a test of Markdown&lt;/p&gt;
 &lt;p&gt;##标题2  欢迎进入 Welcome&lt;/p&gt;
 &lt;p&gt;###标题3 Markdown&lt;/p&gt;
-&lt;p&gt;####标题4&lt;br&gt;这里是测试信息&lt;code&gt;test info&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;####标题4&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;这里是测试信息&lt;code&gt;test info&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;test
 test
 code
@@ -207,8 +214,7 @@ codecode here
       &lt;p&gt;#标题1 This is a test of Markdown&lt;/p&gt;
 &lt;p&gt;##标题2  欢迎进入 Welcome&lt;/p&gt;
 &lt;p&gt;###标题3 Markdown&lt;/p&gt;
-&lt;p&gt;####标题4&lt;br&gt;这里是测试信息&lt;code&gt;test info&lt;/code&gt;&lt;/p&gt;
-&lt;pr
+&lt;p&gt;####标题4&lt;br&gt;
     
     </summary>
     

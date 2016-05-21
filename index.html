@@ -337,18 +337,14 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/18/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -465,49 +461,14 @@
 
       
         
-          
-            <p>##PHP扩展的介绍<br>下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   </p>
+          <p>##PHP扩展的介绍<br>下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   </p>
 <p>PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   </p>
-<p>有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。  </p>
-<p>在PHP中构建扩展模块，主要有以下三种方式：</p>
-<ol>
-<li><p>External Modules：外部模块，也就是编译成共享库，用dl()函数动态加载。</p>
-<p>好处：<br>(1)不需要重新编译整个PHP<br>(2)PHP体积小，因为不需要编译进PHP</p>
-</li>
-<li><p>Built-in Modules：编译进PHP  </p>
-<p>好处：<br>(1)不需要动态加载，模块在php脚本里面可以直接使用。<br>(2)不需要将模块编译成.so共享库，因为直接编译进PHP。</p>
-<p>缺点：<br>(1)对模块的每次小变动都需要重新编译整个PHP和重新部署，不适于生产环节。<br>(2)因为编译进PHP，所以PHP二进制文件较大，而且多占点内存.</p>
-</li>
-<li><p>The Zend Engine：Zend核心里实现（参考Zend API）  </p>
-</li>
-</ol>
-<p>关于dl函数可以参考下面链接：<br><a href="http://www.php.net/manual/zh/function.dl.php" target="_blank" rel="external">http://www.php.net/manual/zh/function.dl.php</a></p>
-<p>可以不使用dl函数，而修改php.ini指定extension的加载，详细步骤如下：</p>
-<ol>
-<li><p>进入PHP源代码包的ext目录，使用扩展骨架(skeleton)构造器， 为扩展建立函数的第一步是写一个函数定义文件  test.proto，该函数定义文件定义了扩展对外提供的函数原形。该例中，定义函数只有一行函数原形</p>
-<p><code>int hello(int a, int b)
-注意行后面没有分号</code></p>
-</li>
-<li><p>使用以下命令，生成对应的扩展目录test：</p>
-<p><code>./ext_skel --extname=test --proto=test.proto</code></p>
-</li>
-<li><p>进入test目录，修改其中的config.m4文件</p>
-<p><code>PHP_ARG_ENABLE(caleng_module, whether to enable test...</code><br><code>[  --enable-test          Enable test support])</code><br><code>两行，删除前面的dnl。</code></p>
-</li>
-<li><p>修改test.c中的相关函数：</p>
-<p><code>PHP_FUNCTION(hello)</code></p>
-</li>
-<li><p>编译和安装模块</p>
-<p><code>phpize</code><br><code>./configure --with-php-config=/usr/local/php/bin/php-config</code><br><code>make &amp; make install</code></p>
-</li>
-<li><p>在PHP中启用扩展，修改配置文件/usr/local/php/etc/php.ini，<br>加入 extension=test.so， 然后需要重启PHP或php-fpm。<br>这里也可以通过在PHP代码中通过dl命令来调用该模块</p>
-</li>
-<li><p>测试扩展</p>
-<p><code>&lt;?php</code><br><code>echo hello(1,2);</code><br><code>phpinfo();</code><br><code>?&gt;</code></p>
-</li>
-</ol>
-
-          
+<p>有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/07/01/php-extension/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -730,8 +691,7 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
 
       
         
-          
-            <p>##制定计划</p>
+          <p>##制定计划</p>
 <p>最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。</p>
 <ol>
 <li>小论文的选题</li>
@@ -739,12 +699,11 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
 <li>各个网站的发展目标和一些设想</li>
 <li>暑假的时间安排</li>
 </ol>
-<p>这几天的时间大部分都放在Web相关方面了，还是比较感兴趣的，学习了一些建站的内容，手里也搜集了几个域名，以后也许能用得上。也希望可以把Web的一些东西应用到毕设论文中去。</p>
-<p>Github也逐渐用起来了，现在还很初步，还在学习的过程中。</p>
-<p>另外，毕设项目没有什么特别的进展，Libevent的加入还是有许多困难，整体的改动还需要动很多代码，一直没敢下手，也没有特别好的思路，比较苦恼。</p>
-<p>暑假也没有具体的安排，现在来看找实习基本是give up了，虽然挺不甘心的，但是时间上已经这样了，也没有办法，还是把时间安排到其他事情上去吧。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/06/26/hard-days/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -842,36 +801,15 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
 
       
         
-          
-            <p>#标题1 This is a test of Markdown</p>
+          <p>#标题1 This is a test of Markdown</p>
 <p>##标题2  欢迎进入 Welcome</p>
 <p>###标题3 Markdown</p>
-<p>####标题4<br>这里是测试信息<code>test info</code></p>
-<pre><code>test
-test
-code
-code
-codecode here
-</code></pre><blockquote>
-<p>block</p>
-</blockquote>
-<ol>
-<li>hello not in order</li>
-<li>hello</li>
-<li><p>hello</p>
-</li>
-<li><p>test</p>
-</li>
-<li>code</li>
-<li>hello</li>
-</ol>
-<p><em>single asterisks</em></p>
-<p><em>single underscores</em></p>
-<p><strong>double asterisks</strong></p>
-<p><strong>double underscores</strong></p>
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from<br><a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
-
-          
+<p>####标题4<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/06/18/my-first-blog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -956,7 +894,7 @@ codecode here
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
