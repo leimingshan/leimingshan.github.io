@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2016-05-21T05:32:11.000Z</updated>
+  <updated>2016-05-23T08:38:53.000Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git-tool</title>
+    <link href="http://leimingshan.github.io/2016/05/23/git-tool/"/>
+    <id>http://leimingshan.github.io/2016/05/23/git-tool/</id>
+    <published>2016-05-23T08:07:38.000Z</published>
+    <updated>2016-05-23T08:38:53.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Outline&quot;&gt;&lt;a href=&quot;#Outline&quot; class=&quot;headerlink&quot; title=&quot;Outline&quot;&gt;&lt;/a&gt;Outline&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;了解Git&lt;/li&gt;
+&lt;li&gt;Killer Features&lt;/li&gt;
+&lt;li&gt;iCode&lt;/li&gt;
+&lt;li&gt;Code Review&lt;/li&gt;
+&lt;li&gt;CI&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;Killer-Features&quot;&gt;&lt;a href=&quot;#Killer-Features&quot; class=&quot;headerlink&quot; title=&quot;Killer Features&quot;&gt;&lt;/a&gt;Killer Features&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;基础概念： 文件系统快照存储模型&lt;/li&gt;
+&lt;li&gt;分布式：本地拥有完整代码库功能&lt;ul&gt;
+&lt;li&gt;Repository: git init&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;超低开销的分支：非线性开发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;git log&lt;br&gt;SHA-1&lt;/p&gt;
+&lt;p&gt;git reset –hard&lt;/p&gt;
+&lt;p&gt;git checkout [53f29fd]&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Outline&quot;&gt;&lt;a href=&quot;#Outline&quot; class=&quot;headerlink&quot; title=&quot;Outline&quot;&gt;&lt;/a&gt;Outline&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;了解Git&lt;/li&gt;
+&lt;li&gt;Killer Features&lt;/li&gt;
+&lt;li&gt;iCod
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://leimingshan.github.io/tags/git/"/>
+    
+      <category term="linux" scheme="http://leimingshan.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
