@@ -102,8 +102,7 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
     <entry>
       <title><![CDATA[制定计划-继续前行]]></title>
       <url>http://leimingshan.github.io/2013/06/26/hard-days/</url>
-      <content type="html"><![CDATA[<p>##制定计划</p>
-<p>最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。</p>
+      <content type="html"><![CDATA[<h2 id="制定计划"><a href="#制定计划" class="headerlink" title="制定计划"></a>制定计划</h2><p>最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。</p>
 <ol>
 <li>小论文的选题</li>
 <li>毕设论文项目的进展</li>

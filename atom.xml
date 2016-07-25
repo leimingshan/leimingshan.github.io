@@ -181,10 +181,9 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     <link href="http://leimingshan.github.io/2013/06/26/hard-days/"/>
     <id>http://leimingshan.github.io/2013/06/26/hard-days/</id>
     <published>2013-06-25T16:00:00.000Z</published>
-    <updated>2016-05-21T05:31:17.000Z</updated>
+    <updated>2016-07-25T09:31:14.000Z</updated>
     
-    <content type="html">&lt;p&gt;##制定计划&lt;/p&gt;
-&lt;p&gt;最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;制定计划&quot;&gt;&lt;a href=&quot;#制定计划&quot; class=&quot;headerlink&quot; title=&quot;制定计划&quot;&gt;&lt;/a&gt;制定计划&lt;/h2&gt;&lt;p&gt;最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;小论文的选题&lt;/li&gt;
 &lt;li&gt;毕设论文项目的进展&lt;/li&gt;
@@ -200,8 +199,7 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     
     <summary type="html">
     
-      &lt;p&gt;##制定计划&lt;/p&gt;
-&lt;p&gt;最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。&lt;/p&gt;
+      &lt;h2 id=&quot;制定计划&quot;&gt;&lt;a href=&quot;#制定计划&quot; class=&quot;headerlink&quot; title=&quot;制定计划&quot;&gt;&lt;/a&gt;制定计划&lt;/h2&gt;&lt;p&gt;最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;小论文的选题&lt;/li&gt;
 &lt;li&gt;毕设论文项目的进展&lt;/li&gt;
