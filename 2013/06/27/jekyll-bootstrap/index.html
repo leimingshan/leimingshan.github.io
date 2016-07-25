@@ -248,7 +248,7 @@ Octopress">
       
         <li class="menu-item menu-item-search">
           
-            <a href="#" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -365,6 +365,7 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
     <div>
       
         
+
       
     </div>
 
@@ -743,6 +744,8 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
 
   
     
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
@@ -790,7 +793,7 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
             var $resultContent = document.getElementById(content_id);
             $input.addEventListener('input', function(){
                 var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';                
+                var str='<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
                 if (this.value.trim().length > 1) {
@@ -845,7 +848,7 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
                             });
-                            
+
                             str += "<p class=\"search-result\">" + match_content +"...</p>"
                         }
                         str += "</li>";
@@ -861,7 +864,7 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
     });}
 
     // handle and trigger popup window;
-    $('.popup-trigger').mousedown(function(e) {
+    $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched == false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
@@ -880,6 +883,7 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
       e.stopPropagation();
     });
   </script>
+
 
   
 

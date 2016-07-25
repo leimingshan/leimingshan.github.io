@@ -239,7 +239,7 @@ PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web�
       
         <li class="menu-item menu-item-search">
           
-            <a href="#" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -408,6 +408,7 @@ PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web�
     <div>
       
         
+
       
     </div>
 
@@ -786,6 +787,8 @@ PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web�
 
   
     
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
@@ -833,7 +836,7 @@ PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web�
             var $resultContent = document.getElementById(content_id);
             $input.addEventListener('input', function(){
                 var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';                
+                var str='<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
                 if (this.value.trim().length > 1) {
@@ -888,7 +891,7 @@ PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web�
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
                             });
-                            
+
                             str += "<p class=\"search-result\">" + match_content +"...</p>"
                         }
                         str += "</li>";
@@ -904,7 +907,7 @@ PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web�
     });}
 
     // handle and trigger popup window;
-    $('.popup-trigger').mousedown(function(e) {
+    $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched == false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
@@ -923,6 +926,7 @@ PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web�
       e.stopPropagation();
     });
   </script>
+
 
   
 
