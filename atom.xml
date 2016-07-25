@@ -92,9 +92,9 @@
     <link href="http://leimingshan.github.io/2013/07/01/php-extension/"/>
     <id>http://leimingshan.github.io/2013/07/01/php-extension/</id>
     <published>2013-06-30T16:00:00.000Z</published>
-    <updated>2016-05-21T05:31:49.000Z</updated>
+    <updated>2016-07-25T09:29:29.000Z</updated>
     
-    <content type="html">&lt;p&gt;##PHP扩展的介绍&lt;br&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;PHP扩展的介绍&quot;&gt;&lt;a href=&quot;#PHP扩展的介绍&quot; class=&quot;headerlink&quot; title=&quot;PHP扩展的介绍&quot;&gt;&lt;/a&gt;PHP扩展的介绍&lt;/h2&gt;&lt;p&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
 &lt;p&gt;PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   &lt;/p&gt;
 &lt;p&gt;有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在PHP中构建扩展模块，主要有以下三种方式：&lt;/p&gt;
 &lt;ol&gt;
@@ -137,7 +137,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;##PHP扩展的介绍&lt;br&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
+      &lt;h2 id=&quot;PHP扩展的介绍&quot;&gt;&lt;a href=&quot;#PHP扩展的介绍&quot; class=&quot;headerlink&quot; title=&quot;PHP扩展的介绍&quot;&gt;&lt;/a&gt;PHP扩展的介绍&lt;/h2&gt;&lt;p&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
 &lt;p&gt;PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   &lt;/p&gt;
 &lt;p&gt;有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。&lt;br&gt;
     
@@ -155,9 +155,9 @@
     <link href="http://leimingshan.github.io/2013/06/27/jekyll-bootstrap/"/>
     <id>http://leimingshan.github.io/2013/06/27/jekyll-bootstrap/</id>
     <published>2013-06-26T16:00:00.000Z</published>
-    <updated>2016-05-21T05:31:07.000Z</updated>
+    <updated>2016-07-25T07:48:56.000Z</updated>
     
-    <content type="html">&lt;p&gt;##关于jekyll bootstrap&lt;br&gt;详细的内容参考&lt;a href=&quot;http://jekyllbootstrap.com/usage/jekyll-quick-start.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;关于jekyll-bootstrap&quot;&gt;&lt;a href=&quot;#关于jekyll-bootstrap&quot; class=&quot;headerlink&quot; title=&quot;关于jekyll bootstrap&quot;&gt;&lt;/a&gt;关于jekyll bootstrap&lt;/h2&gt;&lt;p&gt;详细的内容参考&lt;a href=&quot;http://jekyllbootstrap.com/usage/jekyll-quick-start.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这里列出比较常用的命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;jekyll --server //在本地启动服务
 rake post title=&amp;quot;Hello World&amp;quot; //新建一个小文章，标题为Hello World
@@ -167,7 +167,7 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     
     <summary type="html">
     
-      &lt;p&gt;##关于jekyll bootstrap&lt;br&gt;详细的内容参考&lt;a href=&quot;http://jekyllbootstrap.com/usage/jekyll-quick-start.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方帮助文档&lt;/
+      &lt;h2 id=&quot;关于jekyll-bootstrap&quot;&gt;&lt;a href=&quot;#关于jekyll-bootstrap&quot; class=&quot;headerlink&quot; title=&quot;关于jekyll bootstrap&quot;&gt;&lt;/a&gt;关于jekyll bootstrap&lt;/h2&gt;&lt;p&gt;详细的内容参
     
     </summary>
     
@@ -221,12 +221,10 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     <link href="http://leimingshan.github.io/2013/06/18/my-first-blog/"/>
     <id>http://leimingshan.github.io/2013/06/18/my-first-blog/</id>
     <published>2013-06-17T16:00:00.000Z</published>
-    <updated>2016-05-21T05:30:19.000Z</updated>
+    <updated>2016-07-25T09:29:17.000Z</updated>
     
-    <content type="html">&lt;p&gt;#标题1 This is a test of Markdown&lt;/p&gt;
-&lt;p&gt;##标题2  欢迎进入 Welcome&lt;/p&gt;
-&lt;p&gt;###标题3 Markdown&lt;/p&gt;
-&lt;p&gt;####标题4&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;这里是测试信息&lt;code&gt;test info&lt;/code&gt;&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;标题1-This-is-a-test-of-Markdown&quot;&gt;&lt;a href=&quot;#标题1-This-is-a-test-of-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题1 This is a test of Markdown&quot;&gt;&lt;/a&gt;标题1 This is a test of Markdown&lt;/h1&gt;&lt;h2 id=&quot;标题2-欢迎进入-Welcome&quot;&gt;&lt;a href=&quot;#标题2-欢迎进入-Welcome&quot; class=&quot;headerlink&quot; title=&quot;标题2  欢迎进入 Welcome&quot;&gt;&lt;/a&gt;标题2  欢迎进入 Welcome&lt;/h2&gt;&lt;h3 id=&quot;标题3-Markdown&quot;&gt;&lt;a href=&quot;#标题3-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题3 Markdown&quot;&gt;&lt;/a&gt;标题3 Markdown&lt;/h3&gt;&lt;h4 id=&quot;标题4&quot;&gt;&lt;a href=&quot;#标题4&quot; class=&quot;headerlink&quot; title=&quot;标题4&quot;&gt;&lt;/a&gt;标题4&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;这里是测试信息&lt;code&gt;test info&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;test
 test
 code
@@ -254,10 +252,7 @@ codecode here
     
     <summary type="html">
     
-      &lt;p&gt;#标题1 This is a test of Markdown&lt;/p&gt;
-&lt;p&gt;##标题2  欢迎进入 Welcome&lt;/p&gt;
-&lt;p&gt;###标题3 Markdown&lt;/p&gt;
-&lt;p&gt;####标题4&lt;br&gt;
+      &lt;h1 id=&quot;标题1-This-is-a-test-of-Markdown&quot;&gt;&lt;a href=&quot;#标题1-This-is-a-test-of-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题1 This is a test of Markdown&quot;&gt;&lt;/a&gt;标题1 This is a test of Markdown&lt;/h1&gt;&lt;h2 id=&quot;标题2-欢迎进入-Welcome&quot;&gt;&lt;a href=&quot;#标题2-欢迎进入-Welcome&quot; class=&quot;headerlink&quot; title=&quot;标题2  欢迎进入 Welcome&quot;&gt;&lt;/a&gt;标题2  欢迎进入 Welcome&lt;/h2&gt;&lt;h3 id=&quot;标题3-Markdown&quot;&gt;&lt;a href=&quot;#标题3-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题3 Markdown&quot;&gt;&lt;/a&gt;标题3 Markdown&lt;/h3&gt;&lt;h4 id=&quot;标题4&quot;&gt;&lt;a href=&quot;#标题4&quot; class=&quot;headerlink&quot; title=&quot;标题4&quot;&gt;&lt;/a&gt;标题4&lt;/h4&gt;
     
     </summary>
     
