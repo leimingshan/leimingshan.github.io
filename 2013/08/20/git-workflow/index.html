@@ -1,0 +1,979 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="git,develop," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mingshan Lei's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="英文原文：Understanding the Git workflow   编译： 张重骐
+如果你不理解Git的设计动机，那你就会处处碰壁。知道足够多的命令和参数后，你就会强行让Git按你想的来工作，而不是按Git自己的方式来。这就像把螺丝刀当锤子用；也能把活干完，但肯定干的差极了，花费很长时间，还会弄坏螺丝刀。
+想想常见的Git工作流程是怎么失效的吧。
+
+从Master创建一个分支，写代码，然后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解Git的工作流程 【转载】">
+<meta property="og:url" content="http://leimingshan.github.io/2013/08/20/git-workflow/index.html">
+<meta property="og:site_name" content="Mingshan Lei's Blog">
+<meta property="og:description" content="英文原文：Understanding the Git workflow   编译： 张重骐
+如果你不理解Git的设计动机，那你就会处处碰壁。知道足够多的命令和参数后，你就会强行让Git按你想的来工作，而不是按Git自己的方式来。这就像把螺丝刀当锤子用；也能把活干完，但肯定干的差极了，花费很长时间，还会弄坏螺丝刀。
+想想常见的Git工作流程是怎么失效的吧。
+
+从Master创建一个分支，写代码，然后">
+<meta property="og:updated_time" content="2016-10-31T05:01:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理解Git的工作流程 【转载】">
+<meta name="twitter:description" content="英文原文：Understanding the Git workflow   编译： 张重骐
+如果你不理解Git的设计动机，那你就会处处碰壁。知道足够多的命令和参数后，你就会强行让Git按你想的来工作，而不是按Git自己的方式来。这就像把螺丝刀当锤子用；也能把活干完，但肯定干的差极了，花费很长时间，还会弄坏螺丝刀。
+想想常见的Git工作流程是怎么失效的吧。
+
+从Master创建一个分支，写代码，然后">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://leimingshan.github.io/2013/08/20/git-workflow/"/>
+
+  <title> 理解Git的工作流程 【转载】 | Mingshan Lei's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '41820897-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mingshan Lei's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Tech Share</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                理解Git的工作流程 【转载】
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-08-20T12:13:15+08:00" content="2013-08-20">
+              2013-08-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/08/20/git-workflow/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/08/20/git-workflow/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html" target="_blank" rel="external">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/" target="_blank" rel="external">张重骐</a></p>
+<p>如果你不理解Git的设计动机，那你就会处处碰壁。知道足够多的命令和参数后，你就会强行让Git按你想的来工作，而不是按Git自己的方式来。这就像把螺丝刀当锤子用；也能把活干完，但肯定干的差极了，花费很长时间，还会弄坏螺丝刀。</p>
+<p>想想常见的Git工作流程是怎么失效的吧。</p>
+<blockquote>
+<p>从Master创建一个分支，写代码，然后把这个分支合并回Master。<br>多数时候这样做的效果会如你所愿，因为从你创建分支到合并回去之间，Master一般都会有些变动。然后，有一天当你想把一个功能 （feature）分支合并进Master的时候，而Master并没有像以往那样有变动，问题来了：这时Git不会进行合并commit，而是将 Master指向功能分支上的最新commit。（<a href="http://sandofsky.com/images/fast_forward.pdf" target="_blank" rel="external">看图</a>）<a id="more"></a></p>
+</blockquote>
+<p>不幸的是，你的功能分支有用来备份代码的commit（作者称之为checkpoint commit），这些经常进行的commit对应的代码可能处于不稳定状态！而这些commit现在没法和Master上那些稳定的commit区分开来 了。当你想回滚的时候，很容易发生灾难性后果。</p>
+<p>于是你就记住了：“当合并功能分支的时候，加上 -no-ff 选项强制进行一次全新的commit。”嗯，这么做好像解决问题了，那么继续。</p>
+<p>然后一天你在线上环境中发现了一个严重bug，这时你需要追溯下这个bug是什么时候引入的。你运行了bisect命令，但却总是追溯到一些不稳定的commit。因此你不得不放弃，改用人肉检查。</p>
+<p>最后你将bug范围缩小到一个文件。你运行blame命令查看这个文件在过去48小时里的变动。然后blame告诉你这个文件已经好几周没有被修改 过了——你知道根本不可能没有变动。哦，原来是因为blame计算变动是从第一次commit算起，而不是merge的时候。你在几周前的一次 commit中改动了这个文件，但这个变动今天才被merge回来。</p>
+<p>用no-ff来救急，bisect又临时失效，blame的运作机制又那么模糊，所有这些现象都说明一件事儿，那就是你正在把螺丝刀当锤子用。</p>
+<p><strong>反思版本控制</strong></p>
+<p>版本控制的存在是因为两个原因。</p>
+<p>首先，版本控制是用来辅助写代码的。因为你要和同事同步代码，并经常备份自己的代码。当然了，把文件压缩后发邮件也行，不过工程大了大概就不好办了。</p>
+<p>其次，就是辅助配置管理工作。其中就包括并行开发的管理，比如一边给线上版本修复bug，一边开发下一个版本。配置管理也可以帮助弄清楚变动发生的具体时间，在追溯bug中是一个很好的工具。</p>
+<p>一般说来，这两个原因是冲突的。</p>
+<p>在开发一个功能的时候，你应该经常做备份性的commit。然而，这些commit经常会让软件没法编译。</p>
+<p>理想情况是，你的版本更新历史中的每一次变化都是明确且稳定的，不会有备份性commit带来的噪声，也不会有超过一万行代码变动的超大 commit。一个清晰的版本历史让回滚和选择性merge都变得相当容易，而且也方便以后的检查和分析。然而，要维护这样一个干净的历史版本库，也许意 味着总是要等到代码完善之后才能提交变动。</p>
+<p>那么，经常性的commit和干净的历史，你选择哪一个？</p>
+<p>如果你是在刚起步的创业公司中，干净的历史没有太大帮助。你可以放心地把所有东西都往Master中提交，感觉不错的时候随时发布。</p>
+<p>如果团队规模变大或是用户规模扩大了，你就需要些工具和技巧来做约束，包括自动化测试，代码检查，以及干净的版本历史。</p>
+<p>功能分支貌似是一个不错的折中选择，能够基本的并行开发问题。当你写代码时候，可以不用怎么在意集成的问题，但它总有烦到你的时候。</p>
+<p>当你的项目规模足够大的时候，简单的branch/commit/merge工作流程就出问题了。缝缝补补已经不行了。这时你需要一个干净的版本历史库。</p>
+<p>Git之所以是革命性的，就是因为它能同时给你这两方面的好处。你可以在原型开发过程中经常备份变动，而<a href="http://www.amazon.cn/gp/product/B007XPTAIS/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=vastwork-23&amp;linkCode=as2&amp;camp=536&amp;creative=3200&amp;creativeASIN=B007XPTAIS" title="搞定(套装共3册) " target="_blank" rel="external">搞定</a>后只需要交付一个干净的版本历史。</p>
+<p>&nbsp;</p>
+<p><strong>工作流程</strong></p>
+<p>考虑两种分支：公共的和私有的。</p>
+<p>公共分支是项目的权威性历史库。在公共分支中，每一个commit都应该确保简洁、原子性，并且有完善的提交信息。此分支应该尽可能线性，且不能更改。公共分支包括Master和发行版的分支。</p>
+<p>私有分支是供你自己使用的，就像解决问题时的草稿纸。</p>
+<p>安全起见，把私有分支只保存在本地。如果你确实需要push到服务器的话（比如要同步你在家和办公室的电脑），最好告诉同事这是私有的，不要基于这个分支展开工作。</p>
+<p>绝不要直接用merge命令把私有分支合并到公共分支中。要先用reset、rebase、squash merges、commit amending等工具把你的分支清理一下。</p>
+<p>把你自己看做一个作者，每一次的commit视为书中的一章。作者不会出版最初的草稿，就像Michael Crichton说的，“伟大的书都不是写出来——而是改出来的”。</p>
+<p>如果你没接触过Git，那么修改历史对你来说好像是种禁忌。你习惯于认为提交过的所有东西都应该像刻在石头上一样不能抹去。但如果按这种逻辑，我们在文本处理软件器中也不应该使用“撤销”功能了。</p>
+<p>实用主义者们直到变化变为噪音的时候才关注变化。对于配置管理来说，我们关注宏观的变化。日常commit（checkpoint commits）只是备份于云端的用于“撤销”的缓冲。</p>
+<p>如果你保持公共历史版本库的简洁，那么所谓的fast-forward merge就不仅安全而且可取了，它能保证版本变更历史的线性和易于追溯。</p>
+<p>关于 -no-ff 仅剩的争论就只剩“文档证明”了。人们可能会先merge再commit，以此代表最新的线上部署版本。不过，这是反模式的。用tag吧。</p>
+<p>规则和例子</p>
+<p>根据改变的多少、持续工作时间的长短，以及分支分叉了多远，我使用三种基本的方法。</p>
+<p>1）短期工作</p>
+<p>绝大多数时间，我做清理时只用squash merge命令。</p>
+<p>假设我创建了一个功能分支，并且在接下来一个小时里进行了一系列的checkpoint commit。</p>
+<p><pre class="lang:default decode:true ">git checkout -b private_feature_branch<br>touch file1.txt<br>git add file1.txt<br>git commit -am “WIP”</pre><br>完成开发后，我不是直接执行git merge命令，而是这样：</p>
+<p><pre class="lang:default decode:true ">git checkout master<br>git merge –squash private_feature_branch<br>git commit -v</pre><br>然后我会花一分钟时间写个详细的commit日志。</p>
+<p>2）较大的工作</p>
+<p>有时候一个功能可以延续好几天，伴有大量的小的commit。</p>
+<p>我认为这些改变应该被分解为一些更小粒度的变更，所以squash作为工具来说就有点儿太糙了。（根据经验我一般会问，“这样能让<a href="http://blog.jobbole.com/438/" title="Eric Lippert：阅读代码真的很难" target="_blank" rel="external">阅读代码</a>更容易吗？”）</p>
+<p>如果我的checkpoint commits之后有合理的更新，我可以使用rebase的交互模式。</p>
+<p>交互模式很强大。你可以用它来编辑、分解、重新排序、合并以前的commit。</p>
+<p>在我的功能分支上：</p>
+<p>git rebase –interactive master</p>
+<p>然后会打开一个编辑器，里边是commit列表。每一行上依次是，要执行的操作、commit的SHA1值、当前commit的注释。并且提供了包含所有可用命令列表的图例。</p>
+<p>默认情况下，每个commit的操作都是“pick”，即不会修改commit。</p>
+<p><div><code>pick ccd6e62 Work on back button</code></div></p>
+<p><div><code>pick 1c83feb Bug fixes</code></div></p>
+<p><div><code>pick f9d0c33 Start work on toolbar</code></div><br>我把第二行修改为“squash”，这样第二个commit就会合并到第一个上去。</p>
+<p><div><code>pick ccd6e62 Work on back button</code></div></p>
+<p><div><code>squash 1c83feb Bug fixes</code></div></p>
+<p><div><code>pick f9d0c33 Start work on toolbar</code></div></p>
+<p><div></div><br>保存并退出，会弹出一个新的编辑器窗口，让我为本次合并commit做注释。就这样。</p>
+<p><strong>舍弃分支</strong></p>
+<p>也许我的功能分支已经存在了很久很久，我不得不将好几个分支合并进这个功能分支中，以便当我写代码时这个分支是足够新的的。版本历史让人费解。最简单的办法是创建一个新的分支。</p>
+<p><pre class="lang:default decode:true ">git checkout master<br>git checkout -b cleaned_up_branch<br>git merge –squash private_feature_branch<br>git reset</pre><br>现在，我就有了一个包含我所有修改且不含之前分支历史的工作目录。这样我就可以手动添加和commit我的变更了。</p>
+<p><strong>总结</strong></p>
+<p>如果你在与Git的默认设置背道而驰，先问问为什么。</p>
+<p>将公共分支历史看做不可变的、原子性的、容易追溯的。将私有分支历史看做一次性的、可编辑的。</p>
+<p>推荐的工作流程是：</p>
+<ol>
+<li><div><code>基于公共分支创建一个私有分支。</code></div></li>
+<li>经常向这个私有分支commit代码。</li>
+<li><div><code>一旦你的代码完善了，就清理掉下私有分支的历史。</code></div><br><div></div><br><div></div></li>
+<li><code>将干净的私有分支merge到公共分支中。</code><br>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html" target="_blank" rel="external">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/" target="_blank" rel="external">张重骐</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+            <a href="/tags/develop/" rel="tag">#develop</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/08/19/wordpress-child-theme/" rel="next" title="wordpress 子主题">
+                <i class="fa fa-chevron-left"></i> wordpress 子主题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/08/21/random-number/" rel="prev" title="如何评价随机数生成算法">
+                如何评价随机数生成算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2013/08/20/git-workflow/"
+     data-title="理解Git的工作流程 【转载】"
+     data-content=""
+     data-url="http://leimingshan.github.io/2013/08/20/git-workflow/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/08/20/git-workflow/"
+           data-title="理解Git的工作流程 【转载】" data-url="http://leimingshan.github.io/2013/08/20/git-workflow/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Mingshan Lei" />
+          <p class="site-author-name" itemprop="name">Mingshan Lei</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/leimingshan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/leimingshan" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/leimingshan" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/leimingshan" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/leimingshan" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.leimingshan.com/" title="Title" target="_blank">Title</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mingshan Lei</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lei00"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

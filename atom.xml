@@ -88,174 +88,781 @@
   </entry>
   
   <entry>
-    <title>PHP扩展相关</title>
-    <link href="http://leimingshan.github.io/2013/07/01/php-extension/"/>
-    <id>http://leimingshan.github.io/2013/07/01/php-extension/</id>
-    <published>2013-06-30T16:00:00.000Z</published>
-    <updated>2016-07-25T09:29:29.000Z</updated>
+    <title>Gradle使用代理服务器</title>
+    <link href="http://leimingshan.github.io/2016/03/23/gradle/"/>
+    <id>http://leimingshan.github.io/2016/03/23/gradle/</id>
+    <published>2016-03-23T01:03:16.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="PHP扩展的介绍"><a href="#PHP扩展的介绍" class="headerlink" title="PHP扩展的介绍"></a>PHP扩展的介绍</h2><p>下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   </p>
-<p>PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   </p>
-<p>有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。<br><a id="more"></a><br>在PHP中构建扩展模块，主要有以下三种方式：</p>
+    <content type="html"><![CDATA[<p>在国内使用Gradle的时候，由于依赖管理时经常需要从mavenCentral（maven中央仓库）和jCenter中下载lib，速度不稳定，有时还会导致build长时间卡住，有一种方法是使用Gradle的Offline模式，但前提是你已经cache了项目的依赖在本地，不然可能会Build失败，另外就是使用代理服务器，也是一种不错的选择。</p>
+<p><strong>在Gradle中使用代理服务器的方法：</strong></p>
 <ol>
-<li><p>External Modules：外部模块，也就是编译成共享库，用dl()函数动态加载。</p>
-<p>好处：<br>(1)不需要重新编译整个PHP<br>(2)PHP体积小，因为不需要编译进PHP</p>
+<li><p><strong>使用以下命令行参数指定代理服务器。</strong></p>
+<pre class="lang:default decode:true">gradle -Dhttp.proxyHost=yourProxy -Dhttp.proxyPort=yourPort -Dhttp.proxyUser=usernameProxy -Dhttp.proxyPassword=yourPassoword</pre>
 </li>
-<li><p>Built-in Modules：编译进PHP  </p>
-<p>好处：<br>(1)不需要动态加载，模块在php脚本里面可以直接使用。<br>(2)不需要将模块编译成.so共享库，因为直接编译进PHP。</p>
-<p>缺点：<br>(1)对模块的每次小变动都需要重新编译整个PHP和重新部署，不适于生产环节。<br>(2)因为编译进PHP，所以PHP二进制文件较大，而且多占点内存.</p>
-</li>
-<li><p>The Zend Engine：Zend核心里实现（参考Zend API）  </p>
+<li><p><strong>修改Gradle用户配置文件。</strong>可以在GRADLE_USER_HOME下新建文件gradle.properties，然后设置代理。GRADLE_USER_HOME的路径一般如下:<br>/home/&lt;username&gt;/.gradle/ (Linux)<br>/Users/&lt;username&gt;/.gradle/ (Mac)<br>C:\Users\&lt;username&gt;.gradle\ (Windows)<br><pre class="lang:default decode:true "># Http Proxy<br>systemProp.http.proxyHost=www.somehost.org<br>systemProp.http.proxyPort=8080<br>systemProp.http.proxyUser=userid<br>systemProp.http.proxyPassword=password<br>systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost</pre></p>
 </li>
 </ol>
-<p>关于dl函数可以参考下面链接：<br><a href="http://www.php.net/manual/zh/function.dl.php" target="_blank" rel="external">http://www.php.net/manual/zh/function.dl.php</a></p>
-<p>可以不使用dl函数，而修改php.ini指定extension的加载，详细步骤如下：</p>
+<h1 id="Https-Proxy"><a href="#Https-Proxy" class="headerlink" title="Https Proxy"></a>Https Proxy</h1><p>systemProp.https.proxyHost=www.somehost.org<br>systemProp.https.proxyPort=8080<br>systemProp.https.proxyUser=userid<br>systemProp.https.proxyPassword=password<br>systemProp.https.nonProxyHosts=*.nonproxyrepos.com|localhost<br>参考：</p>
 <ol>
-<li><p>进入PHP源代码包的ext目录，使用扩展骨架(skeleton)构造器， 为扩展建立函数的第一步是写一个函数定义文件  test.proto，该函数定义文件定义了扩展对外提供的函数原形。该例中，定义函数只有一行函数原形</p>
-<p><code>int hello(int a, int b)
-注意行后面没有分号</code></p>
-</li>
-<li><p>使用以下命令，生成对应的扩展目录test：</p>
-<p><code>./ext_skel --extname=test --proto=test.proto</code></p>
-</li>
-<li><p>进入test目录，修改其中的config.m4文件</p>
-<p><code>PHP_ARG_ENABLE(caleng_module, whether to enable test...</code><br><code>[  --enable-test          Enable test support])</code><br><code>两行，删除前面的dnl。</code></p>
-</li>
-<li><p>修改test.c中的相关函数：</p>
-<p><code>PHP_FUNCTION(hello)</code></p>
-</li>
-<li><p>编译和安装模块</p>
-<p><code>phpize</code><br><code>./configure --with-php-config=/usr/local/php/bin/php-config</code><br><code>make &amp; make install</code></p>
-</li>
-<li><p>在PHP中启用扩展，修改配置文件/usr/local/php/etc/php.ini，<br>加入 extension=test.so， 然后需要重启PHP或php-fpm。<br>这里也可以通过在PHP代码中通过dl命令来调用该模块</p>
-</li>
-<li><p>测试扩展</p>
-<p><code>&lt;?php</code><br><code>echo hello(1,2);</code><br><code>phpinfo();</code><br><code>?&gt;</code></p>
-</li>
+<li><a href="https://docs.gradle.org/current/userguide/build_environment.html" target="_blank" rel="external">https://docs.gradle.org/current/userguide/build_environment.html</a></li>
 </ol>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;PHP扩展的介绍&quot;&gt;&lt;a href=&quot;#PHP扩展的介绍&quot; class=&quot;headerlink&quot; title=&quot;PHP扩展的介绍&quot;&gt;&lt;/a&gt;PHP扩展的介绍&lt;/h2&gt;&lt;p&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
-&lt;p&gt;PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   &lt;/p&gt;
-&lt;p&gt;有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。&lt;br&gt;
+      &lt;p&gt;在国内使用Gradle的时候，由于依赖管理时经常需要从mavenCentral（maven中央仓库）和jCenter中下载lib，速度不稳定，有时还会导致build长时间卡住，有一种方法是使用Gradle的Offline模式，但前提是你已经cache了项目的依赖在本地，不然
     
     </summary>
     
-      <category term="php" scheme="http://leimingshan.github.io/categories/php/"/>
+      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
     
     
-      <category term="php" scheme="http://leimingshan.github.io/tags/php/"/>
+      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+    
+      <category term="Gradle" scheme="http://leimingshan.github.io/tags/Gradle/"/>
     
   </entry>
   
   <entry>
-    <title>jekyll bootstrap</title>
-    <link href="http://leimingshan.github.io/2013/06/27/jekyll-bootstrap/"/>
-    <id>http://leimingshan.github.io/2013/06/27/jekyll-bootstrap/</id>
-    <published>2013-06-26T16:00:00.000Z</published>
-    <updated>2016-07-25T07:48:56.000Z</updated>
+    <title>Bug Tracker</title>
+    <link href="http://leimingshan.github.io/2016/03/22/bug-tracker/"/>
+    <id>http://leimingshan.github.io/2016/03/22/bug-tracker/</id>
+    <published>2016-03-22T14:20:38.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="关于jekyll-bootstrap"><a href="#关于jekyll-bootstrap" class="headerlink" title="关于jekyll bootstrap"></a>关于jekyll bootstrap</h2><p>详细的内容参考<a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">官方帮助文档</a></p>
-<p>这里列出比较常用的命令：</p>
-<pre><code>jekyll --server //在本地启动服务
-rake post title=&quot;Hello World&quot; //新建一个小文章，标题为Hello World
-rake page name=&quot;about.md&quot; //新建一个页面about.md
-</code></pre><p><a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>也是很不错的一个框架，有时间可以尝试一下。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;关于jekyll-bootstrap&quot;&gt;&lt;a href=&quot;#关于jekyll-bootstrap&quot; class=&quot;headerlink&quot; title=&quot;关于jekyll bootstrap&quot;&gt;&lt;/a&gt;关于jekyll bootstrap&lt;/h2&gt;&lt;p&gt;详细的内容参
-    
-    </summary>
-    
-    
-      <category term="jekyll" scheme="http://leimingshan.github.io/tags/jekyll/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>制定计划-继续前行</title>
-    <link href="http://leimingshan.github.io/2013/06/26/hard-days/"/>
-    <id>http://leimingshan.github.io/2013/06/26/hard-days/</id>
-    <published>2013-06-25T16:00:00.000Z</published>
-    <updated>2016-07-25T09:31:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="制定计划"><a href="#制定计划" class="headerlink" title="制定计划"></a>制定计划</h2><p>最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。</p>
+    <content type="html"><![CDATA[<p>最近在尝试使用一些项目管理工具，之前的文章里提到的代码质量分析工具SonarQube，比较符合使用的期望，效果也不错，还有比较早使用的持续集成工具Jenkins，</p>
+<p>然后是缺陷跟踪工具，Bug Tracker System，比较常用的有：</p>
 <ol>
-<li>小论文的选题</li>
-<li>毕设论文项目的进展</li>
-<li>各个网站的发展目标和一些设想</li>
-<li>暑假的时间安排</li>
+<li>Redmine <a href="http://www.redmine.org/" target="_blank" rel="external">http://www.redmine.org/</a> 网站本身就是Redmine示例。</li>
+<li>Mantis <a href="http://www.mantisbt.org/" target="_blank" rel="external">http://www.mantisbt.org/</a> demo：<a href="http://www.mantisbt.org/bugs/my_view_page.php" target="_blank" rel="external">http://www.mantisbt.org/bugs/my_view_page.php</a>。</li>
+<li>Atlassian JIRA <a href="https://www.atlassian.com/software/jira/" target="_blank" rel="external">https://www.atlassian.com/software/jira/</a> 应用广泛，有云服务版。</li>
+<li>Bugzilla <a href="https://www.bugzilla.org/" target="_blank" rel="external">https://www.bugzilla.org/</a><br>类似的工具还有许多，可以查看wiki百科汇总 <a href="https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems" target="_blank" rel="external">https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems</a>。</li>
 </ol>
-<a id="more"></a>
-<p>这几天的时间大部分都放在Web相关方面了，还是比较感兴趣的，学习了一些建站的内容，手里也搜集了几个域名，以后也许能用得上。也希望可以把Web的一些东西应用到毕设论文中去。</p>
-<p>Github也逐渐用起来了，现在还很初步，还在学习的过程中。</p>
-<p>另外，毕设项目没有什么特别的进展，Libevent的加入还是有许多困难，整体的改动还需要动很多代码，一直没敢下手，也没有特别好的思路，比较苦恼。</p>
-<p>暑假也没有具体的安排，现在来看找实习基本是give up了，虽然挺不甘心的，但是时间上已经这样了，也没有办法，还是把时间安排到其他事情上去吧。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;制定计划&quot;&gt;&lt;a href=&quot;#制定计划&quot; class=&quot;headerlink&quot; title=&quot;制定计划&quot;&gt;&lt;/a&gt;制定计划&lt;/h2&gt;&lt;p&gt;最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。&lt;/p&gt;
+      &lt;p&gt;最近在尝试使用一些项目管理工具，之前的文章里提到的代码质量分析工具SonarQube，比较符合使用的期望，效果也不错，还有比较早使用的持续集成工具Jenkins，&lt;/p&gt;
+&lt;p&gt;然后是缺陷跟踪工具，Bug Tracker System，比较常用的有：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;小论文的选题&lt;/li&gt;
-&lt;li&gt;毕设论文项目的进展&lt;/li&gt;
-&lt;li&gt;各个网站的发展目标和一些设想&lt;/li&gt;
-&lt;li&gt;暑假的时间安排&lt;/li&gt;
-&lt;/ol&gt;
+&lt;l
     
     </summary>
     
-      <category term="Diary" scheme="http://leimingshan.github.io/categories/Diary/"/>
+      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
     
     
   </entry>
   
   <entry>
-    <title>欢迎来到Github pages</title>
-    <link href="http://leimingshan.github.io/2013/06/18/my-first-blog/"/>
-    <id>http://leimingshan.github.io/2013/06/18/my-first-blog/</id>
-    <published>2013-06-17T16:00:00.000Z</published>
-    <updated>2016-07-25T09:29:17.000Z</updated>
+    <title>MySQL database character set encoding</title>
+    <link href="http://leimingshan.github.io/2016/03/08/mysql-database-character-set-encoding/"/>
+    <id>http://leimingshan.github.io/2016/03/08/mysql-database-character-set-encoding/</id>
+    <published>2016-03-08T03:28:16.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="标题1-This-is-a-test-of-Markdown"><a href="#标题1-This-is-a-test-of-Markdown" class="headerlink" title="标题1 This is a test of Markdown"></a>标题1 This is a test of Markdown</h1><h2 id="标题2-欢迎进入-Welcome"><a href="#标题2-欢迎进入-Welcome" class="headerlink" title="标题2  欢迎进入 Welcome"></a>标题2  欢迎进入 Welcome</h2><h3 id="标题3-Markdown"><a href="#标题3-Markdown" class="headerlink" title="标题3 Markdown"></a>标题3 Markdown</h3><h4 id="标题4"><a href="#标题4" class="headerlink" title="标题4"></a>标题4</h4><a id="more"></a>
-<p>这里是测试信息<code>test info</code></p>
-<pre><code>test
-test
-code
-code
-codecode here
-</code></pre><blockquote>
-<p>block</p>
-</blockquote>
-<ol>
-<li>hello not in order</li>
-<li>hello</li>
-<li><p>hello</p>
-</li>
-<li><p>test</p>
-</li>
-<li>code</li>
-<li>hello</li>
-</ol>
-<p><em>single asterisks</em></p>
-<p><em>single underscores</em></p>
-<p><strong>double asterisks</strong></p>
-<p><strong>double underscores</strong></p>
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from<br><a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
+    <content type="html"><![CDATA[<p>使用MySQL的时候很可能遇到字符集编码相关的问题，尤其是涉及到数据和程序中有中文字符的时候，如果不注意，可能遇到乱码或一些其他的错误。</p>
+<p>本文详细解释MySQL相关的字符集编码设置和排序规则相关的问题。</p>
+<h1 id="MySQL-Server的默认字符集配置"><a href="#MySQL-Server的默认字符集配置" class="headerlink" title="MySQL Server的默认字符集配置"></a>MySQL Server的默认字符集配置</h1><p>在默认安装MySQL的时候，MySQL Server使用的是英文字符集，服务端的默认配置一般是</p>
+<p><span style="text-decoration: underline;">character-set-server=latin1</span></p>
+<p><span style="text-decoration: underline;">collation-server =latin1_swedish_ci</span></p>
+<p>注意latin1字符集是不支持中文的。第一行的character-set当然是指字符集，第二行的collation是指对应该字符集的比较和排序规则。</p>
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/charset-server.html" target="_blank" rel="external">charset-server参考手册</a><a id="more"></a></p>
+<p>通过MySQL命令</p>
+<p><pre class="lang:mysql decode:true">mysql&gt; SHOW VARIABLES LIKE ‘character%’;</pre><br>可以查看当前服务端的默认配置。</p>
+<p>如果在新建数据库的时候不指定character-set和collation，那么就会采用以上的服务器端默认值，所以还是推荐大家手动指定。示例如下：</p>
+<p><pre class="lang:mysql decode:true ">CREATE DATABASE mydb<br>  DEFAULT CHARACTER SET utf8<br>  DEFAULT COLLATE utf8_general_ci;</pre><br>使用utf8和utf8_general_ci是在中英文应用环境下比较常用的一种设置，排序规则还有utf8_unicode_ci，另外还有编码utf8mb4和对应的排序规则，具体区别会在后面的文章说明。<!--more--></p>
+<h1 id="修改已有数据库的字符编码"><a href="#修改已有数据库的字符编码" class="headerlink" title="修改已有数据库的字符编码"></a>修改已有数据库的字符编码</h1><p>如果之前已经建立好了数据库，需要修改当前数据库的编码，可以使用ALTER DATABASE命令。</p>
+<p>首先查看当前数据库的编码和排序规则；</p>
+<p><pre class="lang:mysql decode:true ">mysql&gt; USE mydb;<br>Database changed<br>mysql&gt; SHOW VARIABLES LIKE ‘character_set_database’;<br>+————————+——-+<br>| Variable_name          | Value |<br>+————————+——-+<br>| character_set_database | utf8  |<br>+————————+——-+<br>1 row in set (0.00 sec)</pre></p>
+<p>mysql&gt; mysql&gt; SHOW VARIABLES LIKE ‘collation_database’;<br>+——————–+—————–+<br>| Variable_name      | Value           |<br>+——————–+—————–+<br>| collation_database | utf8_general_ci |<br>+——————–+—————–+<br>1 row in set (0.01 sec)</p>
+<p>mysql&gt;<br><br>然后就可以根据情况修改为自己需要的编码设置了；</p>
+<p><pre class="lang:mysql decode:true">mysql&gt; ALTER DATABASE databasename CHARACTER SET utf8 COLLATE utf8_general_ci;</pre><br>参考：</p>
+<ul>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/charset-database.html" target="_blank" rel="external">数据库的字符集</a></li>
+<li>修改具体table编码的方法，<a href="https://dev.mysql.com/doc/refman/5.7/en/charset-unicode-upgrading.html" target="_blank" rel="external">charset-unicode-upgrading参考手册</a>。</li>
+</ul>
+<h1 id="修改MySQL的服务端配置"><a href="#修改MySQL的服务端配置" class="headerlink" title="修改MySQL的服务端配置"></a>修改MySQL的服务端配置</h1><p>修改my.cnf配置文件可以修改MySQL Server的默认字符集等设置。以配置文件在/etc/my.cnf（可能根据具体安装情况不同）为例，修改以下几项即可：</p>
+<p><pre class="lang:default decode:true">[client]<br>default-character-set = utf8</pre></p>
+<p>[mysql]<br>default-character-set = utf8</p>
+<p>[mysqld]<br>init-connect = ‘SET NAMES utf8’<br>character-set-server = utf8<br>collation-server = utf8_unicode_ci<br>参考</p>
+<ul>
+<li>配置方法：<a href="http://stackoverflow.com/questions/3513773/change-mysql-default-character-set-to-utf-8-in-my-cnf" target="_blank" rel="external">http://stackoverflow.com/questions/3513773/change-mysql-default-character-set-to-utf-8-in-my-cnf</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/charset-connection.html" target="_blank" rel="external">SET NAMES的官方解释</a><br>&nbsp;</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;标题1-This-is-a-test-of-Markdown&quot;&gt;&lt;a href=&quot;#标题1-This-is-a-test-of-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题1 This is a test of Markdown&quot;&gt;&lt;/a&gt;标题1 This is a test of Markdown&lt;/h1&gt;&lt;h2 id=&quot;标题2-欢迎进入-Welcome&quot;&gt;&lt;a href=&quot;#标题2-欢迎进入-Welcome&quot; class=&quot;headerlink&quot; title=&quot;标题2  欢迎进入 Welcome&quot;&gt;&lt;/a&gt;标题2  欢迎进入 Welcome&lt;/h2&gt;&lt;h3 id=&quot;标题3-Markdown&quot;&gt;&lt;a href=&quot;#标题3-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题3 Markdown&quot;&gt;&lt;/a&gt;标题3 Markdown&lt;/h3&gt;&lt;h4 id=&quot;标题4&quot;&gt;&lt;a href=&quot;#标题4&quot; class=&quot;headerlink&quot; title=&quot;标题4&quot;&gt;&lt;/a&gt;标题4&lt;/h4&gt;
+      &lt;p&gt;使用MySQL的时候很可能遇到字符集编码相关的问题，尤其是涉及到数据和程序中有中文字符的时候，如果不注意，可能遇到乱码或一些其他的错误。&lt;/p&gt;
+&lt;p&gt;本文详细解释MySQL相关的字符集编码设置和排序规则相关的问题。&lt;/p&gt;
+&lt;h1 id=&quot;MySQL-Server的默认字符集配置&quot;&gt;&lt;a href=&quot;#MySQL-Server的默认字符集配置&quot; class=&quot;headerlink&quot; title=&quot;MySQL Server的默认字符集配置&quot;&gt;&lt;/a&gt;MySQL Server的默认字符集配置&lt;/h1&gt;&lt;p&gt;在默认安装MySQL的时候，MySQL Server使用的是英文字符集，服务端的默认配置一般是&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;character-set-server=latin1&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;collation-server =latin1_swedish_ci&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;注意latin1字符集是不支持中文的。第一行的character-set当然是指字符集，第二行的collation是指对应该字符集的比较和排序规则。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.7/en/charset-server.html&quot;&gt;charset-server参考手册&lt;/a&gt;
     
     </summary>
     
+      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="study" scheme="http://leimingshan.github.io/tags/study/"/>
+    
+      <category term="MySQL" scheme="http://leimingshan.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gradle与SonarQube的应用</title>
+    <link href="http://leimingshan.github.io/2016/03/04/gradle-sonarqube/"/>
+    <id>http://leimingshan.github.io/2016/03/04/gradle-sonarqube/</id>
+    <published>2016-03-04T08:19:50.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先是<a href="http://docs.sonarqube.org/display/SONAR/Analyzing+with+SonarQube+Scanner+for+Gradle" target="_blank" rel="external">官方文档</a>。这里使用的是新的Gradle SonarQube plugin，注意与以往的Gradle Sonar和Runner插件区分，官方不推荐使用旧插件。</p>
+<p><a href="https://plugins.gradle.org/plugin/org.sonarqube" target="_blank" rel="external">SonarQube插件说明</a></p>
+<p>Github示例可以参考<a href="https://github.com/SonarSource/sonar-examples/tree/master/projects/languages/java/gradle/java-gradle-simple" target="_blank" rel="external">java-gradle-simple</a>，注意里面build.gradle脚本的写法，以及如何执行SonarQube的Task。</p>
+<p>&nbsp;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先是&lt;a href=&quot;http://docs.sonarqube.org/display/SONAR/Analyzing+with+SonarQube+Scanner+for+Gradle&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;。
+    
+    </summary>
+    
+      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+    
+      <category term="Gradle" scheme="http://leimingshan.github.io/tags/Gradle/"/>
+    
+      <category term="SonarQube" scheme="http://leimingshan.github.io/tags/SonarQube/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本站开始启用全站Https</title>
+    <link href="http://leimingshan.github.io/2016/03/04/website-https/"/>
+    <id>http://leimingshan.github.io/2016/03/04/website-https/</id>
+    <published>2016-03-04T01:32:44.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>从今天起本站开始启用全站Https。</p>
+<p>如果遇到访问问题的话请及时联系我。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从今天起本站开始启用全站Https。&lt;/p&gt;
+&lt;p&gt;如果遇到访问问题的话请及时联系我。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="网站" scheme="http://leimingshan.github.io/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="web" scheme="http://leimingshan.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins SonarQube的搭配使用</title>
+    <link href="http://leimingshan.github.io/2016/03/04/jenkins-sonarqube/"/>
+    <id>http://leimingshan.github.io/2016/03/04/jenkins-sonarqube/</id>
+    <published>2016-03-04T01:20:14.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Jenkins在Ubuntu环境下的安装配置都比较简单，在安装好Java JDK之后，使用</p>
+<p><pre class="">sudo apt-get install jenkins</pre><br>即可安装。因为没有用到后台数据库，配置过程一般就是配置端口号，以及Nginx或Apache server的代理即可。</p>
+<p>详细方法可以参考<a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu" target="_blank" rel="external">官方安装指南</a>。</p>
+<p>接下来就是与代码质量分析平台SonarQube的结合使用，前面已经说明了SonarQube的安装，然后就是利用Jenkins在进行持续集成的过程中，进行代码质量分析、代码覆盖率分析，并将相关数据和报告通知给SonarQube。</p>
+<p>在Jenkins中的“系统管理”-“管理插件”中搜索安装SonarQube Plugin，因为我使用的是Java Gradle工程和JaCoCo测试报告，所以之前也安装了Gradle Plugin和JaCoCo Plugin，这里大家可以根据自己具体的项目选择。<a id="more"></a></p>
+<p>在安装好SonarQube Plugin之后，记得在系统设置中配置SonarQube服务器的相关信息，可以参考下图进行。</p>
+<p><a href="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Plugin.jpg" target="_blank" rel="external"><img src="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Plugin-300x91.jpg" alt="SonarQube Plugin"></a></p>
+<p>另外注意配置SonarQube scanner，这里可以选择自动安装，或者选择自己安装的目录位置。</p>
+<p><a href="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Runner.jpg" target="_blank" rel="external"><img src="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Runner-300x51.jpg" alt="SonarQube Runner"></a></p>
+<p>服务器配置好之后，然后就是在具体的项目中配置构建过程，选择“增加构建步骤”中的Invoke Standalone SonarQube Analysis，参考下图。</p>
+<p><a href="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Analysis.jpg" target="_blank" rel="external"><img src="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Analysis-300x131.jpg" alt="SonarQube Analysis"></a></p>
+<p>具体的配置如下：</p>
+<p><pre class="lang:default decode:true "># required metadata<br>sonar.projectKey=pminer:MongoDB-ImportXMLProfile<br>sonar.projectName=MongoDB-ImportXMLProfile<br>sonar.projectVersion=1.0</pre></p>
+<h1 id="path-to-source-directories-required"><a href="#path-to-source-directories-required" class="headerlink" title="path to source directories (required)"></a>path to source directories (required)</h1><p>sonar.sources=src/main/java</p>
+<h1 id="path-to-test-source-directories-optional"><a href="#path-to-test-source-directories-optional" class="headerlink" title="path to test source directories (optional)"></a>path to test source directories (optional)</h1><p>sonar.tests=src/test/java</p>
+<p>sonar.java.binaries=build/classes</p>
+<p>sonar.language=java</p>
+<p>#Tells SonarQube where the unit tests execution reports are<br>sonar.junit.reportsPath=reports/tests</p>
+<p>#Tells SonarQube where the unit tests code coverage report is<br>sonar.jacoco.reportPath=build/jacoco/test.exec</p>
+<h1 id="Encoding-of-the-source-files"><a href="#Encoding-of-the-source-files" class="headerlink" title="Encoding of the source files"></a>Encoding of the source files</h1><p>sonar.sourceEncoding=UTF-8<br>注意以上的配置要根据自己具体的项目路径配置。</p>
+<p>这样在下次的构建中，就会之前SonarQube的分析任务，并将结果发送给SonarQube服务器，然后访问服务器平台就能看到代码的质量报告。</p>
+<p>参考：<a href="http://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project" target="_blank" rel="external">http://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Jenkins在Ubuntu环境下的安装配置都比较简单，在安装好Java JDK之后，使用&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&quot;&quot;&gt;sudo apt-get install jenkins&lt;/pre&gt;&lt;br&gt;即可安装。因为没有用到后台数据库，配置过程一般就是配置端口号，以及Nginx或Apache server的代理即可。&lt;/p&gt;
+&lt;p&gt;详细方法可以参考&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu&quot;&gt;官方安装指南&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;接下来就是与代码质量分析平台SonarQube的结合使用，前面已经说明了SonarQube的安装，然后就是利用Jenkins在进行持续集成的过程中，进行代码质量分析、代码覆盖率分析，并将相关数据和报告通知给SonarQube。&lt;/p&gt;
+&lt;p&gt;在Jenkins中的“系统管理”-“管理插件”中搜索安装SonarQube Plugin，因为我使用的是Java Gradle工程和JaCoCo测试报告，所以之前也安装了Gradle Plugin和JaCoCo Plugin，这里大家可以根据自己具体的项目选择。
+    
+    </summary>
+    
+      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+    
+      <category term="SonarQube" scheme="http://leimingshan.github.io/tags/SonarQube/"/>
+    
+      <category term="Jenkins" scheme="http://leimingshan.github.io/tags/Jenkins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SonarQube-代码质量管理平台的安装</title>
+    <link href="http://leimingshan.github.io/2016/02/25/sonarqube-install/"/>
+    <id>http://leimingshan.github.io/2016/02/25/sonarqube-install/</id>
+    <published>2016-02-25T05:49:30.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>JDK，数据库（以下以MySQL为例），操作系统支持Linux和Windows（文章以Linux Ubuntu 14.04为例）。</p>
+<h2 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h2><p>终端进入mysql-client：</p>
+<pre class="lang:default decode:true ">mysql -u root -p</pre>
+执行以下SQL语句建立数据库和相关用户：
+<pre class="lang:default decode:true">CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'sonar' IDENTIFIED BY 'sonar';
+GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
+GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
+FLUSH PRIVILEGES;</pre>
+<a id="more"></a>
+
+## 下载并解压SonarQube安装包
+
+在[SonarQube官网](http://www.sonarqube.org/downloads/)获取最新的下载地址。
+<pre class="lang:default decode:true ">wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-5.3.zip
+unzip sonarqube-5.3.zip
+sudo mv sonarqube-5.3 /usr/local/sonar</pre>
+
+<h2 id="编辑配置文件sonar-properties"><a href="#编辑配置文件sonar-properties" class="headerlink" title="编辑配置文件sonar.properties"></a>编辑配置文件sonar.properties</h2><p>编辑conf目录下的sonar.properties，主要修改数据库配置和web server配置，取消相应行的注释并编辑为对应的值。</p>
+<pre class="lang:default decode:true ">sonar.jdbc.username=sonar
+sonar.jdbc.password=sonar
+sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance
+</pre>
+以下的web server配置允许以下地址访问 http://127.0.0.1:9000/sonar
+<pre class="lang:default decode:true ">sonar.web.host=127.0.0.1 #默认是0.0.0.0，绑定本机所有ip地址
+sonar.web.context=/sonar #默认是空
+sonar.web.port=9000</pre>
+
+<h2 id="配置Service运行"><a href="#配置Service运行" class="headerlink" title="配置Service运行"></a>配置Service运行</h2><p>参考<a href="http://docs.sonarqube.org/display/SONAR/Running+SonarQube+as+a+Service+on+Linux" target="_blank" rel="external">官方文档</a></p>
+<p>新建/etc/init.d/sonar文件并编辑如下。</p>
+<p><pre class="lang:default decode:true ">#!/bin/sh<br>#</pre></p>
+<h1 id="rc-file-for-SonarQube"><a href="#rc-file-for-SonarQube" class="headerlink" title="rc file for SonarQube"></a>rc file for SonarQube</h1><p>#</p>
+<h1 id="chkconfig-345-96-10"><a href="#chkconfig-345-96-10" class="headerlink" title="chkconfig: 345 96 10"></a>chkconfig: 345 96 10</h1><h1 id="description-SonarQube-system-www-sonarsource-org"><a href="#description-SonarQube-system-www-sonarsource-org" class="headerlink" title="description: SonarQube system (www.sonarsource.org)"></a>description: SonarQube system (www.sonarsource.org)</h1><p>#</p>
+<h3 id="BEGIN-INIT-INFO"><a href="#BEGIN-INIT-INFO" class="headerlink" title="BEGIN INIT INFO"></a>BEGIN INIT INFO</h3><h1 id="Provides-sonar"><a href="#Provides-sonar" class="headerlink" title="Provides: sonar"></a>Provides: sonar</h1><h1 id="Required-Start-network"><a href="#Required-Start-network" class="headerlink" title="Required-Start: $network"></a>Required-Start: $network</h1><h1 id="Required-Stop-network"><a href="#Required-Stop-network" class="headerlink" title="Required-Stop: $network"></a>Required-Stop: $network</h1><h1 id="Default-Start-3-4-5"><a href="#Default-Start-3-4-5" class="headerlink" title="Default-Start: 3 4 5"></a>Default-Start: 3 4 5</h1><h1 id="Default-Stop-0-1-2-6"><a href="#Default-Stop-0-1-2-6" class="headerlink" title="Default-Stop: 0 1 2 6"></a>Default-Stop: 0 1 2 6</h1><h1 id="Short-Description-SonarQube-system-www-sonarsource-org"><a href="#Short-Description-SonarQube-system-www-sonarsource-org" class="headerlink" title="Short-Description: SonarQube system (www.sonarsource.org)"></a>Short-Description: SonarQube system (www.sonarsource.org)</h1><h1 id="Description-SonarQube-system-www-sonarsource-org"><a href="#Description-SonarQube-system-www-sonarsource-org" class="headerlink" title="Description: SonarQube system (www.sonarsource.org)"></a>Description: SonarQube system (www.sonarsource.org)</h1><h3 id="END-INIT-INFO"><a href="#END-INIT-INFO" class="headerlink" title="END INIT INFO"></a>END INIT INFO</h3><p>/usr/bin/sonar $*<br>运行以下命令安装服务并运行，注意bin子目录的32位64位区别。</p>
+<p><pre class="lang:default decode:true">sudo ln -s $SONAR_HOME/bin/linux-x86-64/sonar.sh /usr/bin/sonar<br>sudo chmod 755 /etc/init.d/sonar<br>sudo update-rc.d sonar defaults<br>sudo service sonar start</pre><br>&nbsp;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装依赖&quot;&gt;&lt;a href=&quot;#安装依赖&quot; class=&quot;headerlink&quot; title=&quot;安装依赖&quot;&gt;&lt;/a&gt;安装依赖&lt;/h2&gt;&lt;p&gt;JDK，数据库（以下以MySQL为例），操作系统支持Linux和Windows（文章以Linux Ubuntu 14.04为例）。&lt;/p&gt;
+&lt;h2 id=&quot;数据库配置&quot;&gt;&lt;a href=&quot;#数据库配置&quot; class=&quot;headerlink&quot; title=&quot;数据库配置&quot;&gt;&lt;/a&gt;数据库配置&lt;/h2&gt;&lt;p&gt;终端进入mysql-client：&lt;/p&gt;
+&lt;pre class=&quot;lang:default decode:true &quot;&gt;mysql -u root -p&lt;/pre&gt;
+执行以下SQL语句建立数据库和相关用户：
+&lt;pre class=&quot;lang:default decode:true&quot;&gt;CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER &#39;sonar&#39; IDENTIFIED BY &#39;sonar&#39;;
+GRANT ALL ON sonar.* TO &#39;sonar&#39;@&#39;%&#39; IDENTIFIED BY &#39;sonar&#39;;
+GRANT ALL ON sonar.* TO &#39;sonar&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;sonar&#39;;
+FLUSH PRIVILEGES;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+    
+      <category term="SonarQube" scheme="http://leimingshan.github.io/tags/SonarQube/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu14.04使用ppa源安装PHP-7</title>
+    <link href="http://leimingshan.github.io/2016/02/05/ubuntu-ppa-install-php7/"/>
+    <id>http://leimingshan.github.io/2016/02/05/ubuntu-ppa-install-php7/</id>
+    <published>2016-02-05T06:03:12.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Ubuntu 14.04下安装PHP除了可以直接从官网下载源码编译安装，也可以PPA源安装。如果读者对编译安装的各种选项和配置方法不是很熟悉的话，则推荐使用这种方法快速安装。</p>
+<p>在安装的时候，这里选择的是比较流行的一位个人作者维护的一个PPA源，具体的使用方法如下：</p>
+<ol>
+<li><p>添加源。</p>
+<pre class="lang:default decode:true">sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php</pre>
+</li>
+<li><p>如果有之前使用apt-get方法安装的PHP，先删除后再安装PHP7。</p>
+<pre class="lang:default decode:true">sudo apt-get update
+sudo apt-get purge php5-common -y
+sudo apt-get install php7.0 php7.0-fpm php7.0-mysql -y
+sudo apt-get --purge autoremove -y</pre>
+</li>
+<li><p>如果使用nginx，注意以下配置和相应的用户权限。</p>
+<pre class="lang:default decode:true ">fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;</pre>
+
+</li>
+</ol>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-php-7-on-ubuntu-14-04" target="_blank" rel="external">How To Upgrade to PHP 7 on Ubuntu 14.04</a></li>
+<li><a href="http://askubuntu.com/questions/705880/how-to-install-php-7" target="_blank" rel="external">How to install PHP 7?</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Ubuntu 14.04下安装PHP除了可以直接从官网下载源码编译安装，也可以PPA源安装。如果读者对编译安装的各种选项和配置方法不是很熟悉的话，则推荐使用这种方法快速安装。&lt;/p&gt;
+&lt;p&gt;在安装的时候，这里选择的是比较流行的一位个人作者维护的一个PPA源，具体的使用方法
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://leimingshan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://leimingshan.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://leimingshan.github.io/tags/Ubuntu/"/>
+    
+      <category term="PHP" scheme="http://leimingshan.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB--mongoimport loses connection when importing big files</title>
+    <link href="http://leimingshan.github.io/2016/01/20/mongoimport-loses-connection-when-importing-big-files/"/>
+    <id>http://leimingshan.github.io/2016/01/20/mongoimport-loses-connection-when-importing-big-files/</id>
+    <published>2016-01-20T06:36:20.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在新版本下进行MongoDB数据导入的时候，遇到了这样一个问题，例如使用如下命令：</p>
+<p><pre class="lang:default decode:true">mongoimport -d test -c profile users.dat</pre><br>在之前使用过几次这样的导入方法都没有问题，但这次却提示：</p>
+<p><pre class="lang:default decode:true">2016-01-20T10:05:25.228+0100    connected to: localhost<br>2016-01-20T10:05:25.735+0100    error inserting documents: lost connection to server<br>2016-01-20T10:05:25.735+0100    Failed: lost connection to server<br>2016-01-20T10:05:25.735+0100    imported 0 documents</pre><br>查看MongoDB的Log，发现出现异常的原因，如下：</p>
+<p><pre class="lang:default decode:true ">2016-01-20T11:26:39.103+0800 I -        [conn17] Assertion: 10334:BSONObj size: 33562755 (0x2002083) is invalid. Size must be between 0 and 16793600(16MB) First element: insert: “Profile”</pre><br>搜索解决方案，发现这是mongo工具包在新版本下的小bug，mongorestore和mongoimport都有一样的问题，官方说明可以参考<a href="https://jira.mongodb.org/browse/TOOLS-939" target="_blank" rel="external">https://jira.mongodb.org/browse/TOOLS-939</a>。</p>
+<p>原因就是bulk write api，原来的api中批量写入的batch size最大是32MB，现在已经变为16MB了。在导入或还原数据的时候，指定选项 –batchSize=1000，指定一个较小的值即可，默认是10000。</p>
+<p>参考：</p>
+<ol>
+<li><a href="http://stackoverflow.com/questions/33475505/mongodb-mongoimport-loses-connection-when-importing-big-files" target="_blank" rel="external">http://stackoverflow.com/questions/33475505/mongodb-mongoimport-loses-connection-when-importing-big-files</a></li>
+<li><a href="https://jira.mongodb.org/browse/TOOLS-939" target="_blank" rel="external">https://jira.mongodb.org/browse/TOOLS-939</a></li>
+<li><a href="http://chenzhou123520.iteye.com/blog/1641319" target="_blank" rel="external">http://chenzhou123520.iteye.com/blog/1641319</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在新版本下进行MongoDB数据导入的时候，遇到了这样一个问题，例如使用如下命令：&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&quot;lang:default decode:true&quot;&gt;mongoimport -d test -c profile users.dat&lt;/pre&gt;&lt;b
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu, Debian中iptables规则保存和重启自动加载</title>
+    <link href="http://leimingshan.github.io/2016/01/13/debian-iptables-save/"/>
+    <id>http://leimingshan.github.io/2016/01/13/debian-iptables-save/</id>
+    <published>2016-01-13T14:01:31.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Debian中iptables命令输完之后会立刻生效，但重启之后配置就会消失，Debian提供了一个iptables-save程序快速保存配置。</p>
+<p>通过iptables-save和iptables-restore可以让debian自动保存并在开机时自动加载iptables规则。</p>
+<h3 id="1、将iptables配置保存到-etc-iptables，这个文件名可以自己定义，与下面的配置一致即可"><a href="#1、将iptables配置保存到-etc-iptables，这个文件名可以自己定义，与下面的配置一致即可" class="headerlink" title="1、将iptables配置保存到/etc/iptables，这个文件名可以自己定义，与下面的配置一致即可"></a>1、将iptables配置保存到/etc/iptables，这个文件名可以自己定义，与下面的配置一致即可</h3><pre class="lang:default decode:true">iptables-save &gt; /etc/iptables</pre>
+
+<h3 id="2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置"><a href="#2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置" class="headerlink" title="2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置"></a>2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置</h3><p><pre class="lang:default decode:true">sudo vim /etc/network/if-pre-up.d/iptables</pre><br>文件内容为：</p>
+<p><pre class="lang:default decode:true ">#!/bin/sh<br>/sbin/iptables-restore &lt; /etc/iptables</pre><br>保存并退出。</p>
+<p>之后系统每次启动时iptables就可以自动加载规则了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Debian中iptables命令输完之后会立刻生效，但重启之后配置就会消失，Debian提供了一个iptables-save程序快速保存配置。&lt;/p&gt;
+&lt;p&gt;通过iptables-save和iptables-restore可以让debian自动保存并在开机时自动加载ip
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://leimingshan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://leimingshan.github.io/tags/Ubuntu/"/>
+    
+      <category term="Debian" scheme="http://leimingshan.github.io/tags/Debian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IntelliJ相关产品注册</title>
+    <link href="http://leimingshan.github.io/2016/01/04/intellij-products-register/"/>
+    <id>http://leimingshan.github.io/2016/01/04/intellij-products-register/</id>
+    <published>2016-01-04T08:06:11.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>需要的同学可以查看以下网址。当然还是推荐大家去官网购买使用。</p>
+<p><a href="http://idea.lanyus.com/" target="_blank" rel="external">http://idea.lanyus.com/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;需要的同学可以查看以下网址。当然还是推荐大家去官网购买使用。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://idea.lanyus.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://idea.lanyus.com/&lt;/a&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="develop" scheme="http://leimingshan.github.io/tags/develop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL FIND_IN_SET Usage</title>
+    <link href="http://leimingshan.github.io/2016/01/04/mysql-find-in-set-usage/"/>
+    <id>http://leimingshan.github.io/2016/01/04/mysql-find-in-set-usage/</id>
+    <published>2016-01-04T08:04:59.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>MySQL手册中FIND_IN_SET函数的语法:</p>
+<p>FIND_IN_SET(str, strlist)</p>
+<p>Returns a value in the range of 1 to <em><code>N</code></em> if the string <em><code>str</code></em> is in the string list <em><code>strlist</code></em> consisting of <em><code>N</code></em> substrings. A string list is a string composed of substrings separated by <span class="quote">“<span class="quote"><code>,</code></span>”</span> characters. If the first argument is a constant string and the second is a column of type <a href="http://dev.mysql.com/doc/refman/5.7/en/set.html" title="11.4.5 The SET Type" target="_blank" rel="external"><code>SET</code></a>, the <a href="http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_find-in-set" target="_blank" rel="external"><code>FIND_IN_SET()</code></a> function is optimized to use bit arithmetic. Returns <code>0</code> if <em><code>str</code></em> is not in <em><code>strlist</code></em> or if <em><code>strlist</code></em> is the empty string. Returns <code>NULL</code> if either argument is <code>NULL</code>. This function does not work properly if the first argument contains a comma (<span class="quote">“<span class="quote"><code>,</code></span>”</span>) character.</p>
+<p>假如字符串str 在由N 子链组成的字符串列表strlist 中，则返回值的范围在 1 到 N 之间。<br>一个字符串列表就是一个由一些被‘,’符号分开的子链组成的字符串。如果第一个参数是一个常数字符串，而第二个是type SET列，则   FIND_IN_SET() 函数被优化，使用比特计算。<br>如果str不在strlist 或strlist 为空字符串，则返回值为 0 。如任意一个参数为NULL，则返回值为 NULL。这个函数在第一个参数包含一个逗号(‘,’)时将无法正常运行。<a id="more"></a></p>
+<p>例如：</p>
+<p><pre class="lang:default decode:true ">mysql&gt; SELECT FIND_IN_SET(‘b’,’a,b,c,d’);<br>        -&gt; 2</pre><br><a href="http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_substring-index" target="_blank" rel="external"><code>SUBSTRING_INDEX(_&lt;code&gt;str</code><em>,</em><code>delim</code><em>,</em><code>count</code>_)</a></p>
+<p>Returns the substring from string <em><code>str</code></em> before <em><code>count</code></em> occurrences of the delimiter <em><code>delim</code></em>. If <em><code>count</code></em> is positive, everything to the left of the final delimiter (counting from the left) is returned. If <em><code>count</code></em> is negative, everything to the right of the final delimiter (counting from the right) is returned. <a href="http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_substring-index" target="_blank" rel="external"><code>SUBSTRING_INDEX()</code></a> performs a case-sensitive match when searching for <em><code>delim</code></em>.</p>
+<p><pre class="lang:default decode:true ">mysql&gt; SELECT SUBSTRING_INDEX(‘www.mysql.com’, ‘.’, 2);<br>        -&gt; ‘www.mysql’<br>mysql&gt; SELECT SUBSTRING_INDEX(‘www.mysql.com’, ‘.’, -2);<br>        -&gt; ‘mysql.com’</pre><br>This function is multibyte safe.</p>
+<p>&nbsp;</p>
+<p>MySQL中使用WHERE IN进行条件查询的时候，一般情况下，查询的结果和IN中值的顺序并不一致。</p>
+<p>有两种方式可以对IN查询的结果进行排序。一种是ORDER BY FIND_IN_SET，另外一种是ORDER BY SUBSTRING_INDEX。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL手册中FIND_IN_SET函数的语法:&lt;/p&gt;
+&lt;p&gt;FIND_IN_SET(str, strlist)&lt;/p&gt;
+&lt;p&gt;Returns a value in the range of 1 to &lt;em&gt;&lt;code&gt;N&lt;/code&gt;&lt;/em&gt; if the string &lt;em&gt;&lt;code&gt;str&lt;/code&gt;&lt;/em&gt; is in the string list &lt;em&gt;&lt;code&gt;strlist&lt;/code&gt;&lt;/em&gt; consisting of &lt;em&gt;&lt;code&gt;N&lt;/code&gt;&lt;/em&gt; substrings. A string list is a string composed of substrings separated by &lt;span class=&quot;quote&quot;&gt;“&lt;span class=&quot;quote&quot;&gt;&lt;code&gt;,&lt;/code&gt;&lt;/span&gt;”&lt;/span&gt; characters. If the first argument is a constant string and the second is a column of type &lt;a href=&quot;http://dev.mysql.com/doc/refman/5.7/en/set.html&quot; title=&quot;11.4.5 The SET Type&quot;&gt;&lt;code&gt;SET&lt;/code&gt;&lt;/a&gt;, the &lt;a href=&quot;http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_find-in-set&quot;&gt;&lt;code&gt;FIND_IN_SET()&lt;/code&gt;&lt;/a&gt; function is optimized to use bit arithmetic. Returns &lt;code&gt;0&lt;/code&gt; if &lt;em&gt;&lt;code&gt;str&lt;/code&gt;&lt;/em&gt; is not in &lt;em&gt;&lt;code&gt;strlist&lt;/code&gt;&lt;/em&gt; or if &lt;em&gt;&lt;code&gt;strlist&lt;/code&gt;&lt;/em&gt; is the empty string. Returns &lt;code&gt;NULL&lt;/code&gt; if either argument is &lt;code&gt;NULL&lt;/code&gt;. This function does not work properly if the first argument contains a comma (&lt;span class=&quot;quote&quot;&gt;“&lt;span class=&quot;quote&quot;&gt;&lt;code&gt;,&lt;/code&gt;&lt;/span&gt;”&lt;/span&gt;) character.&lt;/p&gt;
+&lt;p&gt;假如字符串str 在由N 子链组成的字符串列表strlist 中，则返回值的范围在 1 到 N 之间。&lt;br&gt;一个字符串列表就是一个由一些被‘,’符号分开的子链组成的字符串。如果第一个参数是一个常数字符串，而第二个是type SET列，则   FIND_IN_SET() 函数被优化，使用比特计算。&lt;br&gt;如果str不在strlist 或strlist 为空字符串，则返回值为 0 。如任意一个参数为NULL，则返回值为 NULL。这个函数在第一个参数包含一个逗号(‘,’)时将无法正常运行。
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="http://leimingshan.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10-kms-openwrt</title>
+    <link href="http://leimingshan.github.io/2015/10/03/win10-kms-openwrt/"/>
+    <id>http://leimingshan.github.io/2015/10/03/win10-kms-openwrt/</id>
+    <published>2015-10-03T14:58:33.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.right.com.cn/forum/thread-174651-1-2.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-174651-1-2.html</a></p>
+<p><a href="http://www.right.com.cn/forum/thread-174287-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-174287-1-1.html</a></p>
+<p><a href="http://www.right.com.cn/forum/thread-159625-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-159625-1-1.html</a></p>
+<p>openwrt luci</p>
+<p>具体安装位置如下：</p>
+<p><pre class="lang:default decode:true ">/etc/vlmcsd.ini<br>/usr/sbin/vlmcsd<br></pre><br><a href="http://www.leimingshan.com/wp-content/uploads/2015/10/vlmcsd-svn812-2015-08-30-Hotbird64.7z" target="_blank" rel="external">vlmcsd-svn812-2015-08-30-Hotbird64</a></p>
+<p>Password: 2015</p>
+<p>具体激活使用方法：</p>
+<p><pre class="lang:default decode:true ">slmgr.vbs /skms 192.168.1.1<br>slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX<br>slmgr.vbs /ato<br>slmgr.vbs /xpr</pre></p>
+<p>cd C:\Program Files\Microsoft Office\Office15<br>cscript ospp.vbs /sethst:192.168.1.1<br>cscript ospp.vbs /act<br>cscript ospp.vbs /dstatus<br><a id="more"></a></p>
+<p><span style="color: #ff0000;">更新下载地址，</span><br><span style="color: #ff0000;">国内地址：</span><span style="color: #336699;"><u><a href="http://download.3kkk.org:90/os/vlmcsd-svn812-2015-08-30-Hotbird64.7z" target="_blank" rel="external">http://download.3kkk.org:90/os/vlmcsd-svn812-2015-08-30-Hotbird64.7z</a></u></span><span style="color: #336699;"><u>官方地址：<a href="http://rghost.net/6G8wYxwnX" target="_blank" rel="external">http://rghost.net/6G8wYxwnX</a><br></u></span><span style="color: #ff0000;">官方站点：<a href="http://forums.mydigitallife.info/threads/50234-Emulated-KMS-Servers-on-non-Windows-platforms" target="_blank" rel="external">http://forums.mydigitallife.info … n-Windows-platforms</a></span><br><span style="color: #ff0000;">解压密码 2015 </span><br><span style="color: #000000;">压缩包指纹：<br>MD50f1a9489ccad4a77d3b8f3ee893ede91</span><br><span style="color: #000000;">SHA1f4daa5cb5f3c4f170c0d343982ce2c1a6a88376f</span><br><span style="font-size: x-large;"><span style="color: #ff0000;">支持windows 10 激活 ，office 2016亲测 可用。</span></span><br><span style="font-size: x-large;"><span style="color: #ff0000;">说明:现在下载到的一般是零售版，是不能用kms激活的，需要转换成批量授权的才行。</span></span><br><span style="font-size: x-large;"><span style="color: #ff0000;">附转换工具，就是替换几个文件，下载地址：</span></span><a href="http://download.3kkk.org:90/os/office2016%20Retail%e8%bd%acVOL%e5%b9%b6%e6%bf%80%e6%b4%bb.rar" target="_blank" rel="external"><span style="font-size: x-large;">点我下载</span></a></p>
+<p>下载附件<br>把附件的三个文件传到路由器上<br>创建目录<br>mkdir /opt/kms  （随意自己定位置。位置不限）<br>复制三个文件 vlmcsd kmsserver.pid kmsserver.ini 到 /opt/kms<br>给vlmcsd 添加执行权限 chmod a+x vlmcsd<br>启动kms服务<br>/opt/kms/vlmcsd -i /opt/kms/kmsserver.ini -p /opt/kms/kmsserver.pid<br>测试服务器<br>在window 下进入cmd 切换到kmsclient.exe 目录<br>运行<br>kmsclient 1688 192.168.1.1 Windows<br>kmsclient 1688 192.168.1.1 Office2010<br>kmsclient 1688 192.168.1.1 Office2013<br>分别测试 类似这样就是成功了.<br>KMS Client Emulator started successfully.<br>Successfully received response from KMS Server.<br>KMS Server PID: 55041-00096-200-625305-03-1049-7601.0000-057201.<br>Activation request (KMS V4.0) 1 of 1 sent.</p>
+<p>&nbsp;</p>
+<p>附件下载 <img src="http://www.right.com.cn/forum/static/image/filetype/rar.gif" alt=""> <span id="attach_103839"><a href="http://www.right.com.cn/forum/forum.php?mod=attachment&amp;aid=MTAzODM5fGFmZDVmYWMzfDE0NDY5OTcyMTZ8MHwxNTk2MjU%3D" target="_blank" rel="external">路由器kms.rar</a> <em>(201.85 KB, 下载次数: 505)</em> </span><br>补充说明一下：官方下载下来是一个5M多的压缩包，里面包含了几乎所有平台的以及源代码<br>binaries 目录里面是编译好的二进制软件，可以直接运行的，针对不同系统分了几个目录 ，<br>这几个目录很明了不用解释了。路由器系统 包括 ddwrt openwrt tomato 等都是基于Linux的系统<br>选择Linux目录。这里有根据cpu不同分了几个目录<br>arm 有一部分路由器是目前相对少一些<br>Intel  很熟了 x86的一般很少有成品的路由器 ，很多都是软路由，<br>mips  绝大数的路由器都是mips 的  bcm artheros的基本都是<br>ppc  sparc32 这个很少见了，不是主流的，一些特殊设备<br>进入mips 目录又有2个目录 big-endian  little-endian<br>俗称 大端 小端 ，意思是一个数据在内存地址中按什么样的顺序存储<br>大体意思<span style="color: #ff0000;">小端 高位 存在高地址 低位存在低地址 大端 高位存低地址 低位存高地址 </span><span style="color: #000000;">详情百度</span><br><span style="color: #000000;">不同cpu 系统 使用的方式不一样，我知道的不全不一定准确</span><br><span style="color: #000000;">至少</span><span style="color: #ff0000;"> mips 的ar的cpu是大端的 big-endian </span><span style="color: #000000;">。选择big-endian</span><br><span style="color: #333333;"><span style="font-family: arial, 宋体, sans-serif;">我们常用的X86结构是小端模式，而KEIL C51则为大端模式。很多的ARM，DSP都为小端模式。有些ARM处理器还可以由硬件来选择是大端模式还是小端模式。</span></span><br><span style="font-family: arial, 宋体, sans-serif;"><span style="color: #333333;">大小端序 还和系统有关 具体情况具体分析</span></span><br><span style="font-family: arial, 宋体, sans-serif;"><span style="color: #333333;">big-endian目录里面有分几个目录</span></span><br><span style="font-family: arial, 宋体, sans-serif;"><span style="color: #333333;">这里是根据使用的c语言运行库来区分的</span></span><br><span style="font-family: arial, 宋体, sans-serif;"><span style="color: #333333;">x86的Linux系统 一般都是用的glibc 这个库</span></span><br><span style="font-family: arial, 宋体, sans-serif;"><span style="color: #333333;">嵌入式的Linux 用的是uclibc 这个库</span></span><br><span style="font-family: arial, 宋体, sans-serif;"><span style="color: #333333;">static 是静态的意思，这里软件不依赖共享的运行库 自己用的自己带了。但是体积大了。</span></span><br><span style="font-family: arial, 宋体, sans-serif;"><span style="color: #333333;">openwrt 之类都是用的uclibc这个库</span></span><br>进入uclibc这个目录 就是软件了<br>ar71xx 91xx的就选择vlmcsd-mips32r2-openwrt-atheros-ar7xxx-ar9xxx-uclibc这个</p>
+<p>vlmcs 是客户端测试 vlmcs − a client for testing and/or charging KMS servers<br>vlmcsd 是一个完整的kms激活服务器 vlmcsd - a fully Microsoft compatible KMS server<br>vlmcsd 包含上面2个的功能 vlmcsdmulti - a multi-call binary containing vlmcs(1) and vlmcsd(8)<br>只用来做激活服务器选用vlmcsd就可以了。</p>
+<p>激活方法及命令：<br><strong><span style="font-size: x-large;">Windows 激活命令：</span></strong></p>
+<p><div align="left"><span style="font-size: x-large;">CD “%SystemRoot%\SYSTEM32″</span></div></p>
+<p><div align="left"><span style="font-size: x-large;">CSCRIPT /NOLOGO SLMGR.VBS /SKMS 192.168.0.xxx</span></div></p>
+<p><div align="left"><span style="font-size: x-large;">CSCRIPT /NOLOGO SLMGR.VBS /ATO</span></div></p>
+<p><div align="left"><span style="font-size: x-large;">CSCRIPT /NOLOGO SLMGR.VBS /XPR</span></div><br><strong><span style="font-size: x-large;">Office/Project/Visio 2013(2010换下安装路径) 激活命令：</span></strong></p>
+<p><div align="left"><span style="font-size: x-large;">32位：CD “%ProgramFiles(x86)%\MICROSOFT OFFICE\OFFICE15″</span></div></p>
+<p><div align="left"><span style="font-size: x-large;">64位：CD “%ProgramFiles%\MICROSOFT OFFICE\OFFICE15″</span></div></p>
+<p><div align="left"><span style="font-size: x-large;">CSCRIPT OSPP.VBS /SETHST:192.168.0.xxx</span></div></p>
+<p><div align="left"><span style="font-size: x-large;">CSCRIPT OSPP.VBS /ACT</span></div></p>
+<p><div align="left"><span style="font-size: x-large;">CSCRIPT OSPP.VBS /DSTATUS</span></div></p>
+<p><div align="left"></div></p>
+<p><div align="left"></div></p>
+<p><div align="left"></div></p>
+<p><div class="quote"></div></p>
+<blockquote>
+<div align="left"><br><br><div align="left">注意：本帖的目的是在你已经搭建私有kms激活服务器的情况下，使局域网内电脑可以自动发现kms服务器而进行免配置激活的。</div>
+
+<div align="left">应用前提是你已经搭好了KMS服务器！</div>
+
+<div align="left">在openwrt上搭建KMS：</div>
+
+<div align="left"><a href="http://www.right.com.cn/forum/thread-174287-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-174287-1-1.html</a></div>
+
+<div align="left">在cubieboard、树莓派等ARM盒子搭建py-KMS的教程：</div>
+
+<div align="left"><a href="http://www.cnblogs.com/bitspace/" target="_blank" rel="external">http://www.cnblogs.com/bitspace/</a></div>
+
+<p></p></div><br><p></p>
+<div class="quote"><br><div align="left">结合 @<a href="http://www.right.com.cn/forum/space-uid-246879.html" target="_blank" rel="external">Vincent-Emiya</a> 的测试发现，可以使用DNS指向任意公共的KMS激活服务器实现激活局域网内的主机。这可能是有史以来最便捷的KMS激活方案了。</div>
+
+<div align="left">想象下，只要配置好路由器的DNS，然后不用架设KMS服务器，不用安装小工具，也不要执行任何命令。只要把电脑接入你的局域网，你的系统和office就可以自动激活~不要方便太多</div>
+
+<p><div align="left">具体方法20楼：<a href="http://www.right.com.cn/forum/forum.php?mod=redirect&amp;goto=findpost&amp;ptid=174651&amp;pid=1111580" target="_blank" rel="external">http://www.right.com.cn/forum/fo … =174651&amp;pid=1111580</a></div><br></p></div><br><p></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">相信很多人都在自己的局域网内搭建了自己的私有kms激活服务器，比如：<a href="http://www.right.com.cn/forum/thread-174287-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-174287-1-1.html</a>。</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">可以说py-kms与vlmcsd的适用性真的非常之广，不管你在windows，linux下甚至安卓下都可以搭建私有的kms服务。但是最后都会遇到的问题是需要在被激活主机上运行批处理命令，不免有些繁琐。</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">曾闻中国某高等学府批量购买企业windows许可，你的电脑只要连入校园网，不需要任何配置就可以激活系统，不免神往。查资料发现，这是通过配置DNS服务器的SRV项实现局域网内主机自动发现kms激活服务器的。</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">刚好我的路由器跑着openwrt系统，可以配置dnsmasq提供SRV功能，于是ssh进入路由器后台，在/etc/dnsmasq.conf中添加配置：</span></span></div></p>
+<p><div class="blockcode"></div></p>
+<div id="code_AMR">
+
+</div></blockquote>
+<ol>
+<li>srv-host=_vlmcs.<em>tcp.lan,cubietruck.lan,1688,0,100<br>
+</em>复制代码_</li>
+</ol>
+<p></p>
+<p><div align="left"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="color: #000000;">其中 _vlmcs._tcp 为服务名；lan 为我的内网域名</span><span style="color: #ff0000;">(这里要改成你的内网域名，一般都是lan)</span><span style="color: #000000;">；cubietruck.lan为我的KMS服务器在内网的地址</span></span><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">(这里要改成你的内网KMS服务器地址)</span><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">；1688为kms激活服务默认端口号；0为优先级；100为权重。</span></span></div></p>
+<p><div align="left"><span style="font-size: x-large;"><span style="color: #ff0000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">注意需要修改：</span>cubietruck.lan 为你的KMS主机实际所在的地址！</span></span></div></p>
+<p><div align="left"></div></p>
+<p><div class="quote"></div></p>
+<blockquote>
+<div align="left"><span style="color: #000000;"><span style="font-size: medium;">比如你的KMS服务器架设在路由器上，而路由器的主机名为：openwrt</span></span></div>
+
+<div align="left"><span style="font-size: medium;"><span style="color: #000000;">你的局域网域名后缀为lan（一般都是lan）</span></span></div>
+
+<p><div align="left"><span style="font-size: medium;"><span style="color: #000000;">那么你的路由器地址为：openwrt.lan</span></span></div><br><br>其中路由器主机名可以在luci界面的状态页面看到，本地域名后缀可以在dns设置页面看到。</p>
+</blockquote>
+<p></p>
+<p><div align="left"><span style="font-size: medium;"><span style="color: #000000;"> </span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">然后在路由器中重启dnsmasq服务</span></span></div></p>
+<p><div align="left">/etc/init.d/dnsmasq restart</div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">切换至windows验证dns配置是否正确，打开命令提示符，运行命令：</span></span></div></p>
+<p><div align="left">nslookup -type=srv _vlmcs._tcp.lan</div></p>
+<p><div align="left"></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">其中 _vlmcs._tcp 表示kms服务类型，lan为我的局域网域名称。</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">看到返回信息：</span></span></div></p>
+<p><div align="left"></div></p>
+<p><div class="blockcode"></div></p>
+<p><div id="code_cY4"></div></p>
+<p><pre class="lang:default decode:true">_vlmcs._tcp.lan SRV service location:</pre></p>
+<pre><code>priority       = 0
+
+weight         = 100
+
+port           = 1688
+
+svr hostname   = cubietruck.lan
+</code></pre><p>cubietruck.lan  internet address = 192.168.1.126<br><br><br></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">说明dns配置正确。</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">这时候看看我自己电脑上的office能不能成功发现kms服务器，还是在管理员权限下运行命令：</span></span></div></p>
+<p><div class="blockcode"></div></p>
+<p><div id="code_f7D"></div></p>
+<p><pre class="lang:default decode:true ">CD “%ProgramFiles(x86)%\MICROSOFT OFFICE\OFFICE15”</pre></p>
+<p>CSCRIPT OSPP.VBS /remhst</p>
+<p>CSCRIPT OSPP.VBS /act</p>
+<p>CSCRIPT OSPP.VBS /dstatus<br>&nbsp;</p>
+<p><br></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">其中第一行表示清除之前设置的kms激活服务器地址，第二行手动激活，第三行显示激活状态。最终看到信息</span></span></div></p>
+<p><div class="blockcode"></div></p>
+<p><div id="code_AY6"></div></p>
+<p><pre class="lang:default decode:true ">REMAINING GRACE: 180 days  (259200 minute(s) before expiring</pre></p>
+<p>Last 5 characters of installed product key: XTGCT</p>
+<p>Activation Type Configuration: ALL</p>
+<pre><code>KMS machine name from DNS: cubietruck.lan:1688
+
+Activation Interval: 120 minutes
+
+Renewal Interval: 10080 minutes
+
+KMS host caching: Enabled
+</code></pre><hr>
+<hr>
+<p>—Exiting—————————–<br>&nbsp;</p>
+<p><br></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">其中</span></span></div></p>
+<p><div align="left"></div></p>
+<p><pre class="lang:default decode:true">KMS machine name from DNS: cubietruck.lan:1688</pre><br></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">表示能够根据DNS自动发现局域网内的kms激活服务器为cubietruck.lan。</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">说明office可以完全免配置自动激活。</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">以后任何电脑只要连接入我的局域网，即可对其VOL版本的office以及windows进行自动激活工作。cool~</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;">参考：</span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><a href="http://blog.14401.cn/post-166.html" target="_blank" rel="external">http://blog.14401.cn/post-166.html</a></span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><a href="http://www.cnblogs.com/zhuangxuqiang/archive/2009/04/28/1445113.html" target="_blank" rel="external">http://www.cnblogs.com/zhuangxuqiang/archive/2009/04/28/1445113.html</a></span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><a href="https://support.microsoft.com/en-us/kb/816587" target="_blank" rel="external">https://support.microsoft.com/en-us/kb/816587</a></span></span></div></p>
+<p><div align="left"><span style="color: #000000;"><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><a href="http://www.cnblogs.com/bitspace/" target="_blank" rel="external">http://www.cnblogs.com/bitspace/</a></span></span></div><br><br>&nbsp;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.right.com.cn/forum/thread-174651-1-2.html&quot;&gt;http://www.right.com.cn/forum/thread-174651-1-2.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.right.com.cn/forum/thread-174287-1-1.html&quot;&gt;http://www.right.com.cn/forum/thread-174287-1-1.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.right.com.cn/forum/thread-159625-1-1.html&quot;&gt;http://www.right.com.cn/forum/thread-159625-1-1.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;openwrt luci&lt;/p&gt;
+&lt;p&gt;具体安装位置如下：&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&quot;lang:default decode:true &quot;&gt;/etc/vlmcsd.ini&lt;br&gt;/usr/sbin/vlmcsd&lt;br&gt;&lt;/pre&gt;&lt;br&gt;&lt;a href=&quot;http://www.leimingshan.com/wp-content/uploads/2015/10/vlmcsd-svn812-2015-08-30-Hotbird64.7z&quot;&gt;vlmcsd-svn812-2015-08-30-Hotbird64&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Password: 2015&lt;/p&gt;
+&lt;p&gt;具体激活使用方法：&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&quot;lang:default decode:true &quot;&gt;slmgr.vbs /skms 192.168.1.1&lt;br&gt;slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX&lt;br&gt;slmgr.vbs /ato&lt;br&gt;slmgr.vbs /xpr&lt;/p&gt;
+&lt;p&gt;cd C:\Program Files\Microsoft Office\Office15&lt;br&gt;cscript ospp.vbs /sethst:192.168.1.1&lt;br&gt;cscript ospp.vbs /act&lt;br&gt;cscript ospp.vbs /dstatus&lt;/pre&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="网站" scheme="http://leimingshan.github.io/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript的模块化编程</title>
+    <link href="http://leimingshan.github.io/2015/08/31/javascript-module/"/>
+    <id>http://leimingshan.github.io/2015/08/31/javascript-module/</id>
+    <published>2015-08-31T07:32:02.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2 … ule_definition.html</a><br>为什么讲到JS的模块化编程，也是最近在应用Echarts图标库需要面对的一个问题。<br>可以参考Echarts引入的方法：<br><a href="http://echarts.baidu.com/doc/doc.html#" target="_blank" rel="external">http://echarts.baidu.com/doc/doc.html#</a>引入ECharts<br>在之前的开发中，为了使用简便，直接采用第三种引入单文件的方式，比较简单，<br>&lt;script src=”js/echarts-all.js”&gt;&lt;/script&gt;<br>就可以了，这样就引入了Echarts所有的图标和地图数据，这个文件是900KB，也就是说，<br>无论你在页面中使用几种图表，都需要加载接近1MB大小的JS库文件，效率还是比较低下的。<br>比较推荐的方法是参考JS的模块化编程和AMD规范，当然使用模块化编程主要不是为了解决<br>加载过多的问题，对于代码的规范和质量都有比较大的帮助。<br>Echarts本身使用了require.js，在前台开发中也可以尝试自己使用require.js。<br>简单介绍：<a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a><br>官网：<a href="http://requirejs.org/" target="_blank" rel="external">http://requirejs.org/</a></p>
+<p>建议推荐一个SeaJS 的 CMD 规范，与 AMD 非常类似，在国内的影响力非常大，也非常易于使用，是国人开发的，在 github 上的更新、互动非常频繁。<br><a href="http://seajs.org/" target="_blank" rel="external">http://seajs.org</a><br><a href="https://github.com/seajs/seajs" target="_blank" rel="external">https://github.com/seajs/seajs</a></p>
+<p>两个的区别<br><a href="http://www.zhihu.com/question/20351507/answer/14859415" target="_blank" rel="external">http://www.zhihu.com/question/20351507/answer/14859415</a></p>
+<p><a href="http://segmentfault.com/a/1190000000733959" target="_blank" rel="external">http://segmentfault.com/a/1190000000733959</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.ruanyifeng
+    
+    </summary>
+    
+      <category term="网站" scheme="http://leimingshan.github.io/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="JavaScript" scheme="http://leimingshan.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB的数据库复制</title>
+    <link href="http://leimingshan.github.io/2015/08/31/mongodb-copy-database/"/>
+    <id>http://leimingshan.github.io/2015/08/31/mongodb-copy-database/</id>
+    <published>2015-08-31T06:20:14.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在MongoDB的客户端可以使用如下命令：<br>db.copyDatabase(“abc”, “abc-tmp”, “localhost”)<br>数据库文件较大的话会需要一段时间。</p>
+<p>1，复制数据库，使用copyDatabase命令完成复制数据库，<br>格式:copyDatabase(fromdb,todb,fromhost[,username,password])<br>fromdb：源数据库名称<br>todb：目标数据库名称<br>fromhost：源数据库地址，本地和远程都可以<br>username：远程数据库用户名<br>password：远程数据密码<br>例子：将本地db2库复制本地，并重命名db1<br>&gt; db.copyDatabase(“db2”,”db1”,”localhost”)<a id="more"></a><br>2，刷新磁盘：将内存中尚未写入磁盘的信息写入磁盘，并锁住对数据库更新的操作，但读操作可以使用，使用runCommand命令,这个命令只能在admin库上执行<br>格式：db.runCommand({fsync:1,async:true})<br>async：是否异步执行<br>lock:1 锁定数据库</p>
+<p>3，数据压缩：mongodb的存储结构采用了预分配的机制，长期不断的操作，会留下太多的的碎片，从而导致数据库系统越来越慢。<br>repairDatabase命令是mongodb内置的一个方法，它会扫描数据库中的所有数据，并将通过导入/导出来重新整理数据集合，将碎片清理干净<br>现在看压缩前和压缩后的对比数据，如下所示：<br>PRIMARY&gt; db.t1.storageSize()<br>65232896<br>PRIMARY&gt; db.t1.totalSize()<br>81470432<br>PRIMARY&gt; db.repairDatabase()<br>{ “ok” : 1 }<br>PRIMARY&gt; db.t1.storageSize()<br>65232896<br>PRIMARY&gt; db.t1.totalSize()<br>79851584</p>
+<p>4，当然也支持复制Collection，与复制Database类似。</p>
+<p>&nbsp;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在MongoDB的客户端可以使用如下命令：&lt;br&gt;db.copyDatabase(“abc”, “abc-tmp”, “localhost”)&lt;br&gt;数据库文件较大的话会需要一段时间。&lt;/p&gt;
+&lt;p&gt;1，复制数据库，使用copyDatabase命令完成复制数据库，&lt;br&gt;格式:copyDatabase(fromdb,todb,fromhost[,username,password])&lt;br&gt;fromdb：源数据库名称&lt;br&gt;todb：目标数据库名称&lt;br&gt;fromhost：源数据库地址，本地和远程都可以&lt;br&gt;username：远程数据库用户名&lt;br&gt;password：远程数据密码&lt;br&gt;例子：将本地db2库复制本地，并重命名db1&lt;br&gt;&amp;gt; db.copyDatabase(“db2”,”db1”,”localhost”)
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
+    
+      <category term="MongoDB" scheme="http://leimingshan.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB的POJO映射</title>
+    <link href="http://leimingshan.github.io/2015/08/31/mongodb-pojo/"/>
+    <id>http://leimingshan.github.io/2015/08/31/mongodb-pojo/</id>
+    <published>2015-08-31T06:12:20.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在MongoDB数据库的Java程序开发过程中，使用了官方支持的POJO映射Morphia<br><a href="https://github.com/mongodb/morphia/wiki" target="_blank" rel="external">https://github.com/mongodb/morphia/wiki</a>。</p>
+<p>其作用，简而言之，就是完成Java Bean对象与MongoDB数据库中一条记录的映射，大家在Entity中看到的Profile就是这样一个POJO，<br>Profile中嵌套了一些子类，比较容易理解，Morphia的所有映射都可以通过注解来完成，非常简单易用，可以查看上面wiki文档中的说明。<br>另外，Morphia提供了一个基本的DAO类，org.mongodb.morphia.dao.BasicDAO&lt;T,K&gt;<br>详细信息可以查看链接<a href="https://rawgit.com/wiki/mongodb/morphia/javadoc/0.108/apidocs/index.html" target="_blank" rel="external">https://rawgit.com/wiki/mongodb/morphia/javadoc/0.108/apidocs/index.html</a></p>
+<p>该类支持基本的CRUD操作，查询也支持各种查询条件，不过在返回结果这边可定制性较弱，通常都是返回整个的POJO类的List，属于粗粒度吧。<br>BasicDAO从根本上都是对mongo-java-driver中一些api的封装，如果需要更全面的功能的话可以选用底层driver，当然这样就是直接跟MongoDB中的BSON打交道了，<br>也就用不上POJO了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在MongoDB数据库的Java程序开发过程中，使用了官方支持的POJO映射Morphia&lt;br&gt;&lt;a href=&quot;https://github.com/mongodb/morphia/wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https:/
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
+    
+      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+    
+      <category term="MongoDB" scheme="http://leimingshan.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java中对json的处理</title>
+    <link href="http://leimingshan.github.io/2015/08/31/java-json/"/>
+    <id>http://leimingshan.github.io/2015/08/31/java-json/</id>
+    <published>2015-08-31T06:09:51.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java中有不少处理JSON格式数据的类库，在JSON的官网 <a href="http://www.json.org/" target="_blank" rel="external">http://www.json.org/</a> 下面对应的各个语言编解码库，Java就有20多种可以使用的类库。</p>
+<p>当然，其中最常使用的是json-lib，也是资格比较老的一个库，网上介绍也很多，<a href="http://json-lib.sourceforge.net/" target="_blank" rel="external">http://json-lib.sourceforge.net/</a>，但是已经停止更新很久了，<br>最新的版本还是基于JDK1.5的，最后更新日期是2010年的12月。在Struts2中返回JSON格式的数据时，默认使用的就是json-lib。<br>但是总体上来说，现在开发程序还是不建议使用json-lib，毕竟有点太古老了。<br>推荐使用的是号称性能最快的JSON处理器Jackson，社区非常活跃，也一直在更新，功能也很强大，<a href="https://github.com/FasterXML/jackson" target="_blank" rel="external">https://github.com/FasterXML/jackson</a>。</p>
+<p>可以发现在许多其他Java开源项目中对JSON的处理都在使用Jackson，例如Spring。</p>
+<p>有人专门对比了这两个类库的性能，<br><a href="http://wangym.iteye.com/blog/738933" target="_blank" rel="external">http://wangym.iteye.com/blog/738933</a><br><a id="more"></a>测试总结：<br>1、显而易见，无论是哪种形式的转换，Jackson &gt; Gson &gt; Json-lib。<br>Jackson的处理能力甚至高出Json-lib有10倍左右<br>2、JSON-lib似乎已经停止更新，最新的版本也是基于JDK15，而Jackson的社区则较为活跃；<br>3、在测试性能的同时，又以人肉方式对这三个类库转换的正确性 进行了检查 ，三者均达100%正确 ；<br>4、JSON-lib在转换诸如Date类型时较为累赘，如以下是两者的转换结果：<br>JSON-lib：<br>{“brithday”:{“date”:17,”day”:2,”hours”:9,”minutes”:24,”month”:7,”seconds”:26,”time”:1282008266398,”timezoneOffset”:-480,”year”:110}}<br>Jackson：<br>{“brithday”:1282008123101}<br>5、JSON-lib依赖commons系列的包及 ezmorph包共 5个，而Jackson除自身的以外只依赖于commons-logging<br>6、Jackson提供完整基于节点的Tree Model，以及完整的OJM数据绑定功能。<!--more--><!--more--></p>
+<p>经过几项试验和测试，发现Jackson确实功能很强大，推荐还是默认用Jackson来处理JSON，算是目前Java中比较优秀的JSON处理库。</p>
+<p>简单的使用方法：<br><a href="https://github.com/FasterXML/jackson-databind/" target="_blank" rel="external">https://github.com/FasterXML/jackson-databind/</a></p>
+<p>即使是处理比较复杂的JavaBean，嵌套多层并且包含自定义类，以及List等的类Profile，也可以轻松处理，不需要用户过多的配置。当然其他更强大的功能还有待以后发掘。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Java中有不少处理JSON格式数据的类库，在JSON的官网 &lt;a href=&quot;http://www.json.org/&quot;&gt;http://www.json.org/&lt;/a&gt; 下面对应的各个语言编解码库，Java就有20多种可以使用的类库。&lt;/p&gt;
+&lt;p&gt;当然，其中最常使用的是json-lib，也是资格比较老的一个库，网上介绍也很多，&lt;a href=&quot;http://json-lib.sourceforge.net/&quot;&gt;http://json-lib.sourceforge.net/&lt;/a&gt;，但是已经停止更新很久了，&lt;br&gt;最新的版本还是基于JDK1.5的，最后更新日期是2010年的12月。在Struts2中返回JSON格式的数据时，默认使用的就是json-lib。&lt;br&gt;但是总体上来说，现在开发程序还是不建议使用json-lib，毕竟有点太古老了。&lt;br&gt;推荐使用的是号称性能最快的JSON处理器Jackson，社区非常活跃，也一直在更新，功能也很强大，&lt;a href=&quot;https://github.com/FasterXML/jackson&quot;&gt;https://github.com/FasterXML/jackson&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;可以发现在许多其他Java开源项目中对JSON的处理都在使用Jackson，例如Spring。&lt;/p&gt;
+&lt;p&gt;有人专门对比了这两个类库的性能，&lt;br&gt;&lt;a href=&quot;http://wangym.iteye.com/blog/738933&quot;&gt;http://wangym.iteye.com/blog/738933&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+    
+      <category term="JSON" scheme="http://leimingshan.github.io/tags/JSON/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rest api design</title>
+    <link href="http://leimingshan.github.io/2015/07/18/rest-api-design/"/>
+    <id>http://leimingshan.github.io/2015/07/18/rest-api-design/</id>
+    <published>2015-07-18T09:39:57.000Z</published>
+    <updated>2016-10-31T05:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在进行一个项目，需要设计一个Server，为移动端的client提供REST风格的服务，RESTful API是现在互联网应用程序中使用比较多、也比较成熟的一种设计理念，以HTTP协议为基础，在项目之前，只是简单听说过REST这种理念，并没有很深入的接触，在api的设计过程中，需要遵循一些原则，但是要注意的是RESTful只是一种风格，并不是标准、协议或者强制性的要求。因此，在设计过程中，我也参考了一些文章和资料，学习如何去设计一套合理规范的API。</p>
+<p>在初步的设计中，根据之前的工作经验，采用了比较传统的Spring和Hibernate，根据应用的需求，也采用了许多相关技术，例如Spring-data-jpa和Hibernate Validator等，后面会根据一些具体内容进行总结。</p>
+<p>下面地址是一个java轻量级restful框架，里面有不少关于RESTful的介绍和文章链接，推荐阅读。</p>
+<p><a href="https://github.com/Dreampie/resty" target="_blank" rel="external">https://github.com/Dreampie/resty</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在进行一个项目，需要设计一个Server，为移动端的client提供REST风格的服务，RESTful API是现在互联网应用程序中使用比较多、也比较成熟的一种设计理念，以HTTP协议为基础，在项目之前，只是简单听说过REST这种理念，并没有很深入的接触，在api的设计
+    
+    </summary>
+    
+      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
     
   </entry>
   
