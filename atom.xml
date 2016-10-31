@@ -22,25 +22,25 @@
     <published>2016-05-23T08:07:38.000Z</published>
     <updated>2016-05-23T08:38:53.000Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;Outline&quot;&gt;&lt;a href=&quot;#Outline&quot; class=&quot;headerlink&quot; title=&quot;Outline&quot;&gt;&lt;/a&gt;Outline&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;了解Git&lt;/li&gt;
-&lt;li&gt;Killer Features&lt;/li&gt;
-&lt;li&gt;iCode&lt;/li&gt;
-&lt;li&gt;Code Review&lt;/li&gt;
-&lt;li&gt;CI&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;Killer-Features&quot;&gt;&lt;a href=&quot;#Killer-Features&quot; class=&quot;headerlink&quot; title=&quot;Killer Features&quot;&gt;&lt;/a&gt;Killer Features&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;基础概念： 文件系统快照存储模型&lt;/li&gt;
-&lt;li&gt;分布式：本地拥有完整代码库功能&lt;ul&gt;
-&lt;li&gt;Repository: git init&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;超低开销的分支：非线性开发&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;git log&lt;br&gt;SHA-1&lt;/p&gt;
-&lt;p&gt;git reset –hard&lt;/p&gt;
-&lt;p&gt;git checkout [53f29fd]&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><ol>
+<li>了解Git</li>
+<li>Killer Features</li>
+<li>iCode</li>
+<li>Code Review</li>
+<li>CI</li>
+</ol>
+<h1 id="Killer-Features"><a href="#Killer-Features" class="headerlink" title="Killer Features"></a>Killer Features</h1><ul>
+<li>基础概念： 文件系统快照存储模型</li>
+<li>分布式：本地拥有完整代码库功能<ul>
+<li>Repository: git init</li>
+</ul>
+</li>
+<li>超低开销的分支：非线性开发</li>
+</ul>
+<p>git log<br>SHA-1</p>
+<p>git reset –hard</p>
+<p>git checkout [53f29fd]</p>
+]]></content>
     
     <summary type="html">
     
@@ -65,16 +65,16 @@
     <published>2016-05-18T06:26:50.000Z</published>
     <updated>2016-05-21T05:32:11.000Z</updated>
     
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a><br><a id="more"></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -94,46 +94,46 @@
     <published>2013-06-30T16:00:00.000Z</published>
     <updated>2016-07-25T09:29:29.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;PHP扩展的介绍&quot;&gt;&lt;a href=&quot;#PHP扩展的介绍&quot; class=&quot;headerlink&quot; title=&quot;PHP扩展的介绍&quot;&gt;&lt;/a&gt;PHP扩展的介绍&lt;/h2&gt;&lt;p&gt;下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   &lt;/p&gt;
-&lt;p&gt;PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   &lt;/p&gt;
-&lt;p&gt;有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在PHP中构建扩展模块，主要有以下三种方式：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;External Modules：外部模块，也就是编译成共享库，用dl()函数动态加载。&lt;/p&gt;
-&lt;p&gt;好处：&lt;br&gt;(1)不需要重新编译整个PHP&lt;br&gt;(2)PHP体积小，因为不需要编译进PHP&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Built-in Modules：编译进PHP  &lt;/p&gt;
-&lt;p&gt;好处：&lt;br&gt;(1)不需要动态加载，模块在php脚本里面可以直接使用。&lt;br&gt;(2)不需要将模块编译成.so共享库，因为直接编译进PHP。&lt;/p&gt;
-&lt;p&gt;缺点：&lt;br&gt;(1)对模块的每次小变动都需要重新编译整个PHP和重新部署，不适于生产环节。&lt;br&gt;(2)因为编译进PHP，所以PHP二进制文件较大，而且多占点内存.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The Zend Engine：Zend核心里实现（参考Zend API）  &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;关于dl函数可以参考下面链接：&lt;br&gt;&lt;a href=&quot;http://www.php.net/manual/zh/function.dl.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.php.net/manual/zh/function.dl.php&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;可以不使用dl函数，而修改php.ini指定extension的加载，详细步骤如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;进入PHP源代码包的ext目录，使用扩展骨架(skeleton)构造器， 为扩展建立函数的第一步是写一个函数定义文件  test.proto，该函数定义文件定义了扩展对外提供的函数原形。该例中，定义函数只有一行函数原形&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;int hello(int a, int b)
-注意行后面没有分号&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;使用以下命令，生成对应的扩展目录test：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;./ext_skel --extname=test --proto=test.proto&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;进入test目录，修改其中的config.m4文件&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;PHP_ARG_ENABLE(caleng_module, whether to enable test...&lt;/code&gt;&lt;br&gt;&lt;code&gt;[  --enable-test          Enable test support])&lt;/code&gt;&lt;br&gt;&lt;code&gt;两行，删除前面的dnl。&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;修改test.c中的相关函数：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;PHP_FUNCTION(hello)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;编译和安装模块&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;phpize&lt;/code&gt;&lt;br&gt;&lt;code&gt;./configure --with-php-config=/usr/local/php/bin/php-config&lt;/code&gt;&lt;br&gt;&lt;code&gt;make &amp;amp; make install&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在PHP中启用扩展，修改配置文件/usr/local/php/etc/php.ini，&lt;br&gt;加入 extension=test.so， 然后需要重启PHP或php-fpm。&lt;br&gt;这里也可以通过在PHP代码中通过dl命令来调用该模块&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;测试扩展&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;?php&lt;/code&gt;&lt;br&gt;&lt;code&gt;echo hello(1,2);&lt;/code&gt;&lt;br&gt;&lt;code&gt;phpinfo();&lt;/code&gt;&lt;br&gt;&lt;code&gt;?&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
+    <content type="html"><![CDATA[<h2 id="PHP扩展的介绍"><a href="#PHP扩展的介绍" class="headerlink" title="PHP扩展的介绍"></a>PHP扩展的介绍</h2><p>下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   </p>
+<p>PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   </p>
+<p>有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。<br><a id="more"></a><br>在PHP中构建扩展模块，主要有以下三种方式：</p>
+<ol>
+<li><p>External Modules：外部模块，也就是编译成共享库，用dl()函数动态加载。</p>
+<p>好处：<br>(1)不需要重新编译整个PHP<br>(2)PHP体积小，因为不需要编译进PHP</p>
+</li>
+<li><p>Built-in Modules：编译进PHP  </p>
+<p>好处：<br>(1)不需要动态加载，模块在php脚本里面可以直接使用。<br>(2)不需要将模块编译成.so共享库，因为直接编译进PHP。</p>
+<p>缺点：<br>(1)对模块的每次小变动都需要重新编译整个PHP和重新部署，不适于生产环节。<br>(2)因为编译进PHP，所以PHP二进制文件较大，而且多占点内存.</p>
+</li>
+<li><p>The Zend Engine：Zend核心里实现（参考Zend API）  </p>
+</li>
+</ol>
+<p>关于dl函数可以参考下面链接：<br><a href="http://www.php.net/manual/zh/function.dl.php" target="_blank" rel="external">http://www.php.net/manual/zh/function.dl.php</a></p>
+<p>可以不使用dl函数，而修改php.ini指定extension的加载，详细步骤如下：</p>
+<ol>
+<li><p>进入PHP源代码包的ext目录，使用扩展骨架(skeleton)构造器， 为扩展建立函数的第一步是写一个函数定义文件  test.proto，该函数定义文件定义了扩展对外提供的函数原形。该例中，定义函数只有一行函数原形</p>
+<p><code>int hello(int a, int b)
+注意行后面没有分号</code></p>
+</li>
+<li><p>使用以下命令，生成对应的扩展目录test：</p>
+<p><code>./ext_skel --extname=test --proto=test.proto</code></p>
+</li>
+<li><p>进入test目录，修改其中的config.m4文件</p>
+<p><code>PHP_ARG_ENABLE(caleng_module, whether to enable test...</code><br><code>[  --enable-test          Enable test support])</code><br><code>两行，删除前面的dnl。</code></p>
+</li>
+<li><p>修改test.c中的相关函数：</p>
+<p><code>PHP_FUNCTION(hello)</code></p>
+</li>
+<li><p>编译和安装模块</p>
+<p><code>phpize</code><br><code>./configure --with-php-config=/usr/local/php/bin/php-config</code><br><code>make &amp; make install</code></p>
+</li>
+<li><p>在PHP中启用扩展，修改配置文件/usr/local/php/etc/php.ini，<br>加入 extension=test.so， 然后需要重启PHP或php-fpm。<br>这里也可以通过在PHP代码中通过dl命令来调用该模块</p>
+</li>
+<li><p>测试扩展</p>
+<p><code>&lt;?php</code><br><code>echo hello(1,2);</code><br><code>phpinfo();</code><br><code>?&gt;</code></p>
+</li>
+</ol>
+]]></content>
     
     <summary type="html">
     
@@ -157,13 +157,13 @@
     <published>2013-06-26T16:00:00.000Z</published>
     <updated>2016-07-25T07:48:56.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;关于jekyll-bootstrap&quot;&gt;&lt;a href=&quot;#关于jekyll-bootstrap&quot; class=&quot;headerlink&quot; title=&quot;关于jekyll bootstrap&quot;&gt;&lt;/a&gt;关于jekyll bootstrap&lt;/h2&gt;&lt;p&gt;详细的内容参考&lt;a href=&quot;http://jekyllbootstrap.com/usage/jekyll-quick-start.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这里列出比较常用的命令：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;jekyll --server //在本地启动服务
-rake post title=&amp;quot;Hello World&amp;quot; //新建一个小文章，标题为Hello World
-rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;http://octopress.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octopress&lt;/a&gt;也是很不错的一个框架，有时间可以尝试一下。&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<h2 id="关于jekyll-bootstrap"><a href="#关于jekyll-bootstrap" class="headerlink" title="关于jekyll bootstrap"></a>关于jekyll bootstrap</h2><p>详细的内容参考<a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html" target="_blank" rel="external">官方帮助文档</a></p>
+<p>这里列出比较常用的命令：</p>
+<pre><code>jekyll --server //在本地启动服务
+rake post title=&quot;Hello World&quot; //新建一个小文章，标题为Hello World
+rake page name=&quot;about.md&quot; //新建一个页面about.md
+</code></pre><p><a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>也是很不错的一个框架，有时间可以尝试一下。</p>
+]]></content>
     
     <summary type="html">
     
@@ -183,19 +183,19 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     <published>2013-06-25T16:00:00.000Z</published>
     <updated>2016-07-25T09:31:14.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;制定计划&quot;&gt;&lt;a href=&quot;#制定计划&quot; class=&quot;headerlink&quot; title=&quot;制定计划&quot;&gt;&lt;/a&gt;制定计划&lt;/h2&gt;&lt;p&gt;最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;小论文的选题&lt;/li&gt;
-&lt;li&gt;毕设论文项目的进展&lt;/li&gt;
-&lt;li&gt;各个网站的发展目标和一些设想&lt;/li&gt;
-&lt;li&gt;暑假的时间安排&lt;/li&gt;
-&lt;/ol&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;这几天的时间大部分都放在Web相关方面了，还是比较感兴趣的，学习了一些建站的内容，手里也搜集了几个域名，以后也许能用得上。也希望可以把Web的一些东西应用到毕设论文中去。&lt;/p&gt;
-&lt;p&gt;Github也逐渐用起来了，现在还很初步，还在学习的过程中。&lt;/p&gt;
-&lt;p&gt;另外，毕设项目没有什么特别的进展，Libevent的加入还是有许多困难，整体的改动还需要动很多代码，一直没敢下手，也没有特别好的思路，比较苦恼。&lt;/p&gt;
-&lt;p&gt;暑假也没有具体的安排，现在来看找实习基本是give up了，虽然挺不甘心的，但是时间上已经这样了，也没有办法，还是把时间安排到其他事情上去吧。&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<h2 id="制定计划"><a href="#制定计划" class="headerlink" title="制定计划"></a>制定计划</h2><p>最近面临的问题很多，接下来要一个一个解决，直接列在下面的计划列表里面好了。</p>
+<ol>
+<li>小论文的选题</li>
+<li>毕设论文项目的进展</li>
+<li>各个网站的发展目标和一些设想</li>
+<li>暑假的时间安排</li>
+</ol>
+<a id="more"></a>
+<p>这几天的时间大部分都放在Web相关方面了，还是比较感兴趣的，学习了一些建站的内容，手里也搜集了几个域名，以后也许能用得上。也希望可以把Web的一些东西应用到毕设论文中去。</p>
+<p>Github也逐渐用起来了，现在还很初步，还在学习的过程中。</p>
+<p>另外，毕设项目没有什么特别的进展，Libevent的加入还是有许多困难，整体的改动还需要动很多代码，一直没敢下手，也没有特别好的思路，比较苦恼。</p>
+<p>暑假也没有具体的安排，现在来看找实习基本是give up了，虽然挺不甘心的，但是时间上已经这样了，也没有办法，还是把时间安排到其他事情上去吧。</p>
+]]></content>
     
     <summary type="html">
     
@@ -221,32 +221,32 @@ rake page name=&amp;quot;about.md&amp;quot; //新建一个页面about.md
     <published>2013-06-17T16:00:00.000Z</published>
     <updated>2016-07-25T09:29:17.000Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;标题1-This-is-a-test-of-Markdown&quot;&gt;&lt;a href=&quot;#标题1-This-is-a-test-of-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题1 This is a test of Markdown&quot;&gt;&lt;/a&gt;标题1 This is a test of Markdown&lt;/h1&gt;&lt;h2 id=&quot;标题2-欢迎进入-Welcome&quot;&gt;&lt;a href=&quot;#标题2-欢迎进入-Welcome&quot; class=&quot;headerlink&quot; title=&quot;标题2  欢迎进入 Welcome&quot;&gt;&lt;/a&gt;标题2  欢迎进入 Welcome&lt;/h2&gt;&lt;h3 id=&quot;标题3-Markdown&quot;&gt;&lt;a href=&quot;#标题3-Markdown&quot; class=&quot;headerlink&quot; title=&quot;标题3 Markdown&quot;&gt;&lt;/a&gt;标题3 Markdown&lt;/h3&gt;&lt;h4 id=&quot;标题4&quot;&gt;&lt;a href=&quot;#标题4&quot; class=&quot;headerlink&quot; title=&quot;标题4&quot;&gt;&lt;/a&gt;标题4&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;这里是测试信息&lt;code&gt;test info&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;test
+    <content type="html"><![CDATA[<h1 id="标题1-This-is-a-test-of-Markdown"><a href="#标题1-This-is-a-test-of-Markdown" class="headerlink" title="标题1 This is a test of Markdown"></a>标题1 This is a test of Markdown</h1><h2 id="标题2-欢迎进入-Welcome"><a href="#标题2-欢迎进入-Welcome" class="headerlink" title="标题2  欢迎进入 Welcome"></a>标题2  欢迎进入 Welcome</h2><h3 id="标题3-Markdown"><a href="#标题3-Markdown" class="headerlink" title="标题3 Markdown"></a>标题3 Markdown</h3><h4 id="标题4"><a href="#标题4" class="headerlink" title="标题4"></a>标题4</h4><a id="more"></a>
+<p>这里是测试信息<code>test info</code></p>
+<pre><code>test
 test
 code
 code
 codecode here
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;block&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;hello not in order&lt;/li&gt;
-&lt;li&gt;hello&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;hello&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;test&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;code&lt;/li&gt;
-&lt;li&gt;hello&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;single asterisks&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;single underscores&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;double asterisks&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;double underscores&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot; title=&quot;Google&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google&lt;/a&gt; than from&lt;br&gt;&lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Yahoo&lt;/a&gt; or &lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-</content>
+</code></pre><blockquote>
+<p>block</p>
+</blockquote>
+<ol>
+<li>hello not in order</li>
+<li>hello</li>
+<li><p>hello</p>
+</li>
+<li><p>test</p>
+</li>
+<li>code</li>
+<li>hello</li>
+</ol>
+<p><em>single asterisks</em></p>
+<p><em>single underscores</em></p>
+<p><strong>double asterisks</strong></p>
+<p><strong>double underscores</strong></p>
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from<br><a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
+]]></content>
     
     <summary type="html">
     
