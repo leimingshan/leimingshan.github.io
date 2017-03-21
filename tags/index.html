@@ -27,6 +27,9 @@
 
 
 
+
+
+
   
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -101,7 +104,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"right","display":"post"},
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -140,14 +143,18 @@
   
 
 
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', '41820897-1', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
 
@@ -162,29 +169,33 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container sidebar-position-right  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Mingshan Lei's Blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mingshan Lei's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Tech Share</p>
+      
   </div>
-  <p class="site-subtitle">Tech Share</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -245,32 +256,9 @@
       
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
-    </div>
   
 </nav>
 
@@ -288,7 +276,7 @@
   <div id="posts" class="posts-expand">
   <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">标签</h2>
+	<h1 class="post-title" itemprop="name headline">标签</h1>
 
 
 
@@ -301,7 +289,7 @@
             目前共计 32 个标签
         </div>
         <div class="tag-cloud-tags">
-          <a href="/tags/Baidu/" style="font-size: 12px; color: #ccc">Baidu</a> <a href="/tags/C/" style="font-size: 19.2px; color: #818181">C++</a> <a href="/tags/Career/" style="font-size: 12px; color: #ccc">Career</a> <a href="/tags/Dairy/" style="font-size: 12px; color: #ccc">Dairy</a> <a href="/tags/Debian/" style="font-size: 12px; color: #ccc">Debian</a> <a href="/tags/Game/" style="font-size: 15.6px; color: #a7a7a7">Game</a> <a href="/tags/Gradle/" style="font-size: 26.4px; color: #363636">Gradle</a> <a href="/tags/JSON/" style="font-size: 12px; color: #ccc">JSON</a> <a href="/tags/Java/" style="font-size: 30px; color: #111">Java</a> <a href="/tags/JavaScript/" style="font-size: 15.6px; color: #a7a7a7">JavaScript</a> <a href="/tags/Jenkins/" style="font-size: 12px; color: #ccc">Jenkins</a> <a href="/tags/Linux/" style="font-size: 26.4px; color: #363636">Linux</a> <a href="/tags/MongoDB/" style="font-size: 15.6px; color: #a7a7a7">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 15.6px; color: #a7a7a7">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 26.4px; color: #363636">NoSQL</a> <a href="/tags/PHP/" style="font-size: 12px; color: #ccc">PHP</a> <a href="/tags/PS4/" style="font-size: 12px; color: #ccc">PS4</a> <a href="/tags/SonarQube/" style="font-size: 19.2px; color: #818181">SonarQube</a> <a href="/tags/Spring/" style="font-size: 12px; color: #ccc">Spring</a> <a href="/tags/Ubuntu/" style="font-size: 26.4px; color: #363636">Ubuntu</a> <a href="/tags/develop/" style="font-size: 22.8px; color: #5c5c5c">develop</a> <a href="/tags/git/" style="font-size: 19.2px; color: #818181">git</a> <a href="/tags/http/" style="font-size: 12px; color: #ccc">http</a> <a href="/tags/jekyll/" style="font-size: 12px; color: #ccc">jekyll</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/php/" style="font-size: 12px; color: #ccc">php</a> <a href="/tags/random-number/" style="font-size: 12px; color: #ccc">random number</a> <a href="/tags/study/" style="font-size: 12px; color: #ccc">study</a> <a href="/tags/thesis/" style="font-size: 12px; color: #ccc">thesis</a> <a href="/tags/web/" style="font-size: 26.4px; color: #363636">web</a> <a href="/tags/windows/" style="font-size: 12px; color: #ccc">windows</a> <a href="/tags/wordpress/" style="font-size: 15.6px; color: #a7a7a7">wordpress</a>
+          <a href="/tags/C/" style="font-size: 19.2px; color: #818181">C++</a> <a href="/tags/Debian/" style="font-size: 12px; color: #ccc">Debian</a> <a href="/tags/Game/" style="font-size: 15.6px; color: #a7a7a7">Game</a> <a href="/tags/Gradle/" style="font-size: 26.4px; color: #363636">Gradle</a> <a href="/tags/JSON/" style="font-size: 12px; color: #ccc">JSON</a> <a href="/tags/Java/" style="font-size: 30px; color: #111">Java</a> <a href="/tags/JavaScript/" style="font-size: 15.6px; color: #a7a7a7">JavaScript</a> <a href="/tags/Jenkins/" style="font-size: 12px; color: #ccc">Jenkins</a> <a href="/tags/Linux/" style="font-size: 26.4px; color: #363636">Linux</a> <a href="/tags/MongoDB/" style="font-size: 15.6px; color: #a7a7a7">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 15.6px; color: #a7a7a7">MySQL</a> <a href="/tags/NoSQL/" style="font-size: 26.4px; color: #363636">NoSQL</a> <a href="/tags/PHP/" style="font-size: 12px; color: #ccc">PHP</a> <a href="/tags/PS4/" style="font-size: 12px; color: #ccc">PS4</a> <a href="/tags/SonarQube/" style="font-size: 19.2px; color: #818181">SonarQube</a> <a href="/tags/Spring/" style="font-size: 12px; color: #ccc">Spring</a> <a href="/tags/Ubuntu/" style="font-size: 26.4px; color: #363636">Ubuntu</a> <a href="/tags/develop/" style="font-size: 22.8px; color: #5c5c5c">develop</a> <a href="/tags/git/" style="font-size: 19.2px; color: #818181">git</a> <a href="/tags/http/" style="font-size: 12px; color: #ccc">http</a> <a href="/tags/jekyll/" style="font-size: 12px; color: #ccc">jekyll</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/php/" style="font-size: 12px; color: #ccc">php</a> <a href="/tags/random-number/" style="font-size: 12px; color: #ccc">random number</a> <a href="/tags/study/" style="font-size: 12px; color: #ccc">study</a> <a href="/tags/thesis/" style="font-size: 12px; color: #ccc">thesis</a> <a href="/tags/web/" style="font-size: 26.4px; color: #363636">web</a> <a href="/tags/windows/" style="font-size: 12px; color: #ccc">windows</a> <a href="/tags/wordpress/" style="font-size: 15.6px; color: #a7a7a7">wordpress</a>
         </div>
       </div>
     
@@ -339,19 +327,26 @@
                src="/images/avatar.png"
                alt="Mingshan Lei" />
           <p class="site-author-name" itemprop="name">Mingshan Lei</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">66</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -359,8 +354,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -409,6 +406,8 @@
 
       
 
+      
+
     </div>
   </aside>
 
@@ -422,7 +421,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -448,9 +447,13 @@
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -470,6 +473,7 @@
 
 
   
+
 
 
 
@@ -553,131 +557,18 @@
 
 
 
+
+
+
+
+
+
+
+
   
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
 
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
 
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
 
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
-        }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
 
 
   
@@ -687,7 +578,6 @@
   
 
   
-
 
 </body>
 </html>
