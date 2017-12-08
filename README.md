@@ -4,7 +4,7 @@
 我的技术分享，使用[Hexo](http://hexo.io)并部署在Github pages上的静态页面Blog。
 
 欢迎通过以下地址访问。  
-[www.leicode.com](http://www.lei00.com)  
+[www.leicode.com](http://www.leicode.com)  
 [leimingshan.github.io](http://leimingshan.github.io)
 
 ## Author
