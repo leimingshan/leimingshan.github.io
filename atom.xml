@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2018-08-27T05:42:25.427Z</updated>
+  <updated>2018-08-27T05:49:24.496Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RBAC-system-design</title>
+    <link href="http://leimingshan.github.io/2018/08/27/RBAC-system-design/"/>
+    <id>http://leimingshan.github.io/2018/08/27/RBAC-system-design/</id>
+    <published>2018-08-27T05:49:24.000Z</published>
+    <updated>2018-08-27T05:49:24.496Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Elasticsearch-nested-query</title>
@@ -227,16 +241,14 @@
     <link href="http://leimingshan.github.io/2016/03/04/website-https/"/>
     <id>http://leimingshan.github.io/2016/03/04/website-https/</id>
     <published>2016-03-04T01:32:44.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
+    <updated>2018-08-27T05:48:51.817Z</updated>
     
-    <content type="html"><![CDATA[<p>从今天起本站开始启用全站Https。</p>
-<p>如果遇到访问问题的话请及时联系我。</p>
+    <content type="html"><![CDATA[<p>从今天起本Blog开始启用全站Https。<br>未来的大趋势嘛，哈哈！</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;从今天起本站开始启用全站Https。&lt;/p&gt;
-&lt;p&gt;如果遇到访问问题的话请及时联系我。&lt;/p&gt;
+      &lt;p&gt;从今天起本Blog开始启用全站Https。&lt;br&gt;未来的大趋势嘛，哈哈！&lt;/p&gt;
 
     
     </summary>
@@ -819,30 +831,6 @@ KMS host caching: Enabled
       <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
     
       <category term="JSON" scheme="http://leimingshan.github.io/tags/JSON/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Rest api design</title>
-    <link href="http://leimingshan.github.io/2015/07/18/rest-api-design/"/>
-    <id>http://leimingshan.github.io/2015/07/18/rest-api-design/</id>
-    <published>2015-07-18T09:39:57.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在进行一个项目，需要设计一个Server，为移动端的client提供REST风格的服务，RESTful API是现在互联网应用程序中使用比较多、也比较成熟的一种设计理念，以HTTP协议为基础，在项目之前，只是简单听说过REST这种理念，并没有很深入的接触，在api的设计过程中，需要遵循一些原则，但是要注意的是RESTful只是一种风格，并不是标准、协议或者强制性的要求。因此，在设计过程中，我也参考了一些文章和资料，学习如何去设计一套合理规范的API。</p>
-<p>在初步的设计中，根据之前的工作经验，采用了比较传统的Spring和Hibernate，根据应用的需求，也采用了许多相关技术，例如Spring-data-jpa和Hibernate Validator等，后面会根据一些具体内容进行总结。</p>
-<p>下面地址是一个java轻量级restful框架，里面有不少关于RESTful的介绍和文章链接，推荐阅读。</p>
-<p><a href="https://github.com/Dreampie/resty" target="_blank" rel="external">https://github.com/Dreampie/resty</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近在进行一个项目，需要设计一个Server，为移动端的client提供REST风格的服务，RESTful API是现在互联网应用程序中使用比较多、也比较成熟的一种设计理念，以HTTP协议为基础，在项目之前，只是简单听说过REST这种理念，并没有很深入的接触，在api的设计
-    
-    </summary>
-    
-      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
-    
     
   </entry>
   
