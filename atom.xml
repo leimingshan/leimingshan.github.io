@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2018-08-27T03:44:42.400Z</updated>
+  <updated>2018-08-27T05:34:14.502Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Elasticsearch-nested-query</title>
+    <link href="http://leimingshan.github.io/2018/08/27/Elasticsearch-nested-query/"/>
+    <id>http://leimingshan.github.io/2018/08/27/Elasticsearch-nested-query/</id>
+    <published>2018-08-27T05:23:35.000Z</published>
+    <updated>2018-08-27T05:34:14.502Z</updated>
+    
+    <content type="html"><![CDATA[<p>Elasticsearch嵌套查询，具体可参考<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html" target="_blank" rel="external">Nested Query</a>.</p>
+<p>建议还是要多看多熟悉Elasticsearch的官方文档，比到处去搜强多了。</p>
+<p>简而言之，</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Elasticsearch嵌套查询，具体可参考&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html&quot; target=&quot;_bla
+    
+    </summary>
+    
+    
+      <category term="elasticsearch" scheme="http://leimingshan.github.io/tags/elasticsearch/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo Basic Usage</title>
@@ -819,26 +842,6 @@ KMS host caching: Enabled
     </summary>
     
       <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>The measure of a man is what he does with power.</title>
-    <link href="http://leimingshan.github.io/2015/07/15/the-measure-of-a-man/"/>
-    <id>http://leimingshan.github.io/2015/07/15/the-measure-of-a-man/</id>
-    <published>2015-07-15T03:46:08.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="The-measure-of-a-man-is-what-he-does-with-power"><a href="#The-measure-of-a-man-is-what-he-does-with-power" class="headerlink" title="The measure of a man is what he does with power."></a>The measure of a man is what he does with power.</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;The-measure-of-a-man-is-what-he-does-with-power&quot;&gt;&lt;a href=&quot;#The-measure-of-a-man-is-what-he-does-with-power&quot; class=&quot;headerlink&quot; title
-    
-    </summary>
-    
-      <category term="日志" scheme="http://leimingshan.github.io/categories/%E6%97%A5%E5%BF%97/"/>
     
     
   </entry>
