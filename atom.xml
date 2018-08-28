@@ -84,9 +84,9 @@
     <link href="http://leimingshan.github.io/2018/01/25/Docker-Basic/"/>
     <id>http://leimingshan.github.io/2018/01/25/Docker-Basic/</id>
     <published>2018-01-25T07:45:10.000Z</published>
-    <updated>2018-08-28T08:58:14.674Z</updated>
+    <updated>2018-08-28T09:10:51.135Z</updated>
     
-    <content type="html"><![CDATA[<p>鉴于生产环境的上线部署，都依赖于镜像构建、制作、部署上线运行等操作，作为一名合格的RD，当然不能只局限于在上线平台上进行一顿鼠标操作了，一定要弄懂这些基础设施内部到底在干嘛。因此，对Docker的相关学习也是很有必要的。</p>
+    <content type="html"><![CDATA[<p>鉴于生产环境的上线部署，都依赖于镜像构建、制作、部署上线运行等操作，作为一名合格的RD，当然不能只局限于在上线平台上进行一顿鼠标操作了，一定要弄懂这些基础设施内部到底在干嘛。因此，对Docker的相关学习也是很有必要的。</p>
 <h1 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h1><p><a href="http://dockone.io/article/783" target="_blank" rel="external">http://dockone.io/article/783</a></p>
 <p><a href="http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html" target="_blank" rel="external">http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html</a></p>
 <p>两篇文章分别是中文和英文原版，建议初学者多读几遍，收获非常大。<br>尤其是对镜像只读层和读写层的理解，非常重要，还有docker各个命令对各层的影响。<br><a id="more"></a></p>
@@ -100,7 +100,7 @@
 <li>–publish , -p        Publish a container’s port(s) to the host</li>
 <li>–volume , -v        Bind mount a volume</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// sshd -D 将 sshd 作为前台进程运行，而不是脱离控制台成为后台守护进程。主要用于调试。</div><div class="line">// -it 通常一起使用，可以开启一个终端进去交互模式，调试时很有用。</div><div class="line">docker run -d -p 2222:22 tomcat:centos /usr/sbin/sshd -D</div><div class="line"></div><div class="line">docker run -ti -v ~/Downloads:/Downloads tomcat:centos /bin/bash</div><div class="line"></div><div class="line">docker run -d -p 8000:8080 -p 1098:1099 tomcat:centos /usr/local/sbin/tomcat.sh</div><div class="line"></div><div class="line">docker run -it -p 8000:8080 -p 1098:1099 tomcat:centos /usr/local/sbin/tomcat.sh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// sshd -D 将 sshd 作为前台进程运行，而不是脱离控制台成为后台守护进程。主要用于调试。</div><div class="line">// -it 通常一起使用，可以开启一个终端进去交互模式，调试时很有用。</div><div class="line">docker run -d -p 2222:22 tomcat:centos /usr/sbin/sshd -D</div><div class="line"></div><div class="line">docker run -ti -v ~/Downloads:/Downloads tomcat:centos /bin/bash</div><div class="line"></div><div class="line">docker run -d -p 8000:8080 -p 1098:1099 tomcat:centos /usr/local/sbin/tomcat.sh</div><div class="line"></div><div class="line">docker run -it -p 8000:8080 -p 1098:1099 tomcat:centos /usr/local/sbin/tomcat.sh</div></pre></td></tr></table></figure>
 <h1 id="其他Docker命令"><a href="#其他Docker命令" class="headerlink" title="其他Docker命令"></a>其他Docker命令</h1><h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><ul>
 <li>docker version</li>
 <li>docker info</li>
@@ -118,7 +118,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;鉴于生产环境的上线部署，都依赖于镜像构建、制作、部署上线运行等操作，作为一名合格的RD，当然不能只局限于在上线平台上进行一顿鼠标操作了，一定要弄懂这些基础设施内部到底在干嘛。因此，对Docker的相关学习也是很有必要的。&lt;/p&gt;
+      &lt;p&gt;鉴于生产环境的上线部署，都依赖于镜像构建、制作、部署上线运行等操作，作为一名合格的RD，当然不能只局限于在上线平台上进行一顿鼠标操作了，一定要弄懂这些基础设施内部到底在干嘛。因此，对Docker的相关学习也是很有必要的。&lt;/p&gt;
 &lt;h1 id=&quot;基础信息&quot;&gt;&lt;a href=&quot;#基础信息&quot; class=&quot;headerlink&quot; title=&quot;基础信息&quot;&gt;&lt;/a&gt;基础信息&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://dockone.io/article/783&quot;&gt;http://dockone.io/article/783&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html&quot;&gt;http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;两篇文章分别是中文和英文原版，建议初学者多读几遍，收获非常大。&lt;br&gt;尤其是对镜像只读层和读写层的理解，非常重要，还有docker各个命令对各层的影响。&lt;br&gt;
@@ -343,14 +343,14 @@
     <link href="http://leimingshan.github.io/2016/03/04/website-https/"/>
     <id>http://leimingshan.github.io/2016/03/04/website-https/</id>
     <published>2016-03-04T01:32:44.000Z</published>
-    <updated>2018-08-27T05:48:51.817Z</updated>
+    <updated>2018-08-28T09:08:52.702Z</updated>
     
-    <content type="html"><![CDATA[<p>从今天起本Blog开始启用全站Https。<br>未来的大趋势嘛，哈哈！</p>
+    <content type="html"><![CDATA[<p>从今天起本Blog开始启用全站Https。<br>未来的大趋势嘛，哈哈！</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;从今天起本Blog开始启用全站Https。&lt;br&gt;未来的大趋势嘛，哈哈！&lt;/p&gt;
+      &lt;p&gt;从今天起本Blog开始启用全站Https。&lt;br&gt;未来的大趋势嘛，哈哈！&lt;/p&gt;
 
     
     </summary>
