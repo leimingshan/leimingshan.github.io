@@ -106,6 +106,30 @@
   </entry>
   
   <entry>
+    <title>成长记录</title>
+    <link href="http://leimingshan.github.io/2016/04/20/tech-growup-record/"/>
+    <id>http://leimingshan.github.io/2016/04/20/tech-growup-record/</id>
+    <published>2016-04-20T07:25:21.000Z</published>
+    <updated>2018-08-28T07:26:56.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>工作一年多以来，学了不少东西，也尝试了许多新东西，也成长了不少，也许只是一个粗略的记录，也希望提醒自己，还是取得了一些成绩吧，但不能骄傲，还有许多不足之处，技术永无止境，还需要更多的努力。</p>
+<p>工作初始，接触的是C语言网络编程和后台编程的项目，承担的是整体系统中的一部分，加上之前对Redis的了解，也比较适合在这里使用，在设计的时候也就用上了。因为的自己负责调研的部分，所以许多都可以自己设计，还是很高兴的，在使用Redis的过程中，也简单分析了Redis的代码，以及在Linux下编程的技巧，包括学习Redis的Makefile，对错误和消息的处理等。使用Redis作为缓存队列，也实现了自己想要的效果，当然这里会有更优的解决方案，但是作为自己在项目中的第一个设计，还是基本满意的。</p>
+<p>再后来的项目，大部分的经历就转到Java语言项目和Java Web方面了，也接触了一些项目的框架，修改功能代码等。独当一面的是另外一个基于大数据的演示性项目，将来会把这个搭建在服务器上。这个项目里，我独立完成了项目的Java Web后台设计，使用了包括Spring，Struts，MongoDB，Morphia等技术，独立设计前台HTML和JS等，使用了Bootstrap，Echarts，JQuery，Semantic-ui等。项目的时间比较久，后来还有一些改进方案没来得及实施，但是从我的角度来说，是我的一个大作品。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;工作一年多以来，学了不少东西，也尝试了许多新东西，也成长了不少，也许只是一个粗略的记录，也希望提醒自己，还是取得了一些成绩吧，但不能骄傲，还有许多不足之处，技术永无止境，还需要更多的努力。&lt;/p&gt;
+&lt;p&gt;工作初始，接触的是C语言网络编程和后台编程的项目，承担的是整体系统中的
+    
+    </summary>
+    
+      <category term="Diary" scheme="http://leimingshan.github.io/categories/Diary/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Gradle使用代理服务器</title>
     <link href="http://leimingshan.github.io/2016/03/23/gradle/"/>
     <id>http://leimingshan.github.io/2016/03/23/gradle/</id>
@@ -821,40 +845,6 @@ KMS host caching: Enabled
       <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
     
       <category term="MongoDB" scheme="http://leimingshan.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java中对json的处理</title>
-    <link href="http://leimingshan.github.io/2015/08/31/java-json/"/>
-    <id>http://leimingshan.github.io/2015/08/31/java-json/</id>
-    <published>2015-08-31T06:09:51.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Java中有不少处理JSON格式数据的类库，在JSON的官网 <a href="http://www.json.org/" target="_blank" rel="external">http://www.json.org/</a> 下面对应的各个语言编解码库，Java就有20多种可以使用的类库。</p>
-<p>当然，其中最常使用的是json-lib，也是资格比较老的一个库，网上介绍也很多，<a href="http://json-lib.sourceforge.net/" target="_blank" rel="external">http://json-lib.sourceforge.net/</a>，但是已经停止更新很久了，<br>最新的版本还是基于JDK1.5的，最后更新日期是2010年的12月。在Struts2中返回JSON格式的数据时，默认使用的就是json-lib。<br>但是总体上来说，现在开发程序还是不建议使用json-lib，毕竟有点太古老了。<br>推荐使用的是号称性能最快的JSON处理器Jackson，社区非常活跃，也一直在更新，功能也很强大，<a href="https://github.com/FasterXML/jackson" target="_blank" rel="external">https://github.com/FasterXML/jackson</a>。</p>
-<p>可以发现在许多其他Java开源项目中对JSON的处理都在使用Jackson，例如Spring。</p>
-<p>有人专门对比了这两个类库的性能，<br><a href="http://wangym.iteye.com/blog/738933" target="_blank" rel="external">http://wangym.iteye.com/blog/738933</a><br><a id="more"></a>测试总结：<br>1、显而易见，无论是哪种形式的转换，Jackson &gt; Gson &gt; Json-lib。<br>Jackson的处理能力甚至高出Json-lib有10倍左右<br>2、JSON-lib似乎已经停止更新，最新的版本也是基于JDK15，而Jackson的社区则较为活跃；<br>3、在测试性能的同时，又以人肉方式对这三个类库转换的正确性 进行了检查 ，三者均达100%正确 ；<br>4、JSON-lib在转换诸如Date类型时较为累赘，如以下是两者的转换结果：<br>JSON-lib：<br>{“brithday”:{“date”:17,”day”:2,”hours”:9,”minutes”:24,”month”:7,”seconds”:26,”time”:1282008266398,”timezoneOffset”:-480,”year”:110}}<br>Jackson：<br>{“brithday”:1282008123101}<br>5、JSON-lib依赖commons系列的包及 ezmorph包共 5个，而Jackson除自身的以外只依赖于commons-logging<br>6、Jackson提供完整基于节点的Tree Model，以及完整的OJM数据绑定功能。<!--more--><!--more--></p>
-<p>经过几项试验和测试，发现Jackson确实功能很强大，推荐还是默认用Jackson来处理JSON，算是目前Java中比较优秀的JSON处理库。</p>
-<p>简单的使用方法：<br><a href="https://github.com/FasterXML/jackson-databind/" target="_blank" rel="external">https://github.com/FasterXML/jackson-databind/</a></p>
-<p>即使是处理比较复杂的JavaBean，嵌套多层并且包含自定义类，以及List等的类Profile，也可以轻松处理，不需要用户过多的配置。当然其他更强大的功能还有待以后发掘。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Java中有不少处理JSON格式数据的类库，在JSON的官网 &lt;a href=&quot;http://www.json.org/&quot;&gt;http://www.json.org/&lt;/a&gt; 下面对应的各个语言编解码库，Java就有20多种可以使用的类库。&lt;/p&gt;
-&lt;p&gt;当然，其中最常使用的是json-lib，也是资格比较老的一个库，网上介绍也很多，&lt;a href=&quot;http://json-lib.sourceforge.net/&quot;&gt;http://json-lib.sourceforge.net/&lt;/a&gt;，但是已经停止更新很久了，&lt;br&gt;最新的版本还是基于JDK1.5的，最后更新日期是2010年的12月。在Struts2中返回JSON格式的数据时，默认使用的就是json-lib。&lt;br&gt;但是总体上来说，现在开发程序还是不建议使用json-lib，毕竟有点太古老了。&lt;br&gt;推荐使用的是号称性能最快的JSON处理器Jackson，社区非常活跃，也一直在更新，功能也很强大，&lt;a href=&quot;https://github.com/FasterXML/jackson&quot;&gt;https://github.com/FasterXML/jackson&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;可以发现在许多其他Java开源项目中对JSON的处理都在使用Jackson，例如Spring。&lt;/p&gt;
-&lt;p&gt;有人专门对比了这两个类库的性能，&lt;br&gt;&lt;a href=&quot;http://wangym.iteye.com/blog/738933&quot;&gt;http://wangym.iteye.com/blog/738933&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
-    
-      <category term="JSON" scheme="http://leimingshan.github.io/tags/JSON/"/>
     
   </entry>
   
