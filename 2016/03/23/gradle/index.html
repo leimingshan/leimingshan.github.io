@@ -120,7 +120,7 @@
 在Gradle中使用代理服务器的方法：
 
 使用以下命令行参">
-<meta property="og:updated_time" content="2016-10-31T05:01:22.000Z">
+<meta property="og:updated_time" content="2018-08-28T08:57:19.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gradle使用代理服务器">
 <meta name="twitter:description" content="在国内使用Gradle的时候，由于依赖管理时经常需要从mavenCentral（maven中央仓库）和jCenter中下载lib，速度不稳定，有时还会导致build长时间卡住，有一种方法是使用Gradle的Offline模式，但前提是你已经cache了项目的依赖在本地，不然可能会Build失败，另外就是使用代理服务器，也是一种不错的选择。
@@ -405,7 +405,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
+                <time title="修改时间：2018-08-28 16:57:19" itemprop="dateModified" datetime="2018-08-28T16:57:19+08:00">2018-08-28</time>
               
             
           </span>
@@ -467,11 +467,8 @@
         <p>在国内使用Gradle的时候，由于依赖管理时经常需要从mavenCentral（maven中央仓库）和jCenter中下载lib，速度不稳定，有时还会导致build长时间卡住，有一种方法是使用Gradle的Offline模式，但前提是你已经cache了项目的依赖在本地，不然可能会Build失败，另外就是使用代理服务器，也是一种不错的选择。</p>
 <p><strong>在Gradle中使用代理服务器的方法：</strong></p>
 <ol>
-<li><p><strong>使用以下命令行参数指定代理服务器。</strong></p>
-<pre class="lang:default decode:true">gradle -Dhttp.proxyHost=yourProxy -Dhttp.proxyPort=yourPort -Dhttp.proxyUser=usernameProxy -Dhttp.proxyPassword=yourPassoword</pre>
-</li>
-<li><p><strong>修改Gradle用户配置文件。</strong>可以在GRADLE_USER_HOME下新建文件gradle.properties，然后设置代理。GRADLE_USER_HOME的路径一般如下:<br>/home/&lt;username&gt;/.gradle/ (Linux)<br>/Users/&lt;username&gt;/.gradle/ (Mac)<br>C:\Users\&lt;username&gt;.gradle\ (Windows)<br><pre class="lang:default decode:true "># Http Proxy<br>systemProp.http.proxyHost=www.somehost.org<br>systemProp.http.proxyPort=8080<br>systemProp.http.proxyUser=userid<br>systemProp.http.proxyPassword=password<br>systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost</pre></p>
-</li>
+<li><strong>使用以下命令行参数指定代理服务器。</strong><br><pre class="lang:default decode:true">gradle -Dhttp.proxyHost=yourProxy -Dhttp.proxyPort=yourPort -Dhttp.proxyUser=usernameProxy -Dhttp.proxyPassword=yourPassoword</pre><a id="more"></a></li>
+<li><strong>修改Gradle用户配置文件。</strong>可以在GRADLE_USER_HOME下新建文件gradle.properties，然后设置代理。GRADLE_USER_HOME的路径一般如下:<br>/home/&lt;username&gt;/.gradle/ (Linux)<br>/Users/&lt;username&gt;/.gradle/ (Mac)<br>C:\Users\&lt;username&gt;.gradle\ (Windows)<br><pre class="lang:default decode:true "># Http Proxy<br>systemProp.http.proxyHost=www.somehost.org<br>systemProp.http.proxyPort=8080<br>systemProp.http.proxyUser=userid<br>systemProp.http.proxyPassword=password<br>systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost</pre></li>
 </ol>
 <h1 id="Https-Proxy"><a href="#Https-Proxy" class="headerlink" title="Https Proxy"></a>Https Proxy</h1><p>systemProp.https.proxyHost=www.somehost.org<br>systemProp.https.proxyPort=8080<br>systemProp.https.proxyUser=userid<br>systemProp.https.proxyPassword=password<br>systemProp.https.nonProxyHosts=*.nonproxyrepos.com|localhost<br>参考：</p>
 <ol>

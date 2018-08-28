@@ -118,7 +118,7 @@ RBAC（Role-Based Access Control，基于角色的访问控制），就是用户
 <meta property="og:description" content="Role-Based-Access-Control System Design.比较常见的基于角色的访问控制系统，这次是主要了解和简单设计，不涉及到特别复杂的功能。
 介绍参考文档：https://blog.csdn.net/yangwenxue_admin/article/details/73936803
 RBAC（Role-Based Access Control，基于角色的访问控制），就是用户">
-<meta property="og:updated_time" content="2018-08-27T06:11:10.162Z">
+<meta property="og:updated_time" content="2018-08-28T08:58:39.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RBAC简要设计">
 <meta name="twitter:description" content="Role-Based-Access-Control System Design.比较常见的基于角色的访问控制系统，这次是主要了解和简单设计，不涉及到特别复杂的功能。
@@ -402,7 +402,7 @@ RBAC（Role-Based Access Control，基于角色的访问控制），就是用户
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-27 14:11:10" itemprop="dateModified" datetime="2018-08-27T14:11:10+08:00">2018-08-27</time>
+                <time title="修改时间：2018-08-28 16:58:39" itemprop="dateModified" datetime="2018-08-28T16:58:39+08:00">2018-08-28</time>
               
             
           </span>
@@ -465,7 +465,7 @@ RBAC（Role-Based Access Control，基于角色的访问控制），就是用户
 <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>参考文档：<a href="https://blog.csdn.net/yangwenxue_admin/article/details/73936803" target="_blank" rel="external">https://blog.csdn.net/yangwenxue_admin/article/details/73936803</a></p>
 <p>RBAC（Role-Based Access Control，基于角色的访问控制），就是用户<strong>通过角色与权限进行关联</strong>。</p>
 <p>其主要特点如下：</p>
-<p>一个用户拥有若干角色，每一个角色拥有若干权限。这样，就构造成“用户-角色-权限”的授权模型。<br>这种模型中，用户与角色之间，角色与权限之间，一般是多对多的关系。<br>在此基础上，可以扩展出用户组等实体类型。<br>根据实际需求，可以考虑增加用户组，并对具体权限的类型进行了细分。</p>
+<p>一个用户拥有若干角色，每一个角色拥有若干权限。这样，就构造成“用户-角色-权限”的授权模型。<br>这种模型中，用户与角色之间，角色与权限之间，一般是多对多的关系。<br>在此基础上，可以扩展出用户组等实体类型。<br>根据实际需求，可以考虑增加用户组，并对具体权限的类型进行了细分。<br><a id="more"></a></p>
 <h1 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h1><p>角色是什么？可以理解为一定数量的权限的集合，权限的载体。例如：一个论坛系统，“超级管理员”、“版主”都是角色。版主可管理版内的帖子、可管理版内的用户等，这些是权限。要给某个用户授予这些权限，不需要直接将权限授予用户，可将“版主”这个角色赋予该用户。  </p>
 <h1 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h1><p>当用户的数量非常大时，要给系统每个用户逐一授权（授角色），是件非常烦琐的事情。这时，就需要给用户分组，每个用户组内有多个用户。</p>
 <p>除了可给用户授权外，还可以给用户组授权。这样一来，用户拥有的所有权限，就是用户个人拥有的权限与该用户所在用户组拥有的权限之和。</p>
