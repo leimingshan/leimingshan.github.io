@@ -315,6 +315,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/08/31/mongodb-pojo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingshan Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mingshan Lei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/08/31/mongodb-pojo/" itemprop="url">
+                  MongoDB的POJO映射
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-08-31 14:12:20" itemprop="dateCreated datePublished" datetime="2015-08-31T14:12:20+08:00">2015-08-31</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在MongoDB数据库的Java程序开发过程中，使用了官方支持的POJO映射Morphia<br><a href="https://github.com/mongodb/morphia/wiki" target="_blank" rel="external">https://github.com/mongodb/morphia/wiki</a>。</p>
+<p>其作用，简而言之，就是完成Java Bean对象与MongoDB数据库中一条记录的映射，大家在Entity中看到的Profile就是这样一个POJO，<br>Profile中嵌套了一些子类，比较容易理解，Morphia的所有映射都可以通过注解来完成，非常简单易用，可以查看上面wiki文档中的说明。<br>另外，Morphia提供了一个基本的DAO类，org.mongodb.morphia.dao.BasicDAO&lt;T,K&gt;<br>详细信息可以查看链接<a href="https://rawgit.com/wiki/mongodb/morphia/javadoc/0.108/apidocs/index.html" target="_blank" rel="external">https://rawgit.com/wiki/mongodb/morphia/javadoc/0.108/apidocs/index.html</a></p>
+<p>该类支持基本的CRUD操作，查询也支持各种查询条件，不过在返回结果这边可定制性较弱，通常都是返回整个的POJO类的List，属于粗粒度吧。<br>BasicDAO从根本上都是对mongo-java-driver中一些api的封装，如果需要更全面的功能的话可以选用底层driver，当然这样就是直接跟MongoDB中的BSON打交道了，<br>也就用不上POJO了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/08/31/java-json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1888,183 +2060,6 @@ println &apos;Done.&apos;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/05/19/gradle-exec-command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingshan Lei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mingshan Lei's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/05/19/gradle-exec-command/" itemprop="url">
-                  Gradle执行外部命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2015-05-19 20:16:13" itemprop="dateCreated datePublished" datetime="2015-05-19T20:16:13+08:00">2015-05-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在Gradle的官方网站，学习的话首要看的是User Guide，其次就是<a href="http://gradle.org/docs/current/dsl/index.html" target="_blank" rel="external">DSL Reference</a>，我觉得后者其实更加重要，前者的内容比较基础，示例也比较精简，所以推荐到DSL里去看示例。</p>
-<p>例如关于任务类型Copy和Exec的介绍。</p>
-<p><pre class="lang:default decode:true ">task stopTomcat(type:Exec) {<br>  workingDir ‘../tomcat/bin’</pre></p>
-<p>  //on windows:<br>  commandLine ‘cmd’, ‘/c’, ‘stop.bat’</p>
-<p>  //on linux<br>  commandLine ‘./stop.sh’</p>
-<p>  //store the output instead of printing to the console:<br>  standardOutput = new ByteArrayOutputStream()</p>
-<p>  //extension method stopTomcat.output() can be used to obtain the output:<br>  ext.output = {<br>    return standardOutput.toString()<br>  }<br>}<br><br>这个示例就很好的介绍了在Gradle中如何执行外部命令。</p>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2112,7 +2107,7 @@ println &apos;Done.&apos;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-count">68</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2228,7 +2223,9 @@ println &apos;Done.&apos;
                     
                       
                     
-                    <span class="site-state-item-count">29</span>
+                      
+                    
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

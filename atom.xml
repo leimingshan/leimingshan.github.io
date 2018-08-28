@@ -77,6 +77,31 @@
   </entry>
   
   <entry>
+    <title>Docker-Basic</title>
+    <link href="http://leimingshan.github.io/2018/01/25/Docker-Basic/"/>
+    <id>http://leimingshan.github.io/2018/01/25/Docker-Basic/</id>
+    <published>2018-01-25T07:45:10.000Z</published>
+    <updated>2018-08-28T07:54:33.133Z</updated>
+    
+    <content type="html"><![CDATA[<p>鉴于生产环境的上线部署，都依赖于镜像构建、制作、部署上线运行等操作，作为一名合格的RD，当然不能只局限于在上线平台上进行一顿鼠标操作了，一定要弄懂这些基础设施内部到底在干嘛。因此，对Docker的相关学习也是很有必要的。</p>
+<h1 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h1><p><a href="http://dockone.io/article/783" target="_blank" rel="external">http://dockone.io/article/783</a></p>
+<p><a href="http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html" target="_blank" rel="external">http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html</a></p>
+<p>两篇文章分别的中文和英文原版。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;鉴于生产环境的上线部署，都依赖于镜像构建、制作、部署上线运行等操作，作为一名合格的RD，当然不能只局限于在上线平台上进行一顿鼠标操作了，一定要弄懂这些基础设施内部到底在干嘛。因此，对Docker的相关学习也是很有必要的。&lt;/p&gt;
+&lt;h1 id=&quot;基础信息&quot;&gt;&lt;a hre
+    
+    </summary>
+    
+    
+      <category term="Docker" scheme="http://leimingshan.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo Basic Usage</title>
     <link href="http://leimingshan.github.io/2016/05/18/Hexo-Basic/"/>
     <id>http://leimingshan.github.io/2016/05/18/Hexo-Basic/</id>
@@ -814,35 +839,6 @@ KMS host caching: Enabled
     
     
       <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
-    
-      <category term="MongoDB" scheme="http://leimingshan.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB的POJO映射</title>
-    <link href="http://leimingshan.github.io/2015/08/31/mongodb-pojo/"/>
-    <id>http://leimingshan.github.io/2015/08/31/mongodb-pojo/</id>
-    <published>2015-08-31T06:12:20.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在MongoDB数据库的Java程序开发过程中，使用了官方支持的POJO映射Morphia<br><a href="https://github.com/mongodb/morphia/wiki" target="_blank" rel="external">https://github.com/mongodb/morphia/wiki</a>。</p>
-<p>其作用，简而言之，就是完成Java Bean对象与MongoDB数据库中一条记录的映射，大家在Entity中看到的Profile就是这样一个POJO，<br>Profile中嵌套了一些子类，比较容易理解，Morphia的所有映射都可以通过注解来完成，非常简单易用，可以查看上面wiki文档中的说明。<br>另外，Morphia提供了一个基本的DAO类，org.mongodb.morphia.dao.BasicDAO&lt;T,K&gt;<br>详细信息可以查看链接<a href="https://rawgit.com/wiki/mongodb/morphia/javadoc/0.108/apidocs/index.html" target="_blank" rel="external">https://rawgit.com/wiki/mongodb/morphia/javadoc/0.108/apidocs/index.html</a></p>
-<p>该类支持基本的CRUD操作，查询也支持各种查询条件，不过在返回结果这边可定制性较弱，通常都是返回整个的POJO类的List，属于粗粒度吧。<br>BasicDAO从根本上都是对mongo-java-driver中一些api的封装，如果需要更全面的功能的话可以选用底层driver，当然这样就是直接跟MongoDB中的BSON打交道了，<br>也就用不上POJO了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在MongoDB数据库的Java程序开发过程中，使用了官方支持的POJO映射Morphia&lt;br&gt;&lt;a href=&quot;https://github.com/mongodb/morphia/wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https:/
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
-    
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
     
       <category term="MongoDB" scheme="http://leimingshan.github.io/tags/MongoDB/"/>
     

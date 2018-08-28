@@ -34,6 +34,16 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Docker-Basic]]></title>
+      <url>http://leimingshan.github.io/2018/01/25/Docker-Basic/</url>
+      <content type="html"><![CDATA[<p>鉴于生产环境的上线部署，都依赖于镜像构建、制作、部署上线运行等操作，作为一名合格的RD，当然不能只局限于在上线平台上进行一顿鼠标操作了，一定要弄懂这些基础设施内部到底在干嘛。因此，对Docker的相关学习也是很有必要的。</p>
+<h1 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h1><p><a href="http://dockone.io/article/783" target="_blank" rel="external">http://dockone.io/article/783</a></p>
+<p><a href="http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html" target="_blank" rel="external">http://merrigrove.blogspot.com/2015/10/visualizing-docker-containers-and-images.html</a></p>
+<p>两篇文章分别的中文和英文原版。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo Basic Usage]]></title>
       <url>http://leimingshan.github.io/2016/05/18/Hexo-Basic/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
