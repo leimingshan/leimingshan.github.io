@@ -33,6 +33,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Hexo启用Https后设置腾讯公益404的问题]]></title>
+    <url>%2F2017%2F08%2F30%2Fhexo-gongyi-404%2F</url>
+    <content type="text"><![CDATA[新建页面执行hexo new page 404 修改source/404/index.md一些老的页面会出现问题，因为启用了Https后，去加载Http的样式表和JS会失败，所以要使用以下的页面代码。 1234567891011121314---title: 404date: 2018-08-30 14:40:55---&lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh-cn&quot;&gt;&lt;head&gt; &lt;meta charset=&quot;UTF-8&quot; /&gt; &lt;title&gt;404&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot; homePageName=&quot;返回宝贝回家&quot; homePageUrl=&quot;https://www.baobeihuijia.com&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo Basic Usage]]></title>
     <url>%2F2016%2F05%2F18%2FHexo-Basic%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

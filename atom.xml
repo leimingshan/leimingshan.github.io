@@ -110,6 +110,28 @@
   </entry>
   
   <entry>
+    <title>Hexo启用Https后设置腾讯公益404的问题</title>
+    <link href="http://leimingshan.github.io/2017/08/30/hexo-gongyi-404/"/>
+    <id>http://leimingshan.github.io/2017/08/30/hexo-gongyi-404/</id>
+    <published>2017-08-30T07:12:16.000Z</published>
+    <updated>2018-08-30T07:18:28.387Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h2><p>执行<br>hexo new page 404</p><h2 id="修改source-404-index-md"><a href="#修改source-404-index-md" class="headerlink" title="修改source/404/index.md"></a>修改source/404/index.md</h2><p>一些老的页面会出现问题，因为启用了Https后，去加载Http的样式表和JS会失败，所以要使用以下的页面代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 404</span><br><span class="line">date: 2018-08-30 14:40:55</span><br><span class="line">---</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-cn&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">  &lt;title&gt;404&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot; src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot; homePageName=&quot;返回宝贝回家&quot; homePageUrl=&quot;https://www.baobeihuijia.com&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;新建页面&quot;&gt;&lt;a href=&quot;#新建页面&quot; class=&quot;headerlink&quot; title=&quot;新建页面&quot;&gt;&lt;/a&gt;新建页面&lt;/h2&gt;&lt;p&gt;执行&lt;br&gt;hexo new page 404&lt;/p&gt;
+&lt;h2 id=&quot;修改source-404-index-md&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hexo Basic Usage</title>
     <link href="http://leimingshan.github.io/2016/05/18/Hexo-Basic/"/>
     <id>http://leimingshan.github.io/2016/05/18/Hexo-Basic/</id>
@@ -513,31 +535,6 @@ FLUSH PRIVILEGES;&lt;/pre&gt;
     
       <category term="网站" scheme="http://leimingshan.github.io/categories/%E7%BD%91%E7%AB%99/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript的模块化编程</title>
-    <link href="http://leimingshan.github.io/2015/08/31/javascript-module/"/>
-    <id>http://leimingshan.github.io/2015/08/31/javascript-module/</id>
-    <published>2015-08-31T07:32:02.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2 … ule_definition.html</a><br>为什么讲到JS的模块化编程，也是最近在应用Echarts图标库需要面对的一个问题。<br>可以参考Echarts引入的方法：<br><a href="http://echarts.baidu.com/doc/doc.html#" target="_blank" rel="noopener">http://echarts.baidu.com/doc/doc.html#</a>引入ECharts<br>在之前的开发中，为了使用简便，直接采用第三种引入单文件的方式，比较简单，<br>&lt;script src=”js/echarts-all.js”&gt;&lt;/script&gt;<br>就可以了，这样就引入了Echarts所有的图标和地图数据，这个文件是900KB，也就是说，<br>无论你在页面中使用几种图表，都需要加载接近1MB大小的JS库文件，效率还是比较低下的。<br>比较推荐的方法是参考JS的模块化编程和AMD规范，当然使用模块化编程主要不是为了解决<br>加载过多的问题，对于代码的规范和质量都有比较大的帮助。<br>Echarts本身使用了require.js，在前台开发中也可以尝试自己使用require.js。<br>简单介绍：<a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a><br>官网：<a href="http://requirejs.org/" target="_blank" rel="noopener">http://requirejs.org/</a></p><p>建议推荐一个SeaJS 的 CMD 规范，与 AMD 非常类似，在国内的影响力非常大，也非常易于使用，是国人开发的，在 github 上的更新、互动非常频繁。<br><a href="http://seajs.org/" target="_blank" rel="noopener">http://seajs.org</a><br><a href="https://github.com/seajs/seajs" target="_blank" rel="noopener">https://github.com/seajs/seajs</a></p><p>两个的区别<br><a href="http://www.zhihu.com/question/20351507/answer/14859415" target="_blank" rel="noopener">http://www.zhihu.com/question/20351507/answer/14859415</a></p><p><a href="http://segmentfault.com/a/1190000000733959" target="_blank" rel="noopener">http://segmentfault.com/a/1190000000733959</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.ruanyifeng
-      
-    
-    </summary>
-    
-      <category term="网站" scheme="http://leimingshan.github.io/categories/%E7%BD%91%E7%AB%99/"/>
-    
-    
-      <category term="JavaScript" scheme="http://leimingshan.github.io/tags/JavaScript/"/>
     
   </entry>
   

@@ -366,6 +366,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/08/31/javascript-module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingshan Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/lms.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mingshan Lei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/08/31/javascript-module/" itemprop="url">
+                  JavaScript的模块化编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-08-31 15:32:02" itemprop="dateCreated datePublished" datetime="2015-08-31T15:32:02+08:00">2015-08-31</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网站/" itemprop="url" rel="index"><span itemprop="name">网站</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2 … ule_definition.html</a><br>为什么讲到JS的模块化编程，也是最近在应用Echarts图标库需要面对的一个问题。<br>可以参考Echarts引入的方法：<br><a href="http://echarts.baidu.com/doc/doc.html#" target="_blank" rel="noopener">http://echarts.baidu.com/doc/doc.html#</a>引入ECharts<br>在之前的开发中，为了使用简便，直接采用第三种引入单文件的方式，比较简单，<br>&lt;script src=”js/echarts-all.js”&gt;&lt;/script&gt;<br>就可以了，这样就引入了Echarts所有的图标和地图数据，这个文件是900KB，也就是说，<br>无论你在页面中使用几种图表，都需要加载接近1MB大小的JS库文件，效率还是比较低下的。<br>比较推荐的方法是参考JS的模块化编程和AMD规范，当然使用模块化编程主要不是为了解决<br>加载过多的问题，对于代码的规范和质量都有比较大的帮助。<br>Echarts本身使用了require.js，在前台开发中也可以尝试自己使用require.js。<br>简单介绍：<a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2012/11/require_js.html</a><br>官网：<a href="http://requirejs.org/" target="_blank" rel="noopener">http://requirejs.org/</a></p>
+<p>建议推荐一个SeaJS 的 CMD 规范，与 AMD 非常类似，在国内的影响力非常大，也非常易于使用，是国人开发的，在 github 上的更新、互动非常频繁。<br><a href="http://seajs.org/" target="_blank" rel="noopener">http://seajs.org</a><br><a href="https://github.com/seajs/seajs" target="_blank" rel="noopener">https://github.com/seajs/seajs</a></p>
+<p>两个的区别<br><a href="http://www.zhihu.com/question/20351507/answer/14859415" target="_blank" rel="noopener">http://www.zhihu.com/question/20351507/answer/14859415</a></p>
+<p><a href="http://segmentfault.com/a/1190000000733959" target="_blank" rel="noopener">http://segmentfault.com/a/1190000000733959</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/08/31/mongodb-copy-database/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1905,200 +2078,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/05/29/gradle-tomcat-deploy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingshan Lei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/lms.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mingshan Lei's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/05/29/gradle-tomcat-deploy/" itemprop="url">
-                  Gradle tomcat相关脚本
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2015-05-29 10:32:38" itemprop="dateCreated datePublished" datetime="2015-05-29T10:32:38+08:00">2015-05-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>初用Gradle，也学习了不少东西，相比于之前的maven（虽然用的不多），但还是感受到了Gradle的许多特点和强大之处。除了常规的添加一些依赖，也尝试着自己写一些脚本。下面的跟tomcat相关的用例，主要用于部署测试环境，也借鉴了他人的一些思路，分享出来。</p>
-<p><pre class="lang:default decode:true ">// deploy to local tomcat server</pre></p>
-<p>// All extra properties must be defined through the “ext” namespace.<br>ext.tomcatHome = System.getenv()[“CATALINA_HOME”]<br>ext.tomcatBin = tomcatHome + ‘/bin’<br>ext.tomcatStart = tomcatBin + ‘/startup’<br>ext.tomcatStop = tomcatBin + ‘/shutdown’<br>ext.tomcatWebapps = tomcatHome + ‘/webapps’</p>
-<p>ant.condition(property: “os”, value: “windows”) { os(family: “windows”) }<br>ant.condition(property: “os”, value: “unix”   ) { os(family: “unix”)    }</p>
-<p>task checkTomcat &lt;&lt; {<br>    if (tomcatHome == null)<br>        throw new RuntimeException(“Could not get TOMCAT home, please set CATALINA_HOME env virable first!”)<br>    switch(ant.properties.os){<br>        case ‘windows’:<br>            println ‘Running on windows.’<br>            tomcatStart += ‘.bat’<br>            tomcatStop += ‘.bat’<br>            break<br>        case ‘unix’:<br>            println ‘Running on unix.’<br>            tomcatStart += ‘.sh’<br>            tomcatStop += ‘.sh’<br>            break<br>    }<br>    println “Using CATALINA_HOME: ${tomcatHome}”<br>    println “Using Tomcat start cmd: ${tomcatStart}”<br>    println “Using Tomcat stop cmd: ${tomcatStop}”<br>}</p>
-<p>task deployLocal &lt;&lt; {<br>    println “copy war from ${buildDir}/libs into ${tomcatWebapps}”<br>    copy{<br>        from “${buildDir}/libs”<br>        into “${tomcatWebapps}”<br>        include ‘*.war’<br>    }<br>    //println “start tomcat !”<br>    //startTomcat.execute()<br>}</p>
-<p>deployLocal.dependsOn checkTomcat</p>
-<p>task startTomcat &lt;&lt; {<br>    exec {<br>        executable tomcatStart<br>    }<br>    println ‘Start Tomcat server.’<br>    //store the output instead of printing to the console:<br>    standardOutput = new ByteArrayOutputStream()</p>
-<pre><code>//extension method stopTomcat.output() can be used to obtain the output:
-ext.output = {
-    return standardOutput.toString()
-}
-println &apos;Done.&apos;
-</code></pre><p>}</p>
-<p>startTomcat.dependsOn checkTomcat</p>
-<p>task stopTomcat &lt;&lt; {<br>    exec {<br>        executable tomcatStop<br>    }<br>    println ‘Shutting down Tomcat server.’</p>
-<pre><code>//store the output instead of printing to the console:
-standardOutput = new ByteArrayOutputStream()
-//extension method stopTomcat.output() can be used to obtain the output:
-ext.output = {
-    return standardOutput.toString()
-}
-println &apos;Done.&apos;
-</code></pre><p>}</p>
-<p>stopTomcat.dependsOn checkTomcat<br><br>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2150,7 +2129,7 @@ println &apos;Done.&apos;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">69</span>
+                    <span class="site-state-item-count">70</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
