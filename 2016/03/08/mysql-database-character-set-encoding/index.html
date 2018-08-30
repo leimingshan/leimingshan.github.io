@@ -494,7 +494,7 @@
 <p><span style="text-decoration: underline;">character-set-server=latin1</span></p>
 <p><span style="text-decoration: underline;">collation-server =latin1_swedish_ci</span></p>
 <p>注意latin1字符集是不支持中文的。第一行的character-set当然是指字符集，第二行的collation是指对应该字符集的比较和排序规则。</p>
-<p><a href="http://dev.mysql.com/doc/refman/5.7/en/charset-server.html" target="_blank" rel="external">charset-server参考手册</a><a id="more"></a></p>
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/charset-server.html" target="_blank" rel="noopener">charset-server参考手册</a><a id="more"></a></p>
 <p>通过MySQL命令</p>
 <p><pre class="lang:mysql decode:true">mysql&gt; SHOW VARIABLES LIKE ‘character%’;</pre><br>可以查看当前服务端的默认配置。</p>
 <p>如果在新建数据库的时候不指定character-set和collation，那么就会采用以上的服务器端默认值，所以还是推荐大家手动指定。示例如下：</p>
@@ -506,16 +506,16 @@
 <p>mysql&gt;<br><br>然后就可以根据情况修改为自己需要的编码设置了；</p>
 <p><pre class="lang:mysql decode:true">mysql&gt; ALTER DATABASE databasename CHARACTER SET utf8 COLLATE utf8_general_ci;</pre><br>参考：</p>
 <ul>
-<li><a href="https://dev.mysql.com/doc/refman/5.7/en/charset-database.html" target="_blank" rel="external">数据库的字符集</a></li>
-<li>修改具体table编码的方法，<a href="https://dev.mysql.com/doc/refman/5.7/en/charset-unicode-upgrading.html" target="_blank" rel="external">charset-unicode-upgrading参考手册</a>。</li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/charset-database.html" target="_blank" rel="noopener">数据库的字符集</a></li>
+<li>修改具体table编码的方法，<a href="https://dev.mysql.com/doc/refman/5.7/en/charset-unicode-upgrading.html" target="_blank" rel="noopener">charset-unicode-upgrading参考手册</a>。</li>
 </ul>
 <h1 id="修改MySQL的服务端配置"><a href="#修改MySQL的服务端配置" class="headerlink" title="修改MySQL的服务端配置"></a>修改MySQL的服务端配置</h1><p>修改my.cnf配置文件可以修改MySQL Server的默认字符集等设置。以配置文件在/etc/my.cnf（可能根据具体安装情况不同）为例，修改以下几项即可：</p>
 <p><pre class="lang:default decode:true">[client]<br>default-character-set = utf8</pre></p>
 <p>[mysql]<br>default-character-set = utf8</p>
 <p>[mysqld]<br>init-connect = ‘SET NAMES utf8’<br>character-set-server = utf8<br>collation-server = utf8_unicode_ci<br>参考</p>
 <ul>
-<li>配置方法：<a href="http://stackoverflow.com/questions/3513773/change-mysql-default-character-set-to-utf-8-in-my-cnf" target="_blank" rel="external">http://stackoverflow.com/questions/3513773/change-mysql-default-character-set-to-utf-8-in-my-cnf</a></li>
-<li><a href="https://dev.mysql.com/doc/refman/5.7/en/charset-connection.html" target="_blank" rel="external">SET NAMES的官方解释</a><br>&nbsp;</li>
+<li>配置方法：<a href="http://stackoverflow.com/questions/3513773/change-mysql-default-character-set-to-utf-8-in-my-cnf" target="_blank" rel="noopener">http://stackoverflow.com/questions/3513773/change-mysql-default-character-set-to-utf-8-in-my-cnf</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/charset-connection.html" target="_blank" rel="noopener">SET NAMES的官方解释</a><br>&nbsp;</li>
 </ul>
 
       
@@ -636,7 +636,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

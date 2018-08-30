@@ -496,22 +496,22 @@
 <h1 id="历史："><a href="#历史：" class="headerlink" title="历史："></a>历史：</h1><p>NoSQL一词最早是由Carlo Strozzi用来命名他开发的一个轻量级开源的关系型数据库，这个数据没有提供标准的SQL接口，所以就简单叫做NoSQL，他认为，现在的NoSQL运动，主要是不使用关系模型，应该叫做NoREL（非关系型）更为合适。</p>
 <p>在2009年初，Eric Evans再次提出这个概念，那时Johan Oskarsson想组织一个会议来讨论开源的分布式数据库。这个名字用来标记那些越来越多的非关系型、分布式数据存储、并且不尝试提供ACID（原子性、一致性、隔离性和持久性）的数据库。</p>
 <blockquote>
-<p><strong>关系型数据库最大特点就是事务的一致性</strong>：传统的关系型数据库读写操作都是事务的，具有ACID（原子性Atomicity、一致性Consistency、隔离性Isolation、持久性Durability）的特点，C就是一致性（Consistency），这个特点是关系型数据库的灵魂（其他三个AID都是为其服务的），这个特性使得关系型数据库可以用于几乎所有对一致性有要求的系统中，如典型的银行系统。<br>自2009年初开始，NoSQL运动发展迅猛，现在已经有了大约150种NoSQL数据库，你可以在这个网站<a href="http://nosql-database.org/" target="_blank" rel="external">http://nosql-database.org/</a>查看其中一些比较有代表性的NoSQL数据库。</p>
+<p><strong>关系型数据库最大特点就是事务的一致性</strong>：传统的关系型数据库读写操作都是事务的，具有ACID（原子性Atomicity、一致性Consistency、隔离性Isolation、持久性Durability）的特点，C就是一致性（Consistency），这个特点是关系型数据库的灵魂（其他三个AID都是为其服务的），这个特性使得关系型数据库可以用于几乎所有对一致性有要求的系统中，如典型的银行系统。<br>自2009年初开始，NoSQL运动发展迅猛，现在已经有了大约150种NoSQL数据库，你可以在这个网站<a href="http://nosql-database.org/" target="_blank" rel="noopener">http://nosql-database.org/</a>查看其中一些比较有代表性的NoSQL数据库。</p>
 </blockquote>
 <h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>大多数人比较认同的分类方法是根据其数据模型进行分类：</p>
 <ul>
-<li><strong>Column</strong>: <a href="http://en.wikipedia.org/wiki/HBase" title="HBase" target="_blank" rel="external">HBase</a>, <a href="http://en.wikipedia.org/wiki/Accumulo" title="Accumulo" target="_blank" rel="external">Accumulo</a></li>
-<li><strong>Document</strong>: <a href="http://en.wikipedia.org/wiki/MongoDB" title="MongoDB" target="_blank" rel="external">MongoDB</a>, <a href="http://en.wikipedia.org/wiki/Couchbase" title="Couchbase" target="_blank" rel="external">Couchbase</a></li>
-<li><strong>Key-value</strong> : <a href="http://en.wikipedia.org/wiki/Dynamo_(storage_system" target="_blank" rel="external">Dynamo</a> “Dynamo (storage system)”), <a href="http://en.wikipedia.org/wiki/Riak" title="Riak" target="_blank" rel="external">Riak</a>, <a href="http://en.wikipedia.org/wiki/Redis" title="Redis" target="_blank" rel="external">Redis</a>, <a href="http://en.wikipedia.org/wiki/MemcacheDB" title="MemcacheDB" target="_blank" rel="external">Cache</a>, <a href="http://en.wikipedia.org/wiki/Project_Voldemort" title="Project Voldemort" target="_blank" rel="external">Project Voldemort</a></li>
-<li><strong>Graph</strong>: <a href="http://en.wikipedia.org/wiki/Neo4J" title="Neo4J" target="_blank" rel="external">Neo4J</a>, <a href="http://en.wikipedia.org/wiki/AllegroGraph" title="AllegroGraph" target="_blank" rel="external">Allegro</a>, <a href="http://en.wikipedia.org/wiki/Virtuoso" title="Virtuoso" target="_blank" rel="external">Virtuoso</a><br>初学者建议学习和使用一下MongoDB和Redis。</li>
+<li><strong>Column</strong>: <a href="http://en.wikipedia.org/wiki/HBase" title="HBase" target="_blank" rel="noopener">HBase</a>, <a href="http://en.wikipedia.org/wiki/Accumulo" title="Accumulo" target="_blank" rel="noopener">Accumulo</a></li>
+<li><strong>Document</strong>: <a href="http://en.wikipedia.org/wiki/MongoDB" title="MongoDB" target="_blank" rel="noopener">MongoDB</a>, <a href="http://en.wikipedia.org/wiki/Couchbase" title="Couchbase" target="_blank" rel="noopener">Couchbase</a></li>
+<li><strong>Key-value</strong> : <a href="http://en.wikipedia.org/wiki/Dynamo_(storage_system" target="_blank" rel="noopener">Dynamo</a> “Dynamo (storage system)”), <a href="http://en.wikipedia.org/wiki/Riak" title="Riak" target="_blank" rel="noopener">Riak</a>, <a href="http://en.wikipedia.org/wiki/Redis" title="Redis" target="_blank" rel="noopener">Redis</a>, <a href="http://en.wikipedia.org/wiki/MemcacheDB" title="MemcacheDB" target="_blank" rel="noopener">Cache</a>, <a href="http://en.wikipedia.org/wiki/Project_Voldemort" title="Project Voldemort" target="_blank" rel="noopener">Project Voldemort</a></li>
+<li><strong>Graph</strong>: <a href="http://en.wikipedia.org/wiki/Neo4J" title="Neo4J" target="_blank" rel="noopener">Neo4J</a>, <a href="http://en.wikipedia.org/wiki/AllegroGraph" title="AllegroGraph" target="_blank" rel="noopener">Allegro</a>, <a href="http://en.wikipedia.org/wiki/Virtuoso" title="Virtuoso" target="_blank" rel="noopener">Virtuoso</a><br>初学者建议学习和使用一下MongoDB和Redis。</li>
 </ul>
 <p>参考阅读：</p>
 <ol>
-<li>更加详细的NoSQL介绍：<a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank" rel="external">http://en.wikipedia.org/wiki/NoSQL</a></li>
-<li>要了解和学习更多的NoSQL数据库，请看：<a href="http://nosql-database.org/" target="_blank" rel="external">http://nosql-database.org/</a></li>
-<li>NoSQL相关博客：<a href="http://nosql.mypopescu.com/" target="_blank" rel="external">http://nosql.mypopescu.com/</a></li>
-<li>NoSQL相关博客：<a href="http://blog.nosqlfan.com/" target="_blank" rel="external">http://blog.nosqlfan.com/</a></li>
-<li>redis设计与实现：<a href="http://www.redisbook.com/en/latest/" target="_blank" rel="external">http://www.redisbook.com/en/latest/</a></li>
+<li>更加详细的NoSQL介绍：<a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/NoSQL</a></li>
+<li>要了解和学习更多的NoSQL数据库，请看：<a href="http://nosql-database.org/" target="_blank" rel="noopener">http://nosql-database.org/</a></li>
+<li>NoSQL相关博客：<a href="http://nosql.mypopescu.com/" target="_blank" rel="noopener">http://nosql.mypopescu.com/</a></li>
+<li>NoSQL相关博客：<a href="http://blog.nosqlfan.com/" target="_blank" rel="noopener">http://blog.nosqlfan.com/</a></li>
+<li>redis设计与实现：<a href="http://www.redisbook.com/en/latest/" target="_blank" rel="noopener">http://www.redisbook.com/en/latest/</a></li>
 </ol>
 
       
@@ -632,7 +632,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[推荐计算机科学书籍]]></title>
+    <url>%2F2018%2F08%2F30%2Fdouban-computer-books%2F</url>
+    <content type="text"><![CDATA[值得一读的高分计算机书籍：https://www.douban.com/doulist/37472347/?start=0&amp;sort=seq&amp;playable=0&amp;sub_type=]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Elasticsearch-nested-query]]></title>
     <url>%2F2018%2F08%2F27%2FElasticsearch-nested-query%2F</url>
     <content type="text"><![CDATA[Elasticsearch嵌套查询，具体可参考Nested Query. 建议还是要多看多熟悉Elasticsearch的官方文档，比到处去搜强多了。 简而言之，在对ES doc的多层嵌套对象进行查询的时候，要使用Nested Query，常规查询无效。 1234567891011121314&#123; &quot;query&quot;: &#123; &quot;nested&quot; : &#123; &quot;path&quot; : &quot;obj&quot;, &quot;query&quot; : &#123; &quot;bool&quot; : &#123; &quot;must&quot; : [ &#123; &quot;match&quot; : &#123;&quot;obj.info.name&quot; : &quot;zhangsan&quot;&#125; &#125; ] &#125; &#125; &#125; &#125;&#125;]]></content>

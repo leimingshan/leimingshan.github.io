@@ -503,7 +503,7 @@
 </li>
 <li><p>Spring mvc中处理参数时，改用注解@RequestBody，这里得到的是请求字符串，需要自己进行转换，得到对应的参数信息，Spring这里也提供了对应的转换方法，处理起来并不复杂。</p>
 </li>
-<li>自己增加一个filte，来专门处理HTTP中的PUT请求，这里建议参考<a href="http://www.360doc.com/content/14/0306/17/15700330_358288127.shtml" target="_blank" rel="external">该文章</a>。关键配置部分如下：<br><pre class="lang:default decode:true">&lt;filter&gt;<br>&lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt;<br>&lt;filter-class&gt;org.springframework.web.filter.HttpPutFormContentFilter&lt;/filter-class&gt;<br>&lt;/filter&gt;<br>&lt;filter-mapping&gt;<br>&lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt;<br>&lt;url-pattern&gt;/*&lt;/url-pattern&gt;<br>&lt;/filter-mapping&gt;</pre><br>&nbsp;</li>
+<li>自己增加一个filte，来专门处理HTTP中的PUT请求，这里建议参考<a href="http://www.360doc.com/content/14/0306/17/15700330_358288127.shtml" target="_blank" rel="noopener">该文章</a>。关键配置部分如下：<br><pre class="lang:default decode:true">&lt;filter&gt;<br>&lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt;<br>&lt;filter-class&gt;org.springframework.web.filter.HttpPutFormContentFilter&lt;/filter-class&gt;<br>&lt;/filter&gt;<br>&lt;filter-mapping&gt;<br>&lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt;<br>&lt;url-pattern&gt;/*&lt;/url-pattern&gt;<br>&lt;/filter-mapping&gt;</pre><br>&nbsp;</li>
 </ol>
 <p>&nbsp;</p>
 
@@ -618,7 +618,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

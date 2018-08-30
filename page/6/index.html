@@ -366,6 +366,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2013/08/21/random-number/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingshan Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/lms.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mingshan Lei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2013/08/21/random-number/" itemprop="url">
+                  如何评价随机数生成算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2013-08-21 01:42:32" itemprop="dateCreated datePublished" datetime="2013-08-21T01:42:32+08:00">2013-08-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>部分内容转自知乎 <a href="http://www.zhihu.com/question/20222653" title="如何评价一个随机数生成算法的优劣？" target="_blank" rel="noopener">http://www.zhihu.com/question/20222653</a>，在此做一个记录和总结。</p>
+<p>主要的评价标准可以参考德国联邦信息安全办公室给出了随机数发生器质量评判的四个标准。</p>
+<p>四个判别随机数序列质量的准则：</p>
+<blockquote>
+<ul>
+<li>K1 — A sequence of random numbers with a low probability of containing identical consecutive elements.</li>
+<li>K2 — A sequence of numbers which is indistinguishable from ‘true random’ numbers according to specified statistical tests.</li>
+<li>K3 — It should be impossible for any attacker (for all practical purposes) to calculate, or otherwise guess, from any given sub-sequence, any previous or future values in the sequence, nor any inner state of the generator.</li>
+<li>K4 — It should be impossible, for all practical purposes, for an attacker to calculate, or guess from an inner state of the generator, any previous numbers in the sequence or any previous inner generator states.
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/08/21/random-number/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2013/08/20/git-workflow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -481,11 +663,11 @@
 
       
         
-          <p>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/">张重骐</a></p>
+          <p>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html" target="_blank" rel="noopener">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/" target="_blank" rel="noopener">张重骐</a></p>
 <p>如果你不理解Git的设计动机，那你就会处处碰壁。知道足够多的命令和参数后，你就会强行让Git按你想的来工作，而不是按Git自己的方式来。这就像把螺丝刀当锤子用；也能把活干完，但肯定干的差极了，花费很长时间，还会弄坏螺丝刀。</p>
 <p>想想常见的Git工作流程是怎么失效的吧。</p>
 <blockquote>
-<p>从Master创建一个分支，写代码，然后把这个分支合并回Master。<br>多数时候这样做的效果会如你所愿，因为从你创建分支到合并回去之间，Master一般都会有些变动。然后，有一天当你想把一个功能 （feature）分支合并进Master的时候，而Master并没有像以往那样有变动，问题来了：这时Git不会进行合并commit，而是将 Master指向功能分支上的最新commit。（<a href="http://sandofsky.com/images/fast_forward.pdf">看图</a>）
+<p>从Master创建一个分支，写代码，然后把这个分支合并回Master。<br>多数时候这样做的效果会如你所愿，因为从你创建分支到合并回去之间，Master一般都会有些变动。然后，有一天当你想把一个功能 （feature）分支合并进Master的时候，而Master并没有像以往那样有变动，问题来了：这时Git不会进行合并commit，而是将 Master指向功能分支上的最新commit。（<a href="http://sandofsky.com/images/fast_forward.pdf" target="_blank" rel="noopener">看图</a>）
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2013/08/20/git-workflow/#more" rel="contents">
@@ -1016,8 +1198,8 @@
 
       
         
-          <p>原文链接： <a href="http://www.webdesignerdepot.com/2013/07/how-to-test-responsive-designs-for-free/">Steve Ralston</a>   翻译： <a href="http://blog.jobbole.com/"> 伯乐在线 </a> - <a href="http://blog.jobbole.com/author/jobbole/">伯乐在线读者</a><br>译文链接： <a href="http://blog.jobbole.com/45535/">http://blog.jobbole.com/45535/</a></p>
-<h2 id="deviceponsive"><a href="#deviceponsive" class="headerlink" title="deviceponsive"></a>deviceponsive</h2><p><a href="http://deviceponsive.com/">deviceponsive</a>与Am I Responsive?非常相似，它们都简单明了的展示了你的网站，而且对设备而言，都没有可见的控制和选项。所有设备在一页长网页上同时显示。你能够通 过改变背景颜色和嵌入你自己的logo来定制这个网站的页眉，之后截屏分享出去，这十分有趣。从某种方式来说，当你向顾客分享你的截屏的时候，也就帮这个 网站打了广告。</p>
+          <p>原文链接： <a href="http://www.webdesignerdepot.com/2013/07/how-to-test-responsive-designs-for-free/" target="_blank" rel="noopener">Steve Ralston</a>   翻译： <a href="http://blog.jobbole.com/" target="_blank" rel="noopener"> 伯乐在线 </a> - <a href="http://blog.jobbole.com/author/jobbole/" target="_blank" rel="noopener">伯乐在线读者</a><br>译文链接： <a href="http://blog.jobbole.com/45535/" target="_blank" rel="noopener">http://blog.jobbole.com/45535/</a></p>
+<h2 id="deviceponsive"><a href="#deviceponsive" class="headerlink" title="deviceponsive"></a>deviceponsive</h2><p><a href="http://deviceponsive.com/" target="_blank" rel="noopener">deviceponsive</a>与Am I Responsive?非常相似，它们都简单明了的展示了你的网站，而且对设备而言，都没有可见的控制和选项。所有设备在一页长网页上同时显示。你能够通 过改变背景颜色和嵌入你自己的logo来定制这个网站的页眉，之后截屏分享出去，这十分有趣。从某种方式来说，当你向顾客分享你的截屏的时候，也就帮这个 网站打了广告。</p>
 <p>该网站所提供设备及其屏幕大小： _Macbook——1280×800 _iPad portrait——768×1024 _iPad landscape——1024×768 _Kindle portrait——600×1024 _Kindle landscape——1024×600 _iPhone portrait——320×480 _iPhone landscape——480×320 _Galasy portrait——240×320 * Galaxy landscape——320×240</p>
 <p>使用这些工具时，大部分情况下，滑动条会在较小的设备上显示。然而在实际的设备上，滑动条不会显示。不过为了测试试图能在不支持触控的设备上也能滑动，必须要做出一些让步。</p>
           <!--noindex-->
@@ -1543,13 +1725,13 @@
 
       
         
-          <p>原文出处： <a href="http://www.tecmint.com/useful-linux-commands-for-newbies/">Tecmit</a>   译文出处： <a href="http://www.oschina.net/translate/useful-linux-commands-for-newbies">oschina</a></p>
+          <p>原文出处： <a href="http://www.tecmint.com/useful-linux-commands-for-newbies/" target="_blank" rel="noopener">Tecmit</a>   译文出处： <a href="http://www.oschina.net/translate/useful-linux-commands-for-newbies" target="_blank" rel="noopener">oschina</a></p>
 <p><div id="ad1"></div><br>你打算从Windows换到Linux上来，还是你刚好换到Linux上来？哎哟！！！我说什么呢，是什么原因你就出现我的世界里了。从我以往的经 验来说，当我刚使用Linux，命令，终端啊什么的，吓了我一跳。我担心该记住多少命令，来帮助我完成所有任务。毫无疑问，在线文档，书籍，man pages以及社区帮了我一个大忙，但是我还是坚信有那么一篇文章记录了如何简单学习和理解命令的秘籍。这激发了我掌握Linux和使它容易使用的积极 性。本文就是通往那里的阶梯。</p>
 <h1 id="1-ls命令"><a href="#1-ls命令" class="headerlink" title="1. ls命令"></a>1. ls命令</h1><p>ls命令是列出目录内容(List Directory Contents)的意思。运行它就是列出文件夹里的内容，可能是文件也可能是文件夹。</p>
-<p><pre class="lang:default decode:true">root@tecmint:~# ls</p>
-<p>Android-Games                     Music<br>Pictures                          Public<br>Desktop                           Tecmint.com<br>Documents                         TecMint-Sync<br>Downloads                         Templates</pre><br>“ls -l”命令已详情模式(long listing fashion)列出文件夹的内容。</p>
-<p><pre class="lang:default decode:true ">root@tecmint:~# ls -l</p>
-<p>total 40588<br>drwxrwxr-x 2 ravisaive ravisaive     4096 May  8 01:06 Android Games<br>drwxr-xr-x 2 ravisaive ravisaive     4096 May 15 10:50 Desktop<br>drwxr-xr-x 2 ravisaive ravisaive     4096 May 16 16:45 Documents<br>drwxr-xr-x 6 ravisaive ravisaive     4096 May 16 14:34 Downloads<br>drwxr-xr-x 2 ravisaive ravisaive     4096 Apr 30 20:50 Music<br>drwxr-xr-x 2 ravisaive ravisaive     4096 May  9 17:54 Pictures<br>drwxrwxr-x 5 ravisaive ravisaive     4096 May  3 18:44 Tecmint.com<br>drwxr-xr-x 2 ravisaive ravisaive     4096 Apr 30 20:50 Templates</pre><br>&nbsp;</p>
+<p><pre class="lang:default decode:true">root@tecmint:~# ls</pre></p>
+<p>Android-Games                     Music<br>Pictures                          Public<br>Desktop                           Tecmint.com<br>Documents                         TecMint-Sync<br>Downloads                         Templates<br>“ls -l”命令已详情模式(long listing fashion)列出文件夹的内容。</p>
+<p><pre class="lang:default decode:true ">root@tecmint:~# ls -l</pre></p>
+<p>total 40588<br>drwxrwxr-x 2 ravisaive ravisaive     4096 May  8 01:06 Android Games<br>drwxr-xr-x 2 ravisaive ravisaive     4096 May 15 10:50 Desktop<br>drwxr-xr-x 2 ravisaive ravisaive     4096 May 16 16:45 Documents<br>drwxr-xr-x 6 ravisaive ravisaive     4096 May 16 14:34 Downloads<br>drwxr-xr-x 2 ravisaive ravisaive     4096 Apr 30 20:50 Music<br>drwxr-xr-x 2 ravisaive ravisaive     4096 May  9 17:54 Pictures<br>drwxrwxr-x 5 ravisaive ravisaive     4096 May  3 18:44 Tecmint.com<br>drwxr-xr-x 2 ravisaive ravisaive     4096 Apr 30 20:50 Templates<br>&nbsp;</p>
 <p>“ls -a”命令会列出文件夹里的所有内容，包括以”.”开头的隐藏文件。</p>
 <p>注意：在Linux中，文件以“.”开头的就是隐藏文件，并且每个文件，文件夹，设备或者命令都是以文件对待。ls -l 命令输出：</p>
 <ol>
@@ -1559,7 +1741,7 @@
 <li>上面例子中的第二个ravisaive代表了文件文件属于用户组ravisaive</li>
 <li>4096 代表了文件大小为4096字节.</li>
 <li>May 8 01:06 代表了文件最后一次修改的日期和时间.</li>
-<li>最后面的就是文件/文件夹的名字<br>更多”ls”例子请查看 <a href="http://www.tecmint.com/15-basic-ls-command-examples-in-linux/">15 linux中ls命令实例</a></li>
+<li>最后面的就是文件/文件夹的名字<br>更多”ls”例子请查看 <a href="http://www.tecmint.com/15-basic-ls-command-examples-in-linux/" target="_blank" rel="noopener">15 linux中ls命令实例</a></li>
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1737,7 +1919,7 @@
           
             <p>WordPress用了有一段时间，感叹其插件功能的强大，对于很多新手或者像我这样对php代码不是很熟悉的人来说，确实节省了许多工作，这里简单介绍几个时下比较流行或者说个人比较推荐的插件：</p>
 <h2 id="WordPress-SEO"><a href="#WordPress-SEO" class="headerlink" title="WordPress SEO"></a>WordPress SEO</h2><blockquote>
-<p>The first true all-in-one SEO solution for WordPress, including on-page content analysis, XML sitemaps and much more.<br>功能很强大的SEO（<a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank" rel="external">Search engine optimization</a>），有中文化的版本，也有很方便的设置向导和引导，在发布文章时也可以进行SEO的分析，另外，内置了站点地图的功能，其他针对SEO的设置也很全面。</p>
+<p>The first true all-in-one SEO solution for WordPress, including on-page content analysis, XML sitemaps and much more.<br>功能很强大的SEO（<a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank" rel="noopener">Search engine optimization</a>），有中文化的版本，也有很方便的设置向导和引导，在发布文章时也可以进行SEO的分析，另外，内置了站点地图的功能，其他针对SEO的设置也很全面。</p>
 </blockquote>
 <h2 id="WP-Super-Cache"><a href="#WP-Super-Cache" class="headerlink" title="WP Super Cache"></a>WP Super Cache</h2><blockquote>
 <p>Very fast caching plugin for WordPress.<br>必备插件之一。是当前最高效也是最灵活的 WordPress 静态缓存插件。它把博客的网页直接生成 静态HTML 文件，就不用解析PHP脚本，从而使得你的 WordPress 博客显著提速。</p>
@@ -1961,182 +2143,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2013/07/01/php-extension/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingshan Lei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/lms.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mingshan Lei's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/07/01/php-extension/" itemprop="url">
-                  PHP扩展相关
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2013-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2013-07-01T00:00:00+08:00">2013-07-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2016-07-25 17:29:29" itemprop="dateModified" datetime="2016-07-25T17:29:29+08:00">2016-07-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="PHP扩展的介绍"><a href="#PHP扩展的介绍" class="headerlink" title="PHP扩展的介绍"></a>PHP扩展的介绍</h2><p>下面的内容大部分搜集与网络，或来自书籍的翻译，由我加以整理而成。   </p>
-<p>PHP取得成功的一个重要原因就是他拥有大量的可用扩展。Web开发者无论有何种需求，这种需求很有可能在PHP发行包里找到。PHP发行包包括支持各种数据库，图形文件格式，压缩，XML技术扩展在内的众多扩展。   </p>
-<p>有两个理由需要自己编写PHP扩展。第一个理由是：PHP需要支持一项她还未支持的技术。这通常包括包裹一些现成的C函数库，以便提供PHP接口。例如，如果一个叫FooBase的数据库已推出市场，你需要建立一个PHP扩展帮助你从PHP里调用FooBase的C函数库。这个工作可能仅由一个人完成，然后被整个PHP社区共享（如果你愿意的话）。第二个不是很普遍的理由是：你需要从性能或功能的原因考虑来编写一些商业逻辑。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/07/01/php-extension/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2188,7 +2194,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -488,11 +488,11 @@
       
 
       
-        <p>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html" target="_blank" rel="external">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/" target="_blank" rel="external">张重骐</a></p>
+        <p>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html" target="_blank" rel="noopener">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/" target="_blank" rel="noopener">张重骐</a></p>
 <p>如果你不理解Git的设计动机，那你就会处处碰壁。知道足够多的命令和参数后，你就会强行让Git按你想的来工作，而不是按Git自己的方式来。这就像把螺丝刀当锤子用；也能把活干完，但肯定干的差极了，花费很长时间，还会弄坏螺丝刀。</p>
 <p>想想常见的Git工作流程是怎么失效的吧。</p>
 <blockquote>
-<p>从Master创建一个分支，写代码，然后把这个分支合并回Master。<br>多数时候这样做的效果会如你所愿，因为从你创建分支到合并回去之间，Master一般都会有些变动。然后，有一天当你想把一个功能 （feature）分支合并进Master的时候，而Master并没有像以往那样有变动，问题来了：这时Git不会进行合并commit，而是将 Master指向功能分支上的最新commit。（<a href="http://sandofsky.com/images/fast_forward.pdf" target="_blank" rel="external">看图</a>）<a id="more"></a></p>
+<p>从Master创建一个分支，写代码，然后把这个分支合并回Master。<br>多数时候这样做的效果会如你所愿，因为从你创建分支到合并回去之间，Master一般都会有些变动。然后，有一天当你想把一个功能 （feature）分支合并进Master的时候，而Master并没有像以往那样有变动，问题来了：这时Git不会进行合并commit，而是将 Master指向功能分支上的最新commit。（<a href="http://sandofsky.com/images/fast_forward.pdf" target="_blank" rel="noopener">看图</a>）<a id="more"></a></p>
 </blockquote>
 <p>不幸的是，你的功能分支有用来备份代码的commit（作者称之为checkpoint commit），这些经常进行的commit对应的代码可能处于不稳定状态！而这些commit现在没法和Master上那些稳定的commit区分开来 了。当你想回滚的时候，很容易发生灾难性后果。</p>
 <p>于是你就记住了：“当合并功能分支的时候，加上 -no-ff 选项强制进行一次全新的commit。”嗯，这么做好像解决问题了，那么继续。</p>
@@ -511,7 +511,7 @@
 <p>如果团队规模变大或是用户规模扩大了，你就需要些工具和技巧来做约束，包括自动化测试，代码检查，以及干净的版本历史。</p>
 <p>功能分支貌似是一个不错的折中选择，能够基本的并行开发问题。当你写代码时候，可以不用怎么在意集成的问题，但它总有烦到你的时候。</p>
 <p>当你的项目规模足够大的时候，简单的branch/commit/merge工作流程就出问题了。缝缝补补已经不行了。这时你需要一个干净的版本历史库。</p>
-<p>Git之所以是革命性的，就是因为它能同时给你这两方面的好处。你可以在原型开发过程中经常备份变动，而<a href="http://www.amazon.cn/gp/product/B007XPTAIS/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=vastwork-23&amp;linkCode=as2&amp;camp=536&amp;creative=3200&amp;creativeASIN=B007XPTAIS" title="搞定(套装共3册) " target="_blank" rel="external">搞定</a>后只需要交付一个干净的版本历史。</p>
+<p>Git之所以是革命性的，就是因为它能同时给你这两方面的好处。你可以在原型开发过程中经常备份变动，而<a href="http://www.amazon.cn/gp/product/B007XPTAIS/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=vastwork-23&amp;linkCode=as2&amp;camp=536&amp;creative=3200&amp;creativeASIN=B007XPTAIS" title="搞定(套装共3册) " target="_blank" rel="noopener">搞定</a>后只需要交付一个干净的版本历史。</p>
 <p>&nbsp;</p>
 <p><strong>工作流程</strong></p>
 <p>考虑两种分支：公共的和私有的。</p>
@@ -533,7 +533,7 @@
 <p><pre class="lang:default decode:true ">git checkout master<br>git merge –squash private_feature_branch<br>git commit -v</pre><br>然后我会花一分钟时间写个详细的commit日志。</p>
 <p>2）较大的工作</p>
 <p>有时候一个功能可以延续好几天，伴有大量的小的commit。</p>
-<p>我认为这些改变应该被分解为一些更小粒度的变更，所以squash作为工具来说就有点儿太糙了。（根据经验我一般会问，“这样能让<a href="http://blog.jobbole.com/438/" title="Eric Lippert：阅读代码真的很难" target="_blank" rel="external">阅读代码</a>更容易吗？”）</p>
+<p>我认为这些改变应该被分解为一些更小粒度的变更，所以squash作为工具来说就有点儿太糙了。（根据经验我一般会问，“这样能让<a href="http://blog.jobbole.com/438/" title="Eric Lippert：阅读代码真的很难" target="_blank" rel="noopener">阅读代码</a>更容易吗？”）</p>
 <p>如果我的checkpoint commits之后有合理的更新，我可以使用rebase的交互模式。</p>
 <p>交互模式很强大。你可以用它来编辑、分解、重新排序、合并以前的commit。</p>
 <p>在我的功能分支上：</p>
@@ -558,7 +558,7 @@
 <li><div><code>基于公共分支创建一个私有分支。</code></div></li>
 <li>经常向这个私有分支commit代码。</li>
 <li><div><code>一旦你的代码完善了，就清理掉下私有分支的历史。</code></div><br><div></div><br><div></div></li>
-<li><code>将干净的私有分支merge到公共分支中。</code><br>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html" target="_blank" rel="external">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/" target="_blank" rel="external">张重骐</a></li>
+<li><code>将干净的私有分支merge到公共分支中。</code><br>英文原文：<a href="http://sandofsky.com/blog/git-workflow.html" target="_blank" rel="noopener">Understanding the Git workflow</a>   编译： <a href="http://blog.jobbole.com/24379/" target="_blank" rel="noopener">张重骐</a></li>
 </ol>
 
       
@@ -672,7 +672,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
