@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Mingshan Lei&#39;s Blog">
 <meta property="og:description" content="JDK 11即将于09/25正式发布，包含了诸多新的特性，主要的新特性JEP(JDK Enhancement Proposal 特性增强提议)有17个，参见下表  181: Nest-Based Access Control 309: Dynamic Class-File Constants 315: Improve Aarch64 Intrinsics 318: Epsilon: A No-Op">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-03T09:28:48.633Z">
+<meta property="og:updated_time" content="2018-09-03T09:31:43.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDK11-ZGC">
 <meta name="twitter:description" content="JDK 11即将于09/25正式发布，包含了诸多新的特性，主要的新特性JEP(JDK Enhancement Proposal 特性增强提议)有17个，参见下表  181: Nest-Based Access Control 309: Dynamic Class-File Constants 315: Improve Aarch64 Intrinsics 318: Epsilon: A No-Op">
@@ -412,7 +412,7 @@
                 
               
 
-              <time title="创建时间：2018-09-03 13:52:32 / 修改时间：17:28:48" itemprop="dateCreated datePublished" datetime="2018-09-03T13:52:32+08:00">2018-09-03</time>
+              <time title="创建时间：2018-09-03 13:52:32 / 修改时间：17:31:43" itemprop="dateCreated datePublished" datetime="2018-09-03T13:52:32+08:00">2018-09-03</time>
             
 
             
@@ -505,7 +505,7 @@
 <li>重分配/压缩（Relocation/Compaction）</li>
 </ul>
 <p>ZGC的核心设计原则是使用负载屏障（load barrier）与有色指针对象（colored object pointers，colored oops）组合。这使得ZGC能够进行并发操作，比如对象的重定位，Java应用程序线程正在运行时，从Java线程的角度，在Java对象中加载引用字段的行为是会受到负载障碍的影响。除了对象地址以外，有色对象指针包含负载障碍所需的其他信息，用来确定Java线程在使用指针之前是否需要执行某些操作，例如，该对象可能已被重新定位，负载屏障将检测到这种情况并采取合适的行为。</p>
-<p><a href="http://openjdk.java.net/projects/jdk/11/" target="_blank" rel="noopener">JDK 11</a><br><a href="http://openjdk.java.net/jeps/333" target="_blank" rel="noopener">JEP 333: ZGC: A Scalable Low-Latency Garbage Collector</a><br><a href="https://wiki.openjdk.java.net/display/zgc/Main" target="_blank" rel="noopener">OpenJDK Wiki About ZGC</a></p>
+<p>参考文档：<br><a href="http://openjdk.java.net/projects/jdk/11/" target="_blank" rel="noopener">JDK 11</a><br><a href="http://openjdk.java.net/jeps/333" target="_blank" rel="noopener">JEP 333: ZGC: A Scalable Low-Latency Garbage Collector</a><br><a href="https://wiki.openjdk.java.net/display/zgc/Main" target="_blank" rel="noopener">OpenJDK Wiki About ZGC</a></p>
 
       
     </div>
