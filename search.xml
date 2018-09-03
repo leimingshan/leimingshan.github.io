@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JDK11-ZGC]]></title>
+    <url>%2F2018%2F09%2F03%2FJDK11-ZGC%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[推荐计算机科学书籍]]></title>
     <url>%2F2018%2F08%2F30%2Fdouban-computer-books%2F</url>
     <content type="text"><![CDATA[值得一读的高分计算机书籍：https://www.douban.com/doulist/37472347/?start=0&amp;sort=seq&amp;playable=0&amp;sub_type= 从我的角度来看呢，高级程序员推荐必读 计算机基础深入理解计算机系统（英文版·第2版） 网络相关HTTP权威指南 图解HTTP TCP/IP详解 卷1：协议 操作系统现代操作系统（原书第4版） Operating Systems 在线免费版本 数据库高性能MySQL 算法算法（第4版） 算法导论（原书第3版） Java]]></content>
@@ -324,10 +335,9 @@
   <entry>
     <title><![CDATA[Spring mvc无法处理put参数的问题]]></title>
     <url>%2F2015%2F05%2F21%2Fspring-mvc-put-params%2F</url>
-    <content type="text"><![CDATA[最近在用Spring MVC做一个Restful的Web Service，在HTTP的各类method中，除了非常常用的GET和POST之外，还有PUT、DELETE、PATCH等可以使用。这次遇到问题的是PUT方法，在REST风格中，PUT一般表示对原有资源的修改，但是在CLIENT端编程发出PUT请求后，却总是会遇到400错误，在用另外一个REST测试工具（IDEA中集成）的时候却一切正常。 分析了一下原因，发现几点： 使用的测试工具在发出PUT请求时，参数是带在url尾部的，而不是放在body中，类似于/users/123?name=123&amp;gender=456这样的形式，Spring mvc在处理这种形式的PUT请求时是没有问题的。 在编写Client的过程中，发送HTTP PUT请求的时候，一般会把参数放入Request Body中，以key:value的格式发送，本质上是json string的格式，此时，在Spring mvc中，通过注解@RequestParam和@ModelAttribute都不能得到请求数据，问题的原因不在Spring，即使使用原始Servlet的request.getParameter也是得不到数据的。解决方法主要有两种： Spring mvc中处理参数时，改用注解@RequestBody，这里得到的是请求字符串，需要自己进行转换，得到对应的参数信息，Spring这里也提供了对应的转换方法，处理起来并不复杂。 自己增加一个filte，来专门处理HTTP中的PUT请求，这里建议参考该文章。关键配置部分如下：&lt;filter&gt;&lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt;&lt;filter-class&gt;org.springframework.web.filter.HttpPutFormContentFilter&lt;/filter-class&gt;&lt;/filter&gt;&lt;filter-mapping&gt;&lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt;&lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt;&nbsp; &nbsp;]]></content>
+    <content type="text"><![CDATA[最近在用Spring MVC做一个Restful的Web Service，在HTTP的各类method中，除了非常常用的GET和POST之外，还有PUT、DELETE、PATCH等可以使用。这次遇到问题的是PUT方法，在REST风格中，PUT一般表示对原有资源的修改，但是在CLIENT端编程发出PUT请求后，却总是会遇到400错误，在用另外一个REST测试工具（IDEA中集成）的时候却一切正常。 分析了一下原因，发现几点： 使用的测试工具在发出PUT请求时，参数是带在url尾部的，而不是放在body中，类似于/users/123?name=123&amp;gender=456这样的形式，Spring mvc在处理这种形式的PUT请求时是没有问题的。 在编写Client的过程中，发送HTTP PUT请求的时候，一般会把参数放入Request Body中，以key:value的格式发送，本质上是json string的格式，此时，在Spring mvc中，通过注解@RequestParam和@ModelAttribute都不能得到请求数据，问题的原因不在Spring，即使使用原始Servlet的request.getParameter也是得不到数据的。解决方法主要有两种： Spring mvc中处理参数时，改用注解@RequestBody，这里得到的是请求字符串，需要自己进行转换，得到对应的参数信息，Spring这里也提供了对应的转换方法，处理起来并不复杂。 自己增加一个filter，来专门处理HTTP中的PUT请求，这里建议参考该文章。关键配置部分如下： 12345678&lt;filter&gt; &lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.HttpPutFormContentFilter&lt;/filter-class&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;httpPutFormFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&lt;/filter-mapping&gt;]]></content>
       <categories>
         <category>Java</category>
-        <category>网站</category>
       </categories>
       <tags>
         <tag>Java</tag>

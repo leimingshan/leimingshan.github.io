@@ -366,6 +366,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2016/03/08/mysql-database-character-set-encoding/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingshan Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/lms.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mingshan Lei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/08/mysql-database-character-set-encoding/" itemprop="url">
+                  MySQL database character set encoding
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-03-08 11:28:16" itemprop="dateCreated datePublished" datetime="2016-03-08T11:28:16+08:00">2016-03-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>使用MySQL的时候很可能遇到字符集编码相关的问题，尤其是涉及到数据和程序中有中文字符的时候，如果不注意，可能遇到乱码或一些其他的错误。</p>
+<p>本文详细解释MySQL相关的字符集编码设置和排序规则相关的问题。</p>
+<h1 id="MySQL-Server的默认字符集配置"><a href="#MySQL-Server的默认字符集配置" class="headerlink" title="MySQL Server的默认字符集配置"></a>MySQL Server的默认字符集配置</h1><p>在默认安装MySQL的时候，MySQL Server使用的是英文字符集，服务端的默认配置一般是</p>
+<p><span style="text-decoration: underline;">character-set-server=latin1</span></p>
+<p><span style="text-decoration: underline;">collation-server =latin1_swedish_ci</span></p>
+<p>注意latin1字符集是不支持中文的。第一行的character-set当然是指字符集，第二行的collation是指对应该字符集的比较和排序规则。</p>
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/charset-server.html" target="_blank" rel="noopener">charset-server参考手册</a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/03/08/mysql-database-character-set-encoding/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2016/03/04/gradle-sonarqube/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1949,194 +2129,11 @@ sudo apt-get --purge autoremove -y</pre>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/10/03/win10-kms-openwrt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingshan Lei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/lms.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mingshan Lei's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/10/03/win10-kms-openwrt/" itemprop="url">
-                  win10-kms-openwrt
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2015-10-03 22:58:33" itemprop="dateCreated datePublished" datetime="2015-10-03T22:58:33+08:00">2015-10-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/网站/" itemprop="url" rel="index"><span itemprop="name">网站</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="http://www.right.com.cn/forum/thread-174651-1-2.html" target="_blank" rel="noopener">http://www.right.com.cn/forum/thread-174651-1-2.html</a></p>
-<p><a href="http://www.right.com.cn/forum/thread-174287-1-1.html" target="_blank" rel="noopener">http://www.right.com.cn/forum/thread-174287-1-1.html</a></p>
-<p><a href="http://www.right.com.cn/forum/thread-159625-1-1.html" target="_blank" rel="noopener">http://www.right.com.cn/forum/thread-159625-1-1.html</a></p>
-<p>openwrt luci</p>
-<p>具体安装位置如下：</p>
-<p><pre class="lang:default decode:true ">/etc/vlmcsd.ini<br>/usr/sbin/vlmcsd<br></pre><br><a href="http://www.leimingshan.com/wp-content/uploads/2015/10/vlmcsd-svn812-2015-08-30-Hotbird64.7z" target="_blank" rel="noopener">vlmcsd-svn812-2015-08-30-Hotbird64</a></p>
-<p>Password: 2015</p>
-<p>具体激活使用方法：</p>
-<p><pre class="lang:default decode:true ">slmgr.vbs /skms 192.168.1.1<br>slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX<br>slmgr.vbs /ato<br>slmgr.vbs /xpr</pre></p>
-<p>cd C:\Program Files\Microsoft Office\Office15<br>cscript ospp.vbs /sethst:192.168.1.1<br>cscript ospp.vbs /act<br>cscript ospp.vbs /dstatus<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/10/03/win10-kms-openwrt/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2183,7 +2180,7 @@ sudo apt-get --purge autoremove -y</pre>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">70</span>
+                    <span class="site-state-item-count">71</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2220,9 +2217,7 @@ sudo apt-get --purge autoremove -y</pre>
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
