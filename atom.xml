@@ -129,6 +129,29 @@
   </entry>
   
   <entry>
+    <title>MongoDB-ObjectId</title>
+    <link href="http://leimingshan.github.io/2018/03/04/MongoDB-ObjectId/"/>
+    <id>http://leimingshan.github.io/2018/03/04/MongoDB-ObjectId/</id>
+    <published>2018-03-04T06:15:35.000Z</published>
+    <updated>2018-09-04T06:32:28.232Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于分布式唯一ID的生成，有几种比较好的思路，划分命名空间并行生成，是现在比较流行的一种方式，例如Twitter提出的非常有名的<br>Snowflake算法。与之类似的是，在很早之前，MongoDB的ObjectId生成算法就是类似的这种思路，在MongoDB的0.9.10(2009年8月24日发布)版本中就已经采用。</p><p>在最新的MongoDB-Java-Driver文档中，可以看到ObjectId的相关API说明。参考资料如下：<br><a href="http://mongodb.github.io/mongo-java-driver/3.8/javadoc/org/bson/types/ObjectId.html" target="_blank" rel="noopener">Class ObjectId</a><br><a href="https://github.com/mongodb/mongo-java-driver/blob/master/bson/src/main/org/bson/types/ObjectId.java" target="_blank" rel="noopener">Source code - ObjectId.java</a><br><a id="more"></a></p><p>具体来说，12字节的MongoDB ObjectId的结构是</p><ul><li>a 4-byte value representing the seconds since the Unix epoch</li><li>a 3-byte machine identifier</li><li>a 2-byte process id</li><li>a 3-byte counter, starting with a random value</li></ul><p>可以看出，最小的划分粒度是 秒*进程实例，<br>对于单个进程来说，每秒的ID容量是最后一个字段的3个字节，24bit，即大约16777216个ID，这个容量已经可以满足大部分情况下的ID生成需求了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对于分布式唯一ID的生成，有几种比较好的思路，划分命名空间并行生成，是现在比较流行的一种方式，例如Twitter提出的非常有名的&lt;br&gt;Snowflake算法。与之类似的是，在很早之前，MongoDB的ObjectId生成算法就是类似的这种思路，在MongoDB的0.9.10(2009年8月24日发布)版本中就已经采用。&lt;/p&gt;
+&lt;p&gt;在最新的MongoDB-Java-Driver文档中，可以看到ObjectId的相关API说明。参考资料如下：&lt;br&gt;&lt;a href=&quot;http://mongodb.github.io/mongo-java-driver/3.8/javadoc/org/bson/types/ObjectId.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Class ObjectId&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/mongodb/mongo-java-driver/blob/master/bson/src/main/org/bson/types/ObjectId.java&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Source code - ObjectId.java&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://leimingshan.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="MongoDB" scheme="http://leimingshan.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Docker-Basic</title>
     <link href="http://leimingshan.github.io/2018/01/25/Docker-Basic/"/>
     <id>http://leimingshan.github.io/2018/01/25/Docker-Basic/</id>
@@ -525,31 +548,6 @@ FLUSH PRIVILEGES;&lt;/pre&gt;
     
     
       <category term="develop" scheme="http://leimingshan.github.io/tags/develop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL FIND_IN_SET Usage</title>
-    <link href="http://leimingshan.github.io/2016/01/04/mysql-find-in-set-usage/"/>
-    <id>http://leimingshan.github.io/2016/01/04/mysql-find-in-set-usage/</id>
-    <published>2016-01-04T08:04:59.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>MySQL手册中FIND_IN_SET函数的语法:</p><p>FIND_IN_SET(str, strlist)</p><p>Returns a value in the range of 1 to <em><code>N</code></em> if the string <em><code>str</code></em> is in the string list <em><code>strlist</code></em> consisting of <em><code>N</code></em> substrings. A string list is a string composed of substrings separated by <span class="quote">“<span class="quote"><code>,</code></span>”</span> characters. If the first argument is a constant string and the second is a column of type <a href="http://dev.mysql.com/doc/refman/5.7/en/set.html" title="11.4.5 The SET Type" target="_blank" rel="noopener"><code>SET</code></a>, the <a href="http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_find-in-set" target="_blank" rel="noopener"><code>FIND_IN_SET()</code></a> function is optimized to use bit arithmetic. Returns <code>0</code> if <em><code>str</code></em> is not in <em><code>strlist</code></em> or if <em><code>strlist</code></em> is the empty string. Returns <code>NULL</code> if either argument is <code>NULL</code>. This function does not work properly if the first argument contains a comma (<span class="quote">“<span class="quote"><code>,</code></span>”</span>) character.</p><p>假如字符串str 在由N 子链组成的字符串列表strlist 中，则返回值的范围在 1 到 N 之间。<br>一个字符串列表就是一个由一些被‘,’符号分开的子链组成的字符串。如果第一个参数是一个常数字符串，而第二个是type SET列，则   FIND_IN_SET() 函数被优化，使用比特计算。<br>如果str不在strlist 或strlist 为空字符串，则返回值为 0 。如任意一个参数为NULL，则返回值为 NULL。这个函数在第一个参数包含一个逗号(‘,’)时将无法正常运行。<a id="more"></a></p><p>例如：</p><p><pre class="lang:default decode:true ">mysql&gt; SELECT FIND_IN_SET(‘b’,’a,b,c,d’);<br>        -&gt; 2</pre><br><a href="http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_substring-index" target="_blank" rel="noopener"><code>SUBSTRING_INDEX(_&lt;code&gt;str</code><em>,</em><code>delim</code><em>,</em><code>count</code>_)</a></p><p>Returns the substring from string <em><code>str</code></em> before <em><code>count</code></em> occurrences of the delimiter <em><code>delim</code></em>. If <em><code>count</code></em> is positive, everything to the left of the final delimiter (counting from the left) is returned. If <em><code>count</code></em> is negative, everything to the right of the final delimiter (counting from the right) is returned. <a href="http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_substring-index" target="_blank" rel="noopener"><code>SUBSTRING_INDEX()</code></a> performs a case-sensitive match when searching for <em><code>delim</code></em>.</p><p><pre class="lang:default decode:true ">mysql&gt; SELECT SUBSTRING_INDEX(‘www.mysql.com’, ‘.’, 2);<br>        -&gt; ‘www.mysql’<br>mysql&gt; SELECT SUBSTRING_INDEX(‘www.mysql.com’, ‘.’, -2);<br>        -&gt; ‘mysql.com’</pre><br>This function is multibyte safe.</p><p>&nbsp;</p><p>MySQL中使用WHERE IN进行条件查询的时候，一般情况下，查询的结果和IN中值的顺序并不一致。</p><p>有两种方式可以对IN查询的结果进行排序。一种是ORDER BY FIND_IN_SET，另外一种是ORDER BY SUBSTRING_INDEX。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;MySQL手册中FIND_IN_SET函数的语法:&lt;/p&gt;
-&lt;p&gt;FIND_IN_SET(str, strlist)&lt;/p&gt;
-&lt;p&gt;Returns a value in the range of 1 to &lt;em&gt;&lt;code&gt;N&lt;/code&gt;&lt;/em&gt; if the string &lt;em&gt;&lt;code&gt;str&lt;/code&gt;&lt;/em&gt; is in the string list &lt;em&gt;&lt;code&gt;strlist&lt;/code&gt;&lt;/em&gt; consisting of &lt;em&gt;&lt;code&gt;N&lt;/code&gt;&lt;/em&gt; substrings. A string list is a string composed of substrings separated by &lt;span class=&quot;quote&quot;&gt;“&lt;span class=&quot;quote&quot;&gt;&lt;code&gt;,&lt;/code&gt;&lt;/span&gt;”&lt;/span&gt; characters. If the first argument is a constant string and the second is a column of type &lt;a href=&quot;http://dev.mysql.com/doc/refman/5.7/en/set.html&quot; title=&quot;11.4.5 The SET Type&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;code&gt;SET&lt;/code&gt;&lt;/a&gt;, the &lt;a href=&quot;http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_find-in-set&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;code&gt;FIND_IN_SET()&lt;/code&gt;&lt;/a&gt; function is optimized to use bit arithmetic. Returns &lt;code&gt;0&lt;/code&gt; if &lt;em&gt;&lt;code&gt;str&lt;/code&gt;&lt;/em&gt; is not in &lt;em&gt;&lt;code&gt;strlist&lt;/code&gt;&lt;/em&gt; or if &lt;em&gt;&lt;code&gt;strlist&lt;/code&gt;&lt;/em&gt; is the empty string. Returns &lt;code&gt;NULL&lt;/code&gt; if either argument is &lt;code&gt;NULL&lt;/code&gt;. This function does not work properly if the first argument contains a comma (&lt;span class=&quot;quote&quot;&gt;“&lt;span class=&quot;quote&quot;&gt;&lt;code&gt;,&lt;/code&gt;&lt;/span&gt;”&lt;/span&gt;) character.&lt;/p&gt;
-&lt;p&gt;假如字符串str 在由N 子链组成的字符串列表strlist 中，则返回值的范围在 1 到 N 之间。&lt;br&gt;一个字符串列表就是一个由一些被‘,’符号分开的子链组成的字符串。如果第一个参数是一个常数字符串，而第二个是type SET列，则   FIND_IN_SET() 函数被优化，使用比特计算。&lt;br&gt;如果str不在strlist 或strlist 为空字符串，则返回值为 0 。如任意一个参数为NULL，则返回值为 NULL。这个函数在第一个参数包含一个逗号(‘,’)时将无法正常运行。
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="http://leimingshan.github.io/tags/MySQL/"/>
     
   </entry>
   
