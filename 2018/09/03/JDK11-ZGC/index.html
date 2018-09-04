@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Mingshan Lei&#39;s Blog">
 <meta property="og:description" content="JDK 11即将于09/25正式发布，包含了诸多新的特性，主要的新特性JEP(JDK Enhancement Proposal 特性增强提议)有17个，参见下表  181: Nest-Based Access Control 309: Dynamic Class-File Constants 315: Improve Aarch64 Intrinsics 318: Epsilon: A No-Op">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-03T09:31:43.236Z">
+<meta property="og:updated_time" content="2018-09-04T06:12:29.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDK11-ZGC">
 <meta name="twitter:description" content="JDK 11即将于09/25正式发布，包含了诸多新的特性，主要的新特性JEP(JDK Enhancement Proposal 特性增强提议)有17个，参见下表  181: Nest-Based Access Control 309: Dynamic Class-File Constants 315: Improve Aarch64 Intrinsics 318: Epsilon: A No-Op">
@@ -412,12 +412,24 @@
                 
               
 
-              <time title="创建时间：2018-09-03 13:52:32 / 修改时间：17:31:43" itemprop="dateCreated datePublished" datetime="2018-09-03T13:52:32+08:00">2018-09-03</time>
+              <time title="创建时间：2018-09-03 13:52:32" itemprop="dateCreated datePublished" datetime="2018-09-03T13:52:32+08:00">2018-09-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-04 14:12:29" itemprop="dateModified" datetime="2018-09-04T14:12:29+08:00">2018-09-04</time>
               
             
           </span>
@@ -497,6 +509,14 @@
 <li>336: Deprecate the Pack200 Tools and API</li>
 </ul>
 <p>其中，非常值得大家关注的是JEP-333，ZGC，一个可扩展的低延迟垃圾回收器。ZGC暂时是实验性质的。<br><a id="more"></a></p>
+<p>ZGC的目标：</p>
+<ul>
+<li>GC停顿(Stop the wordld)时间不应超过10ms</li>
+<li>能够处理从几百MB到几TB大小的JAVA堆</li>
+<li>与G1相比，吞吐量下降不超过15%</li>
+<li>为未来的GC功能和优化利用有色对象指针(colored oops)和加载屏障(load barriers)奠定基础</li>
+<li>初始只支持Linux/x64</li>
+</ul>
 <p>ZGC可以并发执行以下GC任务/阶段：</p>
 <ul>
 <li>标记（Marking）</li>
@@ -504,7 +524,15 @@
 <li>重新分配集的选择（Relocation set selection）</li>
 <li>重分配/压缩（Relocation/Compaction）</li>
 </ul>
+<p>ZGC的特点描述：</p>
+<ul>
+<li>concurrent</li>
+<li>single-generation</li>
+<li>region-based</li>
+<li>NUMA-aware</li>
+</ul>
 <p>ZGC的核心设计原则是使用负载屏障（load barrier）与有色指针对象（colored object pointers，colored oops）组合。这使得ZGC能够进行并发操作，比如对象的重定位，Java应用程序线程正在运行时，从Java线程的角度，在Java对象中加载引用字段的行为是会受到负载障碍的影响。除了对象地址以外，有色对象指针包含负载障碍所需的其他信息，用来确定Java线程在使用指针之前是否需要执行某些操作，例如，该对象可能已被重新定位，负载屏障将检测到这种情况并采取合适的行为。</p>
+<p>A core design principle/choice in ZGC is the use of load barriers in combination with colored object pointers (i.e., colored oops). This is what enables ZGC to do concurrent operations, such as object relocation, while Java application threads are running. From a Java thread’s perspective, the act of loading a reference field in a Java object is subject to a load barrier. In addition to an object address, a colored object pointer contains information used by the load barrier to determine if some action needs to be taken before allowing a Java thread to use the pointer. For example, the object might have been relocated, in which case the load barrier will detect the situation and take appropriate action.</p>
 <p>参考文档：<br><a href="http://openjdk.java.net/projects/jdk/11/" target="_blank" rel="noopener">JDK 11</a><br><a href="http://openjdk.java.net/jeps/333" target="_blank" rel="noopener">JEP 333: ZGC: A Scalable Low-Latency Garbage Collector</a><br><a href="https://wiki.openjdk.java.net/display/zgc/Main" target="_blank" rel="noopener">OpenJDK Wiki About ZGC</a></p>
 
       
