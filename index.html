@@ -366,169 +366,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2018/09/05/Generate-Unique-ID/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingshan Lei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/lms.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mingshan Lei's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/05/Generate-Unique-ID/" itemprop="url">
-                  分布式系统下的唯一ID生成问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-05 13:57:14 / 修改时间：15:06:00" itemprop="dateCreated datePublished" datetime="2018-09-05T13:57:14+08:00">2018-09-05</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发/" itemprop="url" rel="index"><span itemprop="name">开发</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。<br>在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，<br>这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。</p>
-<p>如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适用，多个节点下<br>必然会发生碰撞问题。与此类似，当应用分布在多个节点运行的时候，简单在内存缓存最近的一个ID，也同样不能满足需要。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/05/Generate-Unique-ID/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2018/09/03/JDK11-ZGC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1139,6 +976,181 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/07/RBAC-system-design/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2018/03/06/Generate-Unique-ID/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingshan Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/lms.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mingshan Lei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/06/Generate-Unique-ID/" itemprop="url">
+                  分布式系统下的唯一ID生成问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-06 13:57:14" itemprop="dateCreated datePublished" datetime="2018-03-06T13:57:14+08:00">2018-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-05 15:07:32" itemprop="dateModified" datetime="2018-09-05T15:07:32+08:00">2018-09-05</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发/" itemprop="url" rel="index"><span itemprop="name">开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。<br>在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，<br>这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。</p>
+<p>如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适用，多个节点下<br>必然会发生碰撞问题。与此类似，当应用分布在多个节点运行的时候，简单在内存缓存最近的一个ID，也同样不能满足需要。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/06/Generate-Unique-ID/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
