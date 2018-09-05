@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Mingshan Lei&#39;s Blog">
 <meta property="og:description" content="问题背景在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。 如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-05T07:05:15.939Z">
+<meta property="og:updated_time" content="2018-09-05T07:06:00.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式系统下的唯一ID生成问题">
 <meta name="twitter:description" content="问题背景在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。 如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适">
@@ -412,7 +412,7 @@
                 
               
 
-              <time title="创建时间：2018-09-05 13:57:14 / 修改时间：15:05:15" itemprop="dateCreated datePublished" datetime="2018-09-05T13:57:14+08:00">2018-09-05</time>
+              <time title="创建时间：2018-09-05 13:57:14 / 修改时间：15:06:00" itemprop="dateCreated datePublished" datetime="2018-09-05T13:57:14+08:00">2018-09-05</time>
             
 
             
@@ -496,6 +496,7 @@
 <h2 id="Snowflake算法"><a href="#Snowflake算法" class="headerlink" title="Snowflake算法"></a>Snowflake算法</h2><p><a href="https://segmentfault.com/a/1190000011282426" target="_blank" rel="noopener">看完这一篇就深入理解了</a></p>
 <p><a href="http://darktea.github.io/notes/2013/12/08/Unique-ID" target="_blank" rel="noopener">其他一些变种的flake算法</a></p>
 <h2 id="MongoDB的ObjectId"><a href="#MongoDB的ObjectId" class="headerlink" title="MongoDB的ObjectId"></a>MongoDB的ObjectId</h2><p>和Snowflake算法类似。它设计成轻量型的，不同的机器都能用全局唯一的同种方法方便地生成。<br>MongoDB从一开始就设计用来作为分布式数据库，处理多个节点是一个核心要求，在分布式环境中也很容易应用。</p>
+<p>其他参考文章：<br><a href="https://medium.com/@varuntayal/what-does-it-take-to-generate-cluster-wide-unique-ids-in-a-distributed-system-d505b9eaa46e" target="_blank" rel="noopener">What does it take to generate cluster wide unique ID’s in a distributed system</a></p>
 
       
     </div>
