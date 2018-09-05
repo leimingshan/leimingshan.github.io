@@ -366,6 +366,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/04/30/jrebel-redeploy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingshan Lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/lms.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mingshan Lei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/04/30/jrebel-redeploy/" itemprop="url">
+                  Java热部署工具-JRebel
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-04-30 10:43:57" itemprop="dateCreated datePublished" datetime="2015-04-30T10:43:57+08:00">2015-04-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前看了一篇文章，讲5个比较优秀的Java项目，文章虽然比较老，但是对里面的Neo4J，Gradle和JRebel都有了不少了解。</p>
+<p>最近开发一个Java Web项目，经常需要部署到Tomcat上进行调试，但是每次修改代码或者配置文件后，都需要重新部署并重启Tomcat容器，实在是很浪费时间的一项操作。于是决定尝试一下JRebel，实现热部署，对程序的修改可以直接反应在部署的程序上。</p>
+<p>可惜的是，JRebel是一个收费软件，个人可以申请30天的免费试用，可以使用myJRebel，<a href="https://my.jrebel.com/，是JRebel的一个社区计划，会要求你允许分享一些使用信息，在这里可以免费申请一个key，但需要定期联网激活。" target="_blank" rel="noopener">https://my.jrebel.com/，是JRebel的一个社区计划，会要求你允许分享一些使用信息，在这里可以免费申请一个key，但需要定期联网激活。</a></p>
+<p>JRebel对各种IDE都有相应的插件，使用起来非常方便，具体的信息可以查看<a href="http://zeroturnaround.com/software/jrebel/learn/。选择JRebel" target="_blank" rel="noopener">http://zeroturnaround.com/software/jrebel/learn/。选择JRebel</a> monitor的项目，并在Tomcat server中配置使用即可。启动Tomcat后可以看到JRebel的信息，例如</p>
+<p><pre class="lang:default decode:true">2015-04-30 10:26:45 JRebel:<br>2015-04-30 10:26:45 JRebel:  #############################################################<br>2015-04-30 10:26:45 JRebel:<br>2015-04-30 10:26:45 JRebel:  JRebel Agent 6.1.2 (201504061000)<br>2015-04-30 10:26:45 JRebel:  (c) Copyright ZeroTurnaround AS, Estonia, Tartu.<br>2015-04-30 10:26:45 JRebel:<br>2015-04-30 10:26:45 JRebel:  Over the last 6 days JRebel prevented<br>2015-04-30 10:26:45 JRebel:  at least 166 redeploys/restarts saving you about 6.7 hours.<br>2015-04-30 10:26:45 JRebel:<br>2015-04-30 10:26:45 JRebel:  Licensed to Mingshan Lei (using myJRebel).<br>2015-04-30 10:26:45 JRebel:<br>2015-04-30 10:26:45 JRebel:<br>2015-04-30 10:26:45 JRebel:  #############################################################<br>2015-04-30 10:26:45 JRebel:</pre><br>使用效果确实非常好，JRebel支持许多框架，常用的Spring、myBatis、Struts等等，可以monitor这些框架的配置文件，修改之后会在控制台显示提示信息，Reload class或者Reload SQL map等，确实可以节约许多用于部署的时间。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2015/03/21/code-highlighter-test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1941,183 +2115,6 @@ return 0;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2013/09/05/git-proxy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingshan Lei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/lms.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mingshan Lei's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/09/05/git-proxy/" itemprop="url">
-                  git 代理配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2013-09-05 23:33:25" itemprop="dateCreated datePublished" datetime="2013-09-05T23:33:25+08:00">2013-09-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2016-10-31 13:01:22" itemprop="dateModified" datetime="2016-10-31T13:01:22+08:00">2016-10-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发/" itemprop="url" rel="index"><span itemprop="name">开发</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近Git在国内使用时偶尔会遇到被墙的情况，今天我就遇到了，导致无法更新自己的远端Git仓库，于是使用goagent来解决，浏览器端的代理配置很简单，相关goagent的<a href="https://code.google.com/p/goagent/w/list" title="goagent wiki" target="_blank" rel="noopener">wiki</a>页面也有很详细的解释。</p>
-<p><a href="https://code.google.com/p/goagent/wiki/GoAgent_Linux" title="goagent使用教程" target="_blank" rel="noopener">Linux/Mac系统下的goagent的使用教程</a></p>
-<p>现在你应该可以在Terminal下利用Python运行goagent代理了，代理地址是 127.0.0.1:8087，下面就以使用goagent为例，介绍如何为git配置代理。</p>
-<p>Git 目前支持的三种协议 <code>git://</code>、<code>ssh://</code> 和 <code>http://</code>，其代理配置各不相同：<code>core.gitproxy</code> 用于<code>git://</code> 协议，<code>http.proxy</code> 用于 <code>http://</code> 协议，<code>ssh://</code> 协议的代理需要配置 ssh 的 <code>ProxyCommand</code> 参数。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/09/05/git-proxy/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2169,7 +2166,7 @@ return 0;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">72</span>
+                    <span class="site-state-item-count">73</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
