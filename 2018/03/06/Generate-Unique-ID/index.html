@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Mingshan Lei&#39;s Blog">
 <meta property="og:description" content="问题背景在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。 如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-06T05:34:55.831Z">
+<meta property="og:updated_time" content="2018-09-06T05:38:51.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式系统下的唯一ID生成问题">
 <meta name="twitter:description" content="问题背景在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。 如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适">
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-06 13:34:55" itemprop="dateModified" datetime="2018-09-06T13:34:55+08:00">2018-09-06</time>
+                <time title="修改时间：2018-09-06 13:38:51" itemprop="dateModified" datetime="2018-09-06T13:38:51+08:00">2018-09-06</time>
               
             
           </span>
@@ -522,9 +522,9 @@
 <p>缺点：</p>
 <ul>
 <li>没有顺序性。</li>
-<li>字符串存储，一般需要32个字节，比较占用存储空间。</li>
-<li>可读性较低。</li>
-<li>用作数据库主键的话，查询效率会比较低。<a href="https://medium.com/@varuntayal/re-design-primary-keys-and-ids-9b9776d442b" target="_blank" rel="noopener">UUID与自增64bit long ID的数据库效率比较</a></li>
+<li>字符串存储，一般需要36个字符表示，比较占用存储空间。</li>
+<li>随机生成，可读性较低。</li>
+<li>用作数据库主键或作为索引的话，查询效率会比较低。<a href="https://medium.com/@varuntayal/re-design-primary-keys-and-ids-9b9776d442b" target="_blank" rel="noopener">UUID与自增64bit long ID的数据库效率比较</a></li>
 </ul>
 <p>建议仔细阅读以下文档：<br><a href="http://www.ietf.org/rfc/rfc4122.txt" target="_blank" rel="noopener">RFC4122</a><br><a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener">UUID Wiki</a></p>
 <h2 id="Snowflake算法"><a href="#Snowflake算法" class="headerlink" title="Snowflake算法"></a>Snowflake算法</h2><p><a href="https://segmentfault.com/a/1190000011282426" target="_blank" rel="noopener">看完这一篇就深入理解了</a></p>
