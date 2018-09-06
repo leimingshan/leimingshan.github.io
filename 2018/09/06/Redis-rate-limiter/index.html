@@ -108,18 +108,15 @@
 
 
 
-  <meta name="description" content="Elasticsearch嵌套查询，具体可参考Nested Query. 建议还是要多看多熟悉Elasticsearch的官方文档，比到处去搜强多了。 简而言之，在对ES doc的多层嵌套对象进行查询的时候，要使用Nested Query，常规查询无效。 1234567891011121314&amp;#123;    &amp;quot;query&amp;quot;: &amp;#123;        &amp;quot;nest">
-<meta name="keywords" content="elasticsearch">
+  <meta name="keywords" content="NoSQL,Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Elasticsearch-nested-query">
-<meta property="og:url" content="http://leimingshan.github.io/2018/08/27/Elasticsearch-nested-query/index.html">
+<meta property="og:title" content="基于Redis实现的Rate limiter">
+<meta property="og:url" content="http://leimingshan.github.io/2018/09/06/Redis-rate-limiter/index.html">
 <meta property="og:site_name" content="Mingshan Lei&#39;s Blog">
-<meta property="og:description" content="Elasticsearch嵌套查询，具体可参考Nested Query. 建议还是要多看多熟悉Elasticsearch的官方文档，比到处去搜强多了。 简而言之，在对ES doc的多层嵌套对象进行查询的时候，要使用Nested Query，常规查询无效。 1234567891011121314&amp;#123;    &amp;quot;query&amp;quot;: &amp;#123;        &amp;quot;nest">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-27T06:15:38.057Z">
+<meta property="og:updated_time" content="2018-09-06T09:49:46.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Elasticsearch-nested-query">
-<meta name="twitter:description" content="Elasticsearch嵌套查询，具体可参考Nested Query. 建议还是要多看多熟悉Elasticsearch的官方文档，比到处去搜强多了。 简而言之，在对ES doc的多层嵌套对象进行查询的时候，要使用Nested Query，常规查询无效。 1234567891011121314&amp;#123;    &amp;quot;query&amp;quot;: &amp;#123;        &amp;quot;nest">
+<meta name="twitter:title" content="基于Redis实现的Rate limiter">
 
 
 
@@ -128,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://leimingshan.github.io/2018/08/27/Elasticsearch-nested-query/"/>
+  <link rel="canonical" href="http://leimingshan.github.io/2018/09/06/Redis-rate-limiter/"/>
 
 
 
@@ -138,7 +135,7 @@
   };
 </script>
 
-  <title>Elasticsearch-nested-query | Mingshan Lei's Blog</title>
+  <title>基于Redis实现的Rate limiter | Mingshan Lei's Blog</title>
   
 
 
@@ -370,7 +367,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2018/08/27/Elasticsearch-nested-query/">
+    <link itemprop="mainEntityOfPage" href="http://leimingshan.github.io/2018/09/06/Redis-rate-limiter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mingshan Lei">
@@ -387,7 +384,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Elasticsearch-nested-query
+          <h1 class="post-title" itemprop="name headline">基于Redis实现的Rate limiter
               
             
           </h1>
@@ -412,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2018-08-27 13:23:35 / 修改时间：14:15:38" itemprop="dateCreated datePublished" datetime="2018-08-27T13:23:35+08:00">2018-08-27</time>
+              <time title="创建时间：2018-09-06 17:46:12 / 修改时间：17:49:46" itemprop="dateCreated datePublished" datetime="2018-09-06T17:46:12+08:00">2018-09-06</time>
             
 
             
@@ -422,6 +419,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发/" itemprop="url" rel="index"><span itemprop="name">开发</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -458,11 +473,7 @@
       
 
       
-        <p>Elasticsearch嵌套查询，具体可参考<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html" target="_blank" rel="noopener">Nested Query</a>.</p>
-<p>建议还是要多看多熟悉Elasticsearch的官方文档，比到处去搜强多了。</p>
-<p>简而言之，在对ES doc的多层嵌套对象进行查询的时候，要使用Nested Query，常规查询无效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;nested&quot; : &#123;</span><br><span class="line">            &quot;path&quot; : &quot;obj&quot;,</span><br><span class="line">            &quot;query&quot; : &#123;</span><br><span class="line">                &quot;bool&quot; : &#123;</span><br><span class="line">                    &quot;must&quot; : [</span><br><span class="line">                        &#123; &quot;match&quot; : &#123;&quot;obj.info.name&quot; : &quot;zhangsan&quot;&#125; &#125;</span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        
       
     </div>
 
@@ -482,7 +493,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/elasticsearch/" rel="tag"># elasticsearch</a>
+            <a href="/tags/NoSQL/" rel="tag"># NoSQL</a>
+          
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
           
         </div>
       
@@ -495,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/07/RBAC-system-design/" rel="next" title="RBAC简要设计">
-                <i class="fa fa-chevron-left"></i> RBAC简要设计
+              <a href="/2018/09/03/JDK11-ZGC/" rel="next" title="JDK11-ZGC">
+                <i class="fa fa-chevron-left"></i> JDK11-ZGC
               </a>
             
           </div>
@@ -504,10 +517,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/30/douban-computer-books/" rel="prev" title="推荐计算机科学书籍">
-                推荐计算机科学书籍 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

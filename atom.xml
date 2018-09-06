@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2018-09-04T06:12:29.240Z</updated>
+  <updated>2018-09-06T09:49:46.882Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于Redis实现的Rate limiter</title>
+    <link href="http://leimingshan.github.io/2018/09/06/Redis-rate-limiter/"/>
+    <id>http://leimingshan.github.io/2018/09/06/Redis-rate-limiter/</id>
+    <published>2018-09-06T09:46:12.000Z</published>
+    <updated>2018-09-06T09:49:46.882Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
+    
+      <category term="Redis" scheme="http://leimingshan.github.io/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>JDK11-ZGC</title>
@@ -513,34 +533,6 @@ FLUSH PRIVILEGES;&lt;/pre&gt;
     
     
       <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu, Debian中iptables规则保存和重启自动加载</title>
-    <link href="http://leimingshan.github.io/2016/01/13/debian-iptables-save/"/>
-    <id>http://leimingshan.github.io/2016/01/13/debian-iptables-save/</id>
-    <published>2016-01-13T14:01:31.000Z</published>
-    <updated>2016-10-31T05:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Debian中iptables命令输完之后会立刻生效，但重启之后配置就会消失，Debian提供了一个iptables-save程序快速保存配置。</p><p>通过iptables-save和iptables-restore可以让debian自动保存并在开机时自动加载iptables规则。</p><h3 id="1、将iptables配置保存到-etc-iptables，这个文件名可以自己定义，与下面的配置一致即可"><a href="#1、将iptables配置保存到-etc-iptables，这个文件名可以自己定义，与下面的配置一致即可" class="headerlink" title="1、将iptables配置保存到/etc/iptables，这个文件名可以自己定义，与下面的配置一致即可"></a>1、将iptables配置保存到/etc/iptables，这个文件名可以自己定义，与下面的配置一致即可</h3><pre class="lang:default decode:true">iptables-save &gt; /etc/iptables</pre><h3 id="2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置"><a href="#2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置" class="headerlink" title="2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置"></a>2、创建并编辑自启动配置文件，内容为启动网络时恢复iptables配置</h3><p><pre class="lang:default decode:true">sudo vim /etc/network/if-pre-up.d/iptables</pre><br>文件内容为：</p><p><pre class="lang:default decode:true ">#!/bin/sh<br>/sbin/iptables-restore &lt; /etc/iptables</pre><br>保存并退出。</p><p>之后系统每次启动时iptables就可以自动加载规则了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在Debian中iptables命令输完之后会立刻生效，但重启之后配置就会消失，Debian提供了一个iptables-save程序快速保存配置。&lt;/p&gt;
-&lt;p&gt;通过iptables-save和iptables-restore可以让debian自动保存并在开机时自动加载ip
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://leimingshan.github.io/categories/Linux/"/>
-    
-    
-      <category term="Ubuntu" scheme="http://leimingshan.github.io/tags/Ubuntu/"/>
-    
-      <category term="Debian" scheme="http://leimingshan.github.io/tags/Debian/"/>
     
   </entry>
   
