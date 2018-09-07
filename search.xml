@@ -36,9 +36,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[基于Redis实现的Rate limiter]]></title>
+    <title><![CDATA[基于Redis实现的Rate limiter (限流器)]]></title>
     <url>%2F2018%2F04%2F10%2FRedis-rate-limiter%2F</url>
-    <content type="text"><![CDATA[首先先好好阅读一下官方文章，如何利用incr命令实现一些应用模式（Pattern）。INCR命令的介绍与应用 本文不对原文进行大段翻译，主要讲下自己的理解。 模式：计数器Redis原子性自增操作，最明显的应用就是计数器了，类似Java的AtomicInteger。可以结合EXPIRE，INCRBY，GET，SET，DECR等操作做很多很多事情。多命令的情况下要注意事务或者使用Lua script哦。]]></content>
+    <content type="text"><![CDATA[首先先好好阅读一下官方文章，如何利用incr命令实现一些应用模式（Pattern）。INCR命令的介绍与应用 本文不对原文进行大段翻译，主要讲下自己的理解。 模式：计数器Redis原子性自增操作，最明显的应用就是计数器了，类似Java的AtomicInteger。可以结合EXPIRE，INCRBY，GET，SET，DECR等操作做很多很多事情。多命令的情况下要注意事务或者使用Lua script哦。 模式：Rate limiter 限流器限流器的应用限流器的应用非常广泛，比如Github对外提供了非常丰富的API，但考虑到数据安全和系统资源，对匿名用户和经过认证的用户的请求API频率都是要有限制的。可以看看Github API的Rate limiting。认证的用户每小时请求次数是5000，没认证的用户每小时只能请求60次，依靠原始IP来区分未认证用户。 上面介绍了一个很典型的应用场景，如果一个系统对我提供服务，开放API的话，为了防刷和系统资源的平衡，限流器的应用是很有必要的。调用Github API返回结果的时候，response的Header里面都会带有限流的信息，这是一个非常好的设计，大致如下：1234567curl -i https://api.github.com/users/octocatHTTP/1.1 200 OKDate: Mon, 01 Jul 2013 17:27:06 GMTStatus: 200 OKX-RateLimit-Limit: 60X-RateLimit-Remaining: 56X-RateLimit-Reset: 1372700873 我在做网关设计中也借鉴过这种设计方式，另外也参考过spring-cloud-zuul微服务网关中的一个API限流库的代码，里面Filter的设计还是很不错的。 ##]]></content>
       <categories>
         <category>开发</category>
       </categories>
