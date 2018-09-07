@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2018-09-07T07:18:29.700Z</updated>
+  <updated>2018-09-07T08:41:55.349Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo进阶设置</title>
+    <link href="http://leimingshan.github.io/posts/a62b0c3d/"/>
+    <id>http://leimingshan.github.io/posts/a62b0c3d/</id>
+    <published>2018-09-07T08:21:04.000Z</published>
+    <updated>2018-09-07T08:41:55.349Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="静态代码压缩"><a href="#静态代码压缩" class="headerlink" title="静态代码压缩"></a>静态代码压缩</h1><p>因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。<br>这里没必要用gulp去压缩，配置太繁琐，也没法自动化。<br>直接使用<a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="noopener">hexo-all-minifier</a>这个模块，<br>安装：</p><blockquote><p>npm install hexo-all-minifier –save<br>增加配置：<br>all_minifier: true<br>搞定！</p></blockquote><p>#</p><p>参考资料：</p><ul><li><a href="http://muyunyun.cn/posts/f55182c5/" target="_blank" rel="noopener">http://muyunyun.cn/posts/f55182c5/</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;静态代码压缩&quot;&gt;&lt;a href=&quot;#静态代码压缩&quot; class=&quot;headerlink&quot; title=&quot;静态代码压缩&quot;&gt;&lt;/a&gt;静态代码压缩&lt;/h1&gt;&lt;p&gt;因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。&lt;br&gt;这里没必要用g
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JDK11-ZGC</title>
@@ -456,31 +477,6 @@ FLUSH PRIVILEGES;&lt;/pre&gt;
       <category term="Ubuntu" scheme="http://leimingshan.github.io/tags/Ubuntu/"/>
     
       <category term="PHP" scheme="http://leimingshan.github.io/tags/PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB--mongoimport loses connection when importing big files</title>
-    <link href="http://leimingshan.github.io/posts/33725cfb/"/>
-    <id>http://leimingshan.github.io/posts/33725cfb/</id>
-    <published>2016-01-20T06:36:20.000Z</published>
-    <updated>2018-09-07T07:18:29.679Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天在新版本下进行MongoDB数据导入的时候，遇到了这样一个问题，例如使用如下命令：</p><p><pre class="lang:default decode:true">mongoimport -d test -c profile users.dat</pre><br>在之前使用过几次这样的导入方法都没有问题，但这次却提示：</p><p><pre class="lang:default decode:true">2016-01-20T10:05:25.228+0100    connected to: localhost<br>2016-01-20T10:05:25.735+0100    error inserting documents: lost connection to server<br>2016-01-20T10:05:25.735+0100    Failed: lost connection to server<br>2016-01-20T10:05:25.735+0100    imported 0 documents</pre><br>查看MongoDB的Log，发现出现异常的原因，如下：</p><p><pre class="lang:default decode:true">2016-01-20T11:26:39.103+0800 I -        [conn17] Assertion: 10334:BSONObj size: 33562755 (0x2002083) is invalid. Size must be between 0 and 16793600(16MB) First element: insert: “Profile”</pre><br>搜索解决方案，发现这是mongo工具包在新版本下的小bug，mongorestore和mongoimport都有一样的问题，官方说明可以参考<a href="https://jira.mongodb.org/browse/TOOLS-939" target="_blank" rel="noopener">https://jira.mongodb.org/browse/TOOLS-939</a>。</p><p>原因就是bulk write api，原来的api中批量写入的batch size最大是32MB，现在已经变为16MB了。在导入或还原数据的时候，指定选项 –batchSize=1000，指定一个较小的值即可，默认是10000。</p><p>参考：</p><ol><li><a href="http://stackoverflow.com/questions/33475505/mongodb-mongoimport-loses-connection-when-importing-big-files" target="_blank" rel="noopener">http://stackoverflow.com/questions/33475505/mongodb-mongoimport-loses-connection-when-importing-big-files</a></li><li><a href="https://jira.mongodb.org/browse/TOOLS-939" target="_blank" rel="noopener">https://jira.mongodb.org/browse/TOOLS-939</a></li><li><a href="http://chenzhou123520.iteye.com/blog/1641319" target="_blank" rel="noopener">http://chenzhou123520.iteye.com/blog/1641319</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天在新版本下进行MongoDB数据导入的时候，遇到了这样一个问题，例如使用如下命令：&lt;/p&gt;&lt;p&gt;&lt;pre class=&quot;lang:default decode:true&quot;&gt;mongoimport -d test -c profile users.dat&lt;/pre&gt;&lt;br
-      
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
     
   </entry>
   
