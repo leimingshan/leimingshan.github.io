@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo进阶设置]]></title>
     <url>%2Fposts%2Fa62b0c3d%2F</url>
-    <content type="text"><![CDATA[静态代码压缩因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。这里没必要用gulp去压缩，配置太繁琐，也没法自动化。直接使用hexo-all-minifier这个模块，安装：npm install hexo-all-minifier –save增加配置：all_minifier: true搞定！#参考资料：http://muyunyun.cn/posts/f55182c5/]]></content>
+    <content type="text"><![CDATA[静态代码压缩因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。这里没必要用gulp去压缩，配置太繁琐，也没法自动化。直接使用hexo-all-minifier这个模块，安装：npm install hexo-all-minifier –save增加配置：all_minifier: true搞定！文章唯一链接hexo-abbrlink文章字数统计和阅读时长hexo-symbols-count-time可以替代老的hexo-wordcount。参考资料：http://muyunyun.cn/posts/f55182c5/https://blog.csdn.net/sunshine940326/article/details/70936988]]></content>
   </entry>
   <entry>
     <title><![CDATA[JDK11-ZGC]]></title>

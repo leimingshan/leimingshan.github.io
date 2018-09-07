@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2018-09-07T08:41:55.349Z</updated>
+  <updated>2018-09-07T08:48:17.475Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://leimingshan.github.io/posts/a62b0c3d/"/>
     <id>http://leimingshan.github.io/posts/a62b0c3d/</id>
     <published>2018-09-07T08:21:04.000Z</published>
-    <updated>2018-09-07T08:41:55.349Z</updated>
+    <updated>2018-09-07T08:48:17.475Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="静态代码压缩"><a href="#静态代码压缩" class="headerlink" title="静态代码压缩"></a>静态代码压缩</h1><p>因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。<br>这里没必要用gulp去压缩，配置太繁琐，也没法自动化。<br>直接使用<a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="noopener">hexo-all-minifier</a>这个模块，<br>安装：</p><blockquote><p>npm install hexo-all-minifier –save<br>增加配置：<br>all_minifier: true<br>搞定！</p></blockquote><p>#</p><p>参考资料：</p><ul><li><a href="http://muyunyun.cn/posts/f55182c5/" target="_blank" rel="noopener">http://muyunyun.cn/posts/f55182c5/</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="静态代码压缩"><a href="#静态代码压缩" class="headerlink" title="静态代码压缩"></a>静态代码压缩</h1><p>因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。<br>这里没必要用gulp去压缩，配置太繁琐，也没法自动化。<br>直接使用<a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="noopener">hexo-all-minifier</a>这个模块，<br>安装：</p><blockquote><p>npm install hexo-all-minifier –save</p></blockquote><p>增加配置：</p><blockquote><p>all_minifier: true</p></blockquote><p>搞定！</p><h1 id="文章唯一链接"><a href="#文章唯一链接" class="headerlink" title="文章唯一链接"></a>文章唯一链接</h1><p>hexo-abbrlink</p><h1 id="文章字数统计和阅读时长"><a href="#文章字数统计和阅读时长" class="headerlink" title="文章字数统计和阅读时长"></a>文章字数统计和阅读时长</h1><p><a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">hexo-symbols-count-time</a><br>可以替代老的hexo-wordcount。</p><p>参考资料：</p><ul><li><a href="http://muyunyun.cn/posts/f55182c5/" target="_blank" rel="noopener">http://muyunyun.cn/posts/f55182c5/</a></li><li><a href="https://blog.csdn.net/sunshine940326/article/details/70936988" target="_blank" rel="noopener">https://blog.csdn.net/sunshine940326/article/details/70936988</a></li></ul>]]></content>
     
     <summary type="html">
     
