@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leimingshan.github.io/"/>
-  <updated>2018-09-06T09:49:46.882Z</updated>
+  <updated>2018-09-04T06:12:29.240Z</updated>
   <id>http://leimingshan.github.io/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>基于Redis实现的Rate limiter</title>
-    <link href="http://leimingshan.github.io/2018/09/06/Redis-rate-limiter/"/>
-    <id>http://leimingshan.github.io/2018/09/06/Redis-rate-limiter/</id>
-    <published>2018-09-06T09:46:12.000Z</published>
-    <updated>2018-09-06T09:49:46.882Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
-    
-      <category term="Redis" scheme="http://leimingshan.github.io/tags/Redis/"/>
-    
-  </entry>
   
   <entry>
     <title>JDK11-ZGC</title>
@@ -145,6 +125,33 @@
     
     
       <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Redis实现的Rate limiter</title>
+    <link href="http://leimingshan.github.io/2018/04/10/Redis-rate-limiter/"/>
+    <id>http://leimingshan.github.io/2018/04/10/Redis-rate-limiter/</id>
+    <published>2018-04-10T09:46:12.000Z</published>
+    <updated>2018-09-07T04:52:16.459Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先先好好阅读一下官方文章，如何利用incr命令实现一些应用模式（Pattern）。<br><a href="https://redis.io/commands/incr" target="_blank" rel="noopener">INCR命令的介绍与应用</a></p><p>本文不对原文进行大段翻译，主要讲下自己的理解。</p><h1 id="模式：计数器"><a href="#模式：计数器" class="headerlink" title="模式：计数器"></a>模式：计数器</h1><p>Redis原子性自增操作，最明显的应用就是计数器了，类似Java的AtomicInteger。<br>可以结合EXPIRE，INCRBY，GET，SET，DECR等操作做很多很多事情。<br>多命令的情况下要注意事务或者使用Lua script哦。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;首先先好好阅读一下官方文章，如何利用incr命令实现一些应用模式（Pattern）。&lt;br&gt;&lt;a href=&quot;https://redis.io/commands/incr&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;INCR命令的介绍与应用&lt;/a&gt;&lt;/p
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
+    
+      <category term="Redis" scheme="http://leimingshan.github.io/tags/Redis/"/>
     
   </entry>
   
