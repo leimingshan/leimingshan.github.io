@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Redis开发应用规范]]></title>
-    <url>%2Fposts%2F1113160e%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>NoSQL</tag>
-        <tag>Redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo进阶设置]]></title>
     <url>%2Fposts%2Fa62b0c3d%2F</url>
     <content type="text"><![CDATA[静态代码压缩因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。这里没必要用gulp去压缩，配置太繁琐，也没法自动化。直接使用hexo-all-minifier这个模块，安装：npm install hexo-all-minifier –save增加配置：all_minifier: true搞定！文章唯一链接hexo-abbrlink文章字数统计和阅读时长hexo-symbols-count-time可以替代老的hexo-wordcount。SEO-搜索引擎收录和优化利用插件生成sitemap，hexo自带的两个插件，百度搜索要使用单独的一个。12npm install hexo-generator-sitemap --save npm install hexo-generator-baidu-sitemap --save修改根目录中的_config.yml，url必须要修改成对应的，会体现在sitemap.xml里的url里。增加配置项。12345# Sitemapsitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml之后hexo重新生成部署，就可以看到两个站点地图的xml文件了。Google收录Google站点平台：https://www.google.com/webmasters/验证站点可以用html文件的方式，html文件放在hexo的source目录后，一定要在开头添加123---layout: false---这样hexo才可以正确处理该文件。之后提交sitemap即可，配置比较简单，不再赘述。参考资料：http://muyunyun.cn/posts/f55182c5/https://blog.csdn.net/sunshine940326/article/details/70936988]]></content>
@@ -50,6 +38,18 @@
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Redis常用开发应用规范]]></title>
+    <url>%2Fposts%2F1113160e%2F</url>
+    <content type="text"><![CDATA[Redis在日常开发中可以说是非常常用的服务了，提供了灵活的数据结构、高效率、方便的lua script等多种功能。在开发运用过程中，有一些点是需要特别注意的，也是对Redis的一种比较正确的使用方式，简单总结如下：KEY的格式要规范，可读性要强，注意控制KEY的长度。VALUE的大小限制。Redis限制每个String类型value大小不超过512MB，实际开发中，不要超过10KB，否则会对CPU和网卡造成极大负载。hash、list、set、zset元素个数不要超过5000。选择合适的数据类型，而不是一味的用string类型。建议多用hash，有压缩算法，可以降低开销。hash类型特别适合用于存储对象。在field的数量在限制的范围内以及value的长度小于指定的字节数，那么此时的hash类型是用zipmap存储的，所以会比较节省内存。可以在配置文件里面修改配置项来控制field的数量和value的字节数大小。hash-max-zipmap-entries 512 #配置字段最多512个hash-max-zipmap-value 64 #配置value最大为64字节。必须满足以上两个条件，那么该key会被压缩。否则就是按照正常的hash结构来存储hash类型的key。设置过期时间，减少内存占用。禁用KEYS命令。查找效率是O(N)，很可能阻塞正常请求，而且CPU负载过大。禁用flushall，flushdb命令，过于危险。建议使用批量操作提供效率原生命令：例如mget、mset。非原生命令：可以使用pipeline提高效率。参考文档：阿里云Redis开发规范]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>NoSQL</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>

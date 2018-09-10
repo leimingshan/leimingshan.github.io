@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-09-10T06:33:46.879Z</updated>
+  <updated>2018-09-10T06:31:23.125Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Redis开发应用规范</title>
-    <link href="https://leicode.com/posts/1113160e/"/>
-    <id>https://leicode.com/posts/1113160e/</id>
-    <published>2018-09-10T06:32:37.000Z</published>
-    <updated>2018-09-10T06:33:46.879Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="NoSQL" scheme="https://leicode.com/tags/NoSQL/"/>
-    
-      <category term="Redis" scheme="https://leicode.com/tags/Redis/"/>
-    
-  </entry>
   
   <entry>
     <title>Hexo进阶设置</title>
@@ -139,6 +119,30 @@
     
     
       <category term="Java" scheme="https://leicode.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis常用开发应用规范</title>
+    <link href="https://leicode.com/posts/1113160e/"/>
+    <id>https://leicode.com/posts/1113160e/</id>
+    <published>2018-04-16T06:32:37.000Z</published>
+    <updated>2018-09-10T07:19:03.557Z</updated>
+    
+    <content type="html"><![CDATA[<p>Redis在日常开发中可以说是非常常用的服务了，提供了灵活的数据结构、高效率、方便的lua script等多种功能。<br>在开发运用过程中，有一些点是需要特别注意的，也是对Redis的一种比较正确的使用方式，简单总结如下：</p><ol><li>KEY的格式要规范，可读性要强，注意控制KEY的长度。</li><li>VALUE的大小限制。Redis限制每个String类型value大小不超过512MB，<br>实际开发中，不要超过10KB，否则会对CPU和网卡造成极大负载。<br>hash、list、set、zset元素个数不要超过5000。<a id="more"></a></li><li>选择合适的数据类型，而不是一味的用string类型。建议多用hash，有压缩算法，可以降低开销。<blockquote><blockquote><p>hash类型特别适合用于存储对象。在field的数量在限制的范围内以及value的长度小于指定的字节数，那么此时的hash类型是用zipmap存储的，所以会比较节省内存。可以在配置文件里面修改配置项来控制field的数量和value的字节数大小。<br>hash-max-zipmap-entries 512 #配置字段最多512个<br>hash-max-zipmap-value 64 #配置value最大为64字节。<br>必须满足以上两个条件，那么该key会被压缩。否则就是按照正常的hash结构来存储hash类型的key。</p></blockquote></blockquote></li><li>设置过期时间，减少内存占用。</li><li>禁用KEYS命令。查找效率是O(N)，很可能阻塞正常请求，而且CPU负载过大。</li><li>禁用flushall，flushdb命令，过于危险。</li><li>建议使用批量操作提供效率<blockquote><blockquote><p>原生命令：例如mget、mset。<br>非原生命令：可以使用pipeline提高效率。</p></blockquote></blockquote></li></ol><p>参考文档：<br><a href="https://blog.csdn.net/glx490676405/article/details/79580748" target="_blank" rel="noopener">阿里云Redis开发规范</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Redis在日常开发中可以说是非常常用的服务了，提供了灵活的数据结构、高效率、方便的lua script等多种功能。&lt;br&gt;在开发运用过程中，有一些点是需要特别注意的，也是对Redis的一种比较正确的使用方式，简单总结如下：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;KEY的格式要规范，可读性要强，注意控制KEY的长度。&lt;/li&gt;&lt;li&gt;VALUE的大小限制。Redis限制每个String类型value大小不超过512MB，&lt;br&gt;实际开发中，不要超过10KB，否则会对CPU和网卡造成极大负载。&lt;br&gt;hash、list、set、zset元素个数不要超过5000。
+    
+    </summary>
+    
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="NoSQL" scheme="https://leicode.com/tags/NoSQL/"/>
+    
+      <category term="Redis" scheme="https://leicode.com/tags/Redis/"/>
     
   </entry>
   
