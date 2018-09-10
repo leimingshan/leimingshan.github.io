@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://leicode.com/posts/1113160e/</loc>
+    <lastmod>2018-09-10T06:33:46.879Z</lastmod>
+    <data>
+        <display>
+        <title>Redis开发应用规范</title>
+        <pubTime>2018-09-10T06:32:37.000Z</pubTime>
+        
+        <tag>NoSQL</tag>
+         
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发" url="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://leicode.com/posts/a62b0c3d/</loc>
-    <lastmod>2018-09-10T06:29:25.879Z</lastmod>
+    <lastmod>2018-09-10T06:31:23.125Z</lastmod>
     <data>
         <display>
         <title>Hexo进阶设置</title>
@@ -244,6 +266,24 @@
 
     
   <url>
+    <loc>https://leicode.com/posts/ca051d68/</loc>
+    <lastmod>2018-09-07T07:18:29.684Z</lastmod>
+    <data>
+        <display>
+        <title>Bug Tracker</title>
+        <pubTime>2016-03-22T14:20:38.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="开发" url="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://leicode.com/posts/cf97a194/</loc>
     <lastmod>2018-09-07T07:18:29.684Z</lastmod>
     <data>
@@ -257,24 +297,6 @@
            
              
               <breadCrumb title="网站" url="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://leicode.com/posts/ca051d68/</loc>
-    <lastmod>2018-09-07T07:18:29.684Z</lastmod>
-    <data>
-        <display>
-        <title>Bug Tracker</title>
-        <pubTime>2016-03-22T14:20:38.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="开发" url="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
           
         </display>
     </data>
@@ -302,30 +324,6 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/68467f3f/</loc>
-    <lastmod>2018-09-07T07:18:29.682Z</lastmod>
-    <data>
-        <display>
-        <title>Gradle与SonarQube的应用</title>
-        <pubTime>2016-03-04T08:19:50.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Gradle</tag>
-         
-        <tag>SonarQube</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://leicode.com/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://leicode.com/posts/7a61ee38/</loc>
     <lastmod>2018-09-07T07:18:29.682Z</lastmod>
     <data>
@@ -338,6 +336,30 @@
         <tag>SonarQube</tag>
          
         <tag>Jenkins</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://leicode.com/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://leicode.com/posts/68467f3f/</loc>
+    <lastmod>2018-09-07T07:18:29.682Z</lastmod>
+    <data>
+        <display>
+        <title>Gradle与SonarQube的应用</title>
+        <pubTime>2016-03-04T08:19:50.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Gradle</tag>
+         
+        <tag>SonarQube</tag>
          
          
            
@@ -438,6 +460,24 @@
 
     
   <url>
+    <loc>https://leicode.com/posts/6a1980de/</loc>
+    <lastmod>2018-09-07T07:18:29.677Z</lastmod>
+    <data>
+        <display>
+        <title>win10-kms-openwrt</title>
+        <pubTime>2015-10-03T14:58:33.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="网站" url="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://leicode.com/posts/39136b96/</loc>
     <lastmod>2018-09-07T07:18:29.677Z</lastmod>
     <data>
@@ -451,24 +491,6 @@
            
              
               <breadCrumb title="数据库" url="https://leicode.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://leicode.com/posts/6a1980de/</loc>
-    <lastmod>2018-09-07T07:18:29.677Z</lastmod>
-    <data>
-        <display>
-        <title>win10-kms-openwrt</title>
-        <pubTime>2015-10-03T14:58:33.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="网站" url="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
           
         </display>
     </data>
@@ -682,28 +704,6 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/8b16ca12/</loc>
-    <lastmod>2018-09-07T07:18:29.670Z</lastmod>
-    <data>
-        <display>
-        <title>Gradle tomcat相关脚本</title>
-        <pubTime>2015-05-29T02:32:38.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Gradle</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://leicode.com/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://leicode.com/posts/c3c97857/</loc>
     <lastmod>2018-09-07T07:18:29.670Z</lastmod>
     <data>
@@ -719,6 +719,28 @@
            
              
               <breadCrumb title="游戏" url="https://leicode.com/categories/%E6%B8%B8%E6%88%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://leicode.com/posts/8b16ca12/</loc>
+    <lastmod>2018-09-07T07:18:29.670Z</lastmod>
+    <data>
+        <display>
+        <title>Gradle tomcat相关脚本</title>
+        <pubTime>2015-05-29T02:32:38.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Gradle</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://leicode.com/categories/Java/"/>
           
         </display>
     </data>
@@ -786,6 +808,26 @@
 
     
   <url>
+    <loc>https://leicode.com/posts/3718ad5/</loc>
+    <lastmod>2018-09-07T07:18:29.667Z</lastmod>
+    <data>
+        <display>
+        <title>查看Linux版本号</title>
+        <pubTime>2015-05-11T09:45:10.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://leicode.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://leicode.com/posts/52e12c32/</loc>
     <lastmod>2018-09-07T07:18:29.667Z</lastmod>
     <data>
@@ -801,26 +843,6 @@
            
              
               <breadCrumb title="开发" url="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://leicode.com/posts/3718ad5/</loc>
-    <lastmod>2018-09-07T07:18:29.667Z</lastmod>
-    <data>
-        <display>
-        <title>查看Linux版本号</title>
-        <pubTime>2015-05-11T09:45:10.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://leicode.com/categories/Linux/"/>
           
         </display>
     </data>
@@ -962,6 +984,24 @@
 
     
   <url>
+    <loc>https://leicode.com/posts/7630d0bb/</loc>
+    <lastmod>2018-09-07T07:18:29.660Z</lastmod>
+    <data>
+        <display>
+        <title>黑板数字擦除问题-阿里笔试题</title>
+        <pubTime>2013-09-22T15:08:35.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="算法" url="https://leicode.com/categories/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://leicode.com/posts/45ed9b8e/</loc>
     <lastmod>2018-09-07T07:18:29.660Z</lastmod>
     <data>
@@ -982,24 +1022,6 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/7630d0bb/</loc>
-    <lastmod>2018-09-07T07:18:29.660Z</lastmod>
-    <data>
-        <display>
-        <title>黑板数字擦除问题-阿里笔试题</title>
-        <pubTime>2013-09-22T15:08:35.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="算法" url="https://leicode.com/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://leicode.com/posts/1109c473/</loc>
     <lastmod>2018-09-07T07:18:29.659Z</lastmod>
     <data>
@@ -1013,28 +1035,6 @@
            
              
               <breadCrumb title="算法" url="https://leicode.com/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://leicode.com/posts/3c688e29/</loc>
-    <lastmod>2018-09-07T07:18:29.658Z</lastmod>
-    <data>
-        <display>
-        <title>WINAPI QueryPerformanceCounter的使用</title>
-        <pubTime>2013-09-20T02:39:28.000Z</pubTime>
-        
-        <tag>C++</tag>
-         
-        <tag>windows</tag>
-         
-         
-           
-             
-              <breadCrumb title="C/C++" url="https://leicode.com/categories/C-C/"/>
           
         </display>
     </data>
@@ -1064,6 +1064,28 @@
 
     
   <url>
+    <loc>https://leicode.com/posts/3c688e29/</loc>
+    <lastmod>2018-09-07T07:18:29.658Z</lastmod>
+    <data>
+        <display>
+        <title>WINAPI QueryPerformanceCounter的使用</title>
+        <pubTime>2013-09-20T02:39:28.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="https://leicode.com/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://leicode.com/posts/28636f68/</loc>
     <lastmod>2018-09-07T07:18:29.657Z</lastmod>
     <data>
@@ -1071,6 +1093,28 @@
         <title>git 代理配置</title>
         <pubTime>2013-09-05T15:33:25.000Z</pubTime>
         
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发" url="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://leicode.com/posts/dd469e36/</loc>
+    <lastmod>2018-09-07T07:18:29.656Z</lastmod>
+    <data>
+        <display>
+        <title>理解Git的工作流程 【转载】</title>
+        <pubTime>2013-08-20T04:13:15.000Z</pubTime>
+        
+        <tag>develop</tag>
+         
         <tag>git</tag>
          
          
@@ -1104,28 +1148,6 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/dd469e36/</loc>
-    <lastmod>2018-09-07T07:18:29.656Z</lastmod>
-    <data>
-        <display>
-        <title>理解Git的工作流程 【转载】</title>
-        <pubTime>2013-08-20T04:13:15.000Z</pubTime>
-        
-        <tag>develop</tag>
-         
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发" url="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://leicode.com/posts/bc50611c/</loc>
     <lastmod>2018-09-07T07:18:29.655Z</lastmod>
     <data>
@@ -1139,26 +1161,6 @@
            
              
               <breadCrumb title="算法" url="https://leicode.com/categories/%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://leicode.com/posts/bdfa4fed/</loc>
-    <lastmod>2018-09-07T07:18:29.654Z</lastmod>
-    <data>
-        <display>
-        <title>小论文 选题</title>
-        <pubTime>2013-08-20T17:55:39.000Z</pubTime>
-        
-        <tag>thesis</tag>
-         
-         
-           
-             
-              <breadCrumb title="日志" url="https://leicode.com/categories/%E6%97%A5%E5%BF%97/"/>
           
         </display>
     </data>
@@ -1181,6 +1183,26 @@
            
              
               <breadCrumb title="网站" url="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://leicode.com/posts/bdfa4fed/</loc>
+    <lastmod>2018-09-07T07:18:29.654Z</lastmod>
+    <data>
+        <display>
+        <title>小论文 选题</title>
+        <pubTime>2013-08-20T17:55:39.000Z</pubTime>
+        
+        <tag>thesis</tag>
+         
+         
+           
+             
+              <breadCrumb title="日志" url="https://leicode.com/categories/%E6%97%A5%E5%BF%97/"/>
           
         </display>
     </data>
@@ -1226,6 +1248,24 @@
 
     
   <url>
+    <loc>https://leicode.com/posts/9b8316b/</loc>
+    <lastmod>2018-09-07T07:18:29.652Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World 代码示例</title>
+        <pubTime>2013-08-17T18:19:54.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="未分类" url="https://leicode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://leicode.com/posts/3bc6c284/</loc>
     <lastmod>2018-09-07T07:18:29.652Z</lastmod>
     <data>
@@ -1246,17 +1286,19 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/9b8316b/</loc>
-    <lastmod>2018-09-07T07:18:29.652Z</lastmod>
+    <loc>https://leicode.com/posts/e5cc4ce3/</loc>
+    <lastmod>2018-09-07T07:18:29.651Z</lastmod>
     <data>
         <display>
-        <title>Hello World 代码示例</title>
-        <pubTime>2013-08-17T18:19:54.000Z</pubTime>
+        <title>WordPress-推荐插件</title>
+        <pubTime>2013-07-11T12:29:00.000Z</pubTime>
         
+        <tag>wordpress</tag>
+         
          
            
              
-              <breadCrumb title="未分类" url="https://leicode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+              <breadCrumb title="网站" url="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
           
         </display>
     </data>
@@ -1286,26 +1328,6 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/e5cc4ce3/</loc>
-    <lastmod>2018-09-07T07:18:29.651Z</lastmod>
-    <data>
-        <display>
-        <title>WordPress-推荐插件</title>
-        <pubTime>2013-07-11T12:29:00.000Z</pubTime>
-        
-        <tag>wordpress</tag>
-         
-         
-           
-             
-              <breadCrumb title="网站" url="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://leicode.com/posts/745f0b5e/</loc>
     <lastmod>2018-09-07T07:18:29.650Z</lastmod>
     <data>
@@ -1318,6 +1340,23 @@
              
               <breadCrumb title="日志" url="https://leicode.com/categories/%E6%97%A5%E5%BF%97/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://leicode.com/posts/21153146/</loc>
+    <lastmod>2018-09-07T07:18:29.649Z</lastmod>
+    <data>
+        <display>
+        <title>jekyll bootstrap</title>
+        <pubTime>2013-06-26T16:00:00.000Z</pubTime>
+        
+        <tag>jekyll</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -1338,23 +1377,6 @@
              
               <breadCrumb title="php" url="https://leicode.com/categories/php/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://leicode.com/posts/21153146/</loc>
-    <lastmod>2018-09-07T07:18:29.649Z</lastmod>
-    <data>
-        <display>
-        <title>jekyll bootstrap</title>
-        <pubTime>2013-06-26T16:00:00.000Z</pubTime>
-        
-        <tag>jekyll</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -1419,15 +1441,13 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/9582a957/</loc>
+    <loc>https://leicode.com/posts/11352d68/</loc>
     <lastmod>2018-09-07T07:18:29.646Z</lastmod>
     <data>
         <display>
-        <title>Linux下的动态链接库和so文件</title>
-        <pubTime>2013-06-23T16:56:43.000Z</pubTime>
+        <title>Amazon EC2学习笔记</title>
+        <pubTime>2013-06-23T16:55:37.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
          
            
              
@@ -1439,13 +1459,15 @@
 
     
   <url>
-    <loc>https://leicode.com/posts/11352d68/</loc>
+    <loc>https://leicode.com/posts/9582a957/</loc>
     <lastmod>2018-09-07T07:18:29.646Z</lastmod>
     <data>
         <display>
-        <title>Amazon EC2学习笔记</title>
-        <pubTime>2013-06-23T16:55:37.000Z</pubTime>
+        <title>Linux下的动态链接库和so文件</title>
+        <pubTime>2013-06-23T16:56:43.000Z</pubTime>
         
+        <tag>Linux</tag>
+         
          
            
              
