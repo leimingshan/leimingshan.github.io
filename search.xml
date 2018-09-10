@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Jackson转换Json的严格字母序]]></title>
+    <url>%2Fposts%2F4147250%2F</url>
+    <content type="text"><![CDATA[经常使用Jackson的同学肯定知道这个注解，@JsonPropertyOrder(alphabetic = true)放在类定义上，可以在该类对象序列化的时候，字段按照字母序排序。全局的话，可以这样配置Jackson的mapper：12MAPPER.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);MAPPER.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);问题来了，如果类中的字段是不确定类型的（或者说是Object类型），该类型的字段中又可以嵌套其他不确定类型，这样就不好办了，而我要达到的需求是，所有嵌套结构内部也要按照字母序，或者叫严格的字母序。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo进阶设置]]></title>
     <url>%2Fposts%2Fa62b0c3d%2F</url>
     <content type="text"><![CDATA[静态代码压缩因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。这里没必要用gulp去压缩，配置太繁琐，也没法自动化。直接使用hexo-all-minifier这个模块，安装：npm install hexo-all-minifier –save增加配置：all_minifier: true搞定！文章唯一链接hexo-abbrlink文章字数统计和阅读时长hexo-symbols-count-time可以替代老的hexo-wordcount。SEO-搜索引擎收录和优化利用插件生成sitemap，hexo自带的两个插件，百度搜索要使用单独的一个。12npm install hexo-generator-sitemap --save npm install hexo-generator-baidu-sitemap --save修改根目录中的_config.yml，url必须要修改成对应的，会体现在sitemap.xml里的url里。增加配置项。12345# Sitemapsitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml之后hexo重新生成部署，就可以看到两个站点地图的xml文件了。Google收录Google站点平台：https://www.google.com/webmasters/验证站点可以用html文件的方式，html文件放在hexo的source目录后，一定要在开头添加123---layout: false---这样hexo才可以正确处理该文件。之后提交sitemap即可，配置比较简单，不再赘述。参考资料：http://muyunyun.cn/posts/f55182c5/https://blog.csdn.net/sunshine940326/article/details/70936988]]></content>
