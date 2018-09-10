@@ -5,9 +5,9 @@
   <subtitle>Tech Share</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://leimingshan.github.io/"/>
+  <link href="https://leicode.com/"/>
   <updated>2018-09-07T08:48:17.475Z</updated>
-  <id>http://leimingshan.github.io/</id>
+  <id>https://leicode.com/</id>
   
   <author>
     <name>Mingshan Lei</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hexo进阶设置</title>
-    <link href="http://leimingshan.github.io/posts/a62b0c3d/"/>
-    <id>http://leimingshan.github.io/posts/a62b0c3d/</id>
+    <link href="https://leicode.com/posts/a62b0c3d/"/>
+    <id>https://leicode.com/posts/a62b0c3d/</id>
     <published>2018-09-07T08:21:04.000Z</published>
     <updated>2018-09-07T08:48:17.475Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>JDK11-ZGC</title>
-    <link href="http://leimingshan.github.io/posts/769720f0/"/>
-    <id>http://leimingshan.github.io/posts/769720f0/</id>
+    <link href="https://leicode.com/posts/769720f0/"/>
+    <id>https://leicode.com/posts/769720f0/</id>
     <published>2018-09-03T05:52:32.000Z</published>
     <updated>2018-09-07T07:18:29.700Z</updated>
     
@@ -52,17 +52,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>推荐计算机科学书籍</title>
-    <link href="http://leimingshan.github.io/posts/ba7b25c0/"/>
-    <id>http://leimingshan.github.io/posts/ba7b25c0/</id>
+    <link href="https://leicode.com/posts/ba7b25c0/"/>
+    <id>https://leicode.com/posts/ba7b25c0/</id>
     <published>2018-08-30T06:01:49.000Z</published>
     <updated>2018-09-07T07:18:29.699Z</updated>
     
@@ -82,8 +82,8 @@
   
   <entry>
     <title>Elasticsearch-nested-query</title>
-    <link href="http://leimingshan.github.io/posts/3f81b35b/"/>
-    <id>http://leimingshan.github.io/posts/3f81b35b/</id>
+    <link href="https://leicode.com/posts/3f81b35b/"/>
+    <id>https://leicode.com/posts/3f81b35b/</id>
     <published>2018-08-27T05:23:35.000Z</published>
     <updated>2018-09-07T07:18:29.697Z</updated>
     
@@ -99,14 +99,14 @@
     </summary>
     
     
-      <category term="elasticsearch" scheme="http://leimingshan.github.io/tags/elasticsearch/"/>
+      <category term="elasticsearch" scheme="https://leicode.com/tags/elasticsearch/"/>
     
   </entry>
   
   <entry>
     <title>RBAC简要设计</title>
-    <link href="http://leimingshan.github.io/posts/5969db7a/"/>
-    <id>http://leimingshan.github.io/posts/5969db7a/</id>
+    <link href="https://leicode.com/posts/5969db7a/"/>
+    <id>https://leicode.com/posts/5969db7a/</id>
     <published>2018-06-07T05:49:24.000Z</published>
     <updated>2018-09-07T07:18:29.698Z</updated>
     
@@ -118,17 +118,17 @@
     
     </summary>
     
-      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>基于Redis实现的Rate limiter (限流器)</title>
-    <link href="http://leimingshan.github.io/posts/9e983597/"/>
-    <id>http://leimingshan.github.io/posts/9e983597/</id>
+    <link href="https://leicode.com/posts/9e983597/"/>
+    <id>https://leicode.com/posts/9e983597/</id>
     <published>2018-04-10T09:46:12.000Z</published>
     <updated>2018-09-07T07:18:29.695Z</updated>
     
@@ -140,19 +140,19 @@
     
     </summary>
     
-      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="NoSQL" scheme="http://leimingshan.github.io/tags/NoSQL/"/>
+      <category term="NoSQL" scheme="https://leicode.com/tags/NoSQL/"/>
     
-      <category term="Redis" scheme="http://leimingshan.github.io/tags/Redis/"/>
+      <category term="Redis" scheme="https://leicode.com/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>分布式系统下的唯一ID生成问题</title>
-    <link href="http://leimingshan.github.io/posts/8a9934c8/"/>
-    <id>http://leimingshan.github.io/posts/8a9934c8/</id>
+    <link href="https://leicode.com/posts/8a9934c8/"/>
+    <id>https://leicode.com/posts/8a9934c8/</id>
     <published>2018-03-06T05:57:14.000Z</published>
     <updated>2018-09-07T07:18:29.694Z</updated>
     
@@ -164,17 +164,17 @@
     
     </summary>
     
-      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="develop" scheme="http://leimingshan.github.io/tags/develop/"/>
+      <category term="develop" scheme="https://leicode.com/tags/develop/"/>
     
   </entry>
   
   <entry>
     <title>MongoDB-ObjectId</title>
-    <link href="http://leimingshan.github.io/posts/397fc4ba/"/>
-    <id>http://leimingshan.github.io/posts/397fc4ba/</id>
+    <link href="https://leicode.com/posts/397fc4ba/"/>
+    <id>https://leicode.com/posts/397fc4ba/</id>
     <published>2018-03-04T06:15:35.000Z</published>
     <updated>2018-09-07T07:18:29.692Z</updated>
     
@@ -186,17 +186,17 @@
     
     </summary>
     
-      <category term="算法" scheme="http://leimingshan.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://leicode.com/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="MongoDB" scheme="http://leimingshan.github.io/tags/MongoDB/"/>
+      <category term="MongoDB" scheme="https://leicode.com/tags/MongoDB/"/>
     
   </entry>
   
   <entry>
     <title>Docker-Basic</title>
-    <link href="http://leimingshan.github.io/posts/a02e5c6b/"/>
-    <id>http://leimingshan.github.io/posts/a02e5c6b/</id>
+    <link href="https://leicode.com/posts/a02e5c6b/"/>
+    <id>https://leicode.com/posts/a02e5c6b/</id>
     <published>2018-01-25T07:45:10.000Z</published>
     <updated>2018-09-07T07:18:29.691Z</updated>
     
@@ -209,14 +209,14 @@
     </summary>
     
     
-      <category term="Docker" scheme="http://leimingshan.github.io/tags/Docker/"/>
+      <category term="Docker" scheme="https://leicode.com/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>Hexo启用Https后设置腾讯公益404的问题</title>
-    <link href="http://leimingshan.github.io/posts/da5ea02e/"/>
-    <id>http://leimingshan.github.io/posts/da5ea02e/</id>
+    <link href="https://leicode.com/posts/da5ea02e/"/>
+    <id>https://leicode.com/posts/da5ea02e/</id>
     <published>2017-08-30T07:12:16.000Z</published>
     <updated>2018-09-07T07:18:29.690Z</updated>
     
@@ -231,15 +231,15 @@
     
     </summary>
     
-      <category term="网站" scheme="http://leimingshan.github.io/categories/%E7%BD%91%E7%AB%99/"/>
+      <category term="网站" scheme="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
     
     
   </entry>
   
   <entry>
     <title>Hexo Basic Usage</title>
-    <link href="http://leimingshan.github.io/posts/f49afeaf/"/>
-    <id>http://leimingshan.github.io/posts/f49afeaf/</id>
+    <link href="https://leicode.com/posts/f49afeaf/"/>
+    <id>https://leicode.com/posts/f49afeaf/</id>
     <published>2016-05-18T06:26:50.000Z</published>
     <updated>2018-09-07T07:18:29.700Z</updated>
     
@@ -256,8 +256,8 @@
   
   <entry>
     <title>工作一年的技术成长总结</title>
-    <link href="http://leimingshan.github.io/posts/4d806b6d/"/>
-    <id>http://leimingshan.github.io/posts/4d806b6d/</id>
+    <link href="https://leicode.com/posts/4d806b6d/"/>
+    <id>https://leicode.com/posts/4d806b6d/</id>
     <published>2016-04-20T07:25:21.000Z</published>
     <updated>2018-09-07T07:18:29.689Z</updated>
     
@@ -269,15 +269,15 @@
     
     </summary>
     
-      <category term="Diary" scheme="http://leimingshan.github.io/categories/Diary/"/>
+      <category term="Diary" scheme="https://leicode.com/categories/Diary/"/>
     
     
   </entry>
   
   <entry>
     <title>Gradle使用代理服务器</title>
-    <link href="http://leimingshan.github.io/posts/4fdca764/"/>
-    <id>http://leimingshan.github.io/posts/4fdca764/</id>
+    <link href="https://leicode.com/posts/4fdca764/"/>
+    <id>https://leicode.com/posts/4fdca764/</id>
     <published>2016-03-23T01:03:16.000Z</published>
     <updated>2018-09-07T07:18:29.685Z</updated>
     
@@ -289,19 +289,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
-      <category term="Gradle" scheme="http://leimingshan.github.io/tags/Gradle/"/>
+      <category term="Gradle" scheme="https://leicode.com/tags/Gradle/"/>
     
   </entry>
   
   <entry>
     <title>Bug Tracker</title>
-    <link href="http://leimingshan.github.io/posts/ca051d68/"/>
-    <id>http://leimingshan.github.io/posts/ca051d68/</id>
+    <link href="https://leicode.com/posts/ca051d68/"/>
+    <id>https://leicode.com/posts/ca051d68/</id>
     <published>2016-03-22T14:20:38.000Z</published>
     <updated>2018-09-07T07:18:29.684Z</updated>
     
@@ -316,15 +316,15 @@
     
     </summary>
     
-      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
     
     
   </entry>
   
   <entry>
     <title>MySQL database character set encoding</title>
-    <link href="http://leimingshan.github.io/posts/f528791e/"/>
-    <id>http://leimingshan.github.io/posts/f528791e/</id>
+    <link href="https://leicode.com/posts/f528791e/"/>
+    <id>https://leicode.com/posts/f528791e/</id>
     <published>2016-03-08T03:28:16.000Z</published>
     <updated>2018-09-07T07:18:29.683Z</updated>
     
@@ -336,17 +336,17 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://leimingshan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://leicode.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="MySQL" scheme="http://leimingshan.github.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://leicode.com/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Gradle与SonarQube的应用</title>
-    <link href="http://leimingshan.github.io/posts/68467f3f/"/>
-    <id>http://leimingshan.github.io/posts/68467f3f/</id>
+    <link href="https://leicode.com/posts/68467f3f/"/>
+    <id>https://leicode.com/posts/68467f3f/</id>
     <published>2016-03-04T08:19:50.000Z</published>
     <updated>2018-09-07T07:18:29.682Z</updated>
     
@@ -361,21 +361,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
-      <category term="Gradle" scheme="http://leimingshan.github.io/tags/Gradle/"/>
+      <category term="Gradle" scheme="https://leicode.com/tags/Gradle/"/>
     
-      <category term="SonarQube" scheme="http://leimingshan.github.io/tags/SonarQube/"/>
+      <category term="SonarQube" scheme="https://leicode.com/tags/SonarQube/"/>
     
   </entry>
   
   <entry>
     <title>本站开始启用全站Https</title>
-    <link href="http://leimingshan.github.io/posts/cf97a194/"/>
-    <id>http://leimingshan.github.io/posts/cf97a194/</id>
+    <link href="https://leicode.com/posts/cf97a194/"/>
+    <id>https://leicode.com/posts/cf97a194/</id>
     <published>2016-03-04T01:32:44.000Z</published>
     <updated>2018-09-07T07:18:29.684Z</updated>
     
@@ -390,17 +390,17 @@
     
     </summary>
     
-      <category term="网站" scheme="http://leimingshan.github.io/categories/%E7%BD%91%E7%AB%99/"/>
+      <category term="网站" scheme="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
     
     
-      <category term="web" scheme="http://leimingshan.github.io/tags/web/"/>
+      <category term="web" scheme="https://leicode.com/tags/web/"/>
     
   </entry>
   
   <entry>
     <title>Jenkins SonarQube的搭配使用</title>
-    <link href="http://leimingshan.github.io/posts/7a61ee38/"/>
-    <id>http://leimingshan.github.io/posts/7a61ee38/</id>
+    <link href="https://leicode.com/posts/7a61ee38/"/>
+    <id>https://leicode.com/posts/7a61ee38/</id>
     <published>2016-03-04T01:20:14.000Z</published>
     <updated>2018-09-07T07:18:29.682Z</updated>
     
@@ -412,21 +412,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://leimingshan.github.io/categories/Java/"/>
+      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
-      <category term="SonarQube" scheme="http://leimingshan.github.io/tags/SonarQube/"/>
+      <category term="SonarQube" scheme="https://leicode.com/tags/SonarQube/"/>
     
-      <category term="Jenkins" scheme="http://leimingshan.github.io/tags/Jenkins/"/>
+      <category term="Jenkins" scheme="https://leicode.com/tags/Jenkins/"/>
     
   </entry>
   
   <entry>
     <title>SonarQube-代码质量管理平台的安装</title>
-    <link href="http://leimingshan.github.io/posts/25a76de9/"/>
-    <id>http://leimingshan.github.io/posts/25a76de9/</id>
+    <link href="https://leicode.com/posts/25a76de9/"/>
+    <id>https://leicode.com/posts/25a76de9/</id>
     <published>2016-02-25T05:49:30.000Z</published>
     <updated>2018-09-07T07:18:29.681Z</updated>
     
@@ -442,19 +442,19 @@ FLUSH PRIVILEGES;&lt;/pre&gt;
     
     </summary>
     
-      <category term="开发" scheme="http://leimingshan.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Java" scheme="http://leimingshan.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
-      <category term="SonarQube" scheme="http://leimingshan.github.io/tags/SonarQube/"/>
+      <category term="SonarQube" scheme="https://leicode.com/tags/SonarQube/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu14.04使用ppa源安装PHP-7</title>
-    <link href="http://leimingshan.github.io/posts/bf78be32/"/>
-    <id>http://leimingshan.github.io/posts/bf78be32/</id>
+    <link href="https://leicode.com/posts/bf78be32/"/>
+    <id>https://leicode.com/posts/bf78be32/</id>
     <published>2016-02-05T06:03:12.000Z</published>
     <updated>2018-09-07T07:18:29.680Z</updated>
     
@@ -469,14 +469,14 @@ FLUSH PRIVILEGES;&lt;/pre&gt;
     
     </summary>
     
-      <category term="Linux" scheme="http://leimingshan.github.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://leicode.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://leimingshan.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://leicode.com/tags/Linux/"/>
     
-      <category term="Ubuntu" scheme="http://leimingshan.github.io/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://leicode.com/tags/Ubuntu/"/>
     
-      <category term="PHP" scheme="http://leimingshan.github.io/tags/PHP/"/>
+      <category term="PHP" scheme="https://leicode.com/tags/PHP/"/>
     
   </entry>
   
