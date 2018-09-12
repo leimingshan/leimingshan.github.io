@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-09-10T06:31:23.125Z</updated>
+  <updated>2018-09-12T07:53:00.209Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自建Git服务的几个选择</title>
+    <link href="https://leicode.com/posts/a9253739/"/>
+    <id>https://leicode.com/posts/a9253739/</id>
+    <published>2018-09-12T07:38:51.000Z</published>
+    <updated>2018-09-12T07:53:00.209Z</updated>
+    
+    <content type="html"><![CDATA[<p>两年前比较早的时候，git刚流行起来，私服方案记得只有一个，就是gitlab，gitlab自己提供累死github的公有服务器，也提供自己搭建<br>服务的功能，现在官方还有了docker image，可以说是非常方便了。</p><p>Gitlab的特点：</p><ul><li>优点：功能很全，自带CI持续集成和Issue tracking。</li><li>缺点：比较重，配置要求高。建议独立部署，内存需求比较大。</li></ul><p>最近偶尔看到了几个非常轻量的自建git服务，这里简单记录一下，以后也许会用得到：</p><ol><li>Gogs</li><li>Gitea。Gogs的社区开发维护版本。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;两年前比较早的时候，git刚流行起来，私服方案记得只有一个，就是gitlab，gitlab自己提供累死github的公有服务器，也提供自己搭建&lt;br&gt;服务的功能，现在官方还有了docker image，可以说是非常方便了。&lt;/p&gt;&lt;p&gt;Gitlab的特点：&lt;/p&gt;&lt;ul&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://leicode.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo进阶设置</title>
@@ -440,32 +463,6 @@
     
     
       <category term="web" scheme="https://leicode.com/tags/web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jenkins SonarQube的搭配使用</title>
-    <link href="https://leicode.com/posts/7a61ee38/"/>
-    <id>https://leicode.com/posts/7a61ee38/</id>
-    <published>2016-03-04T01:20:14.000Z</published>
-    <updated>2018-09-07T07:18:29.682Z</updated>
-    
-    <content type="html"><![CDATA[<p>Jenkins在Ubuntu环境下的安装配置都比较简单，在安装好Java JDK之后，使用</p><p><pre>sudo apt-get install jenkins</pre><br>即可安装。因为没有用到后台数据库，配置过程一般就是配置端口号，以及Nginx或Apache server的代理即可。</p><p>详细方法可以参考<a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu" target="_blank" rel="noopener">官方安装指南</a>。</p><p>接下来就是与代码质量分析平台SonarQube的结合使用，前面已经说明了SonarQube的安装，然后就是利用Jenkins在进行持续集成的过程中，进行代码质量分析、代码覆盖率分析，并将相关数据和报告通知给SonarQube。</p><p>在Jenkins中的“系统管理”-“管理插件”中搜索安装SonarQube Plugin，因为我使用的是Java Gradle工程和JaCoCo测试报告，所以之前也安装了Gradle Plugin和JaCoCo Plugin，这里大家可以根据自己具体的项目选择。<a id="more"></a></p><p>在安装好SonarQube Plugin之后，记得在系统设置中配置SonarQube服务器的相关信息，可以参考下图进行。</p><p><a href="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Plugin.jpg" target="_blank" rel="noopener"><img src="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Plugin-300x91.jpg" alt="SonarQube Plugin"></a></p><p>另外注意配置SonarQube scanner，这里可以选择自动安装，或者选择自己安装的目录位置。</p><p><a href="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Runner.jpg" target="_blank" rel="noopener"><img src="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Runner-300x51.jpg" alt="SonarQube Runner"></a></p><p>服务器配置好之后，然后就是在具体的项目中配置构建过程，选择“增加构建步骤”中的Invoke Standalone SonarQube Analysis，参考下图。</p><p><a href="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Analysis.jpg" target="_blank" rel="noopener"><img src="http://www.leimingshan.com/wp-content/uploads/2016/03/SonarQube-Analysis-300x131.jpg" alt="SonarQube Analysis"></a></p><p>具体的配置如下：</p><p><pre class="lang:default decode:true"># required metadata<br>sonar.projectKey=pminer:MongoDB-ImportXMLProfile<br>sonar.projectName=MongoDB-ImportXMLProfile<br>sonar.projectVersion=1.0</pre></p><h1 id="path-to-source-directories-required"><a href="#path-to-source-directories-required" class="headerlink" title="path to source directories (required)"></a>path to source directories (required)</h1><p>sonar.sources=src/main/java</p><h1 id="path-to-test-source-directories-optional"><a href="#path-to-test-source-directories-optional" class="headerlink" title="path to test source directories (optional)"></a>path to test source directories (optional)</h1><p>sonar.tests=src/test/java</p><p>sonar.java.binaries=build/classes</p><p>sonar.language=java</p><p>#Tells SonarQube where the unit tests execution reports are<br>sonar.junit.reportsPath=reports/tests</p><p>#Tells SonarQube where the unit tests code coverage report is<br>sonar.jacoco.reportPath=build/jacoco/test.exec</p><h1 id="Encoding-of-the-source-files"><a href="#Encoding-of-the-source-files" class="headerlink" title="Encoding of the source files"></a>Encoding of the source files</h1><p>sonar.sourceEncoding=UTF-8<br>注意以上的配置要根据自己具体的项目路径配置。</p><p>这样在下次的构建中，就会之前SonarQube的分析任务，并将结果发送给SonarQube服务器，然后访问服务器平台就能看到代码的质量报告。</p><p>参考：<a href="http://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project" target="_blank" rel="noopener">http://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Jenkins在Ubuntu环境下的安装配置都比较简单，在安装好Java JDK之后，使用&lt;/p&gt;&lt;p&gt;&lt;pre&gt;sudo apt-get install jenkins&lt;/pre&gt;&lt;br&gt;即可安装。因为没有用到后台数据库，配置过程一般就是配置端口号，以及Nginx或Apache server的代理即可。&lt;/p&gt;&lt;p&gt;详细方法可以参考&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方安装指南&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;接下来就是与代码质量分析平台SonarQube的结合使用，前面已经说明了SonarQube的安装，然后就是利用Jenkins在进行持续集成的过程中，进行代码质量分析、代码覆盖率分析，并将相关数据和报告通知给SonarQube。&lt;/p&gt;&lt;p&gt;在Jenkins中的“系统管理”-“管理插件”中搜索安装SonarQube Plugin，因为我使用的是Java Gradle工程和JaCoCo测试报告，所以之前也安装了Gradle Plugin和JaCoCo Plugin，这里大家可以根据自己具体的项目选择。
-    
-    </summary>
-    
-      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
-    
-      <category term="SonarQube" scheme="https://leicode.com/tags/SonarQube/"/>
-    
-      <category term="Jenkins" scheme="https://leicode.com/tags/Jenkins/"/>
     
   </entry>
   
