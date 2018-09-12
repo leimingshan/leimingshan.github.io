@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-09-12T07:53:00.209Z</updated>
+  <updated>2018-09-12T07:55:04.614Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://leicode.com/posts/a9253739/"/>
     <id>https://leicode.com/posts/a9253739/</id>
     <published>2018-09-12T07:38:51.000Z</published>
-    <updated>2018-09-12T07:53:00.209Z</updated>
+    <updated>2018-09-12T07:55:04.614Z</updated>
     
-    <content type="html"><![CDATA[<p>两年前比较早的时候，git刚流行起来，私服方案记得只有一个，就是gitlab，gitlab自己提供累死github的公有服务器，也提供自己搭建<br>服务的功能，现在官方还有了docker image，可以说是非常方便了。</p><p>Gitlab的特点：</p><ul><li>优点：功能很全，自带CI持续集成和Issue tracking。</li><li>缺点：比较重，配置要求高。建议独立部署，内存需求比较大。</li></ul><p>最近偶尔看到了几个非常轻量的自建git服务，这里简单记录一下，以后也许会用得到：</p><ol><li>Gogs</li><li>Gitea。Gogs的社区开发维护版本。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>两年前比较早的时候，git刚流行起来，私服方案记得只有一个，就是gitlab，gitlab自己提供累死github的公有服务器，也提供自己搭建<br>服务的功能，现在官方还有了docker image，可以说是非常方便了。</p><p>Gitlab的特点：</p><ul><li>优点：功能很全，自带CI持续集成和Issue tracking。</li><li>缺点：比较重，配置要求高。建议独立部署，内存需求比较大。</li></ul><p>最近偶尔看到了几个非常轻量的自建git服务，这里简单记录一下，以后也许会用得到：</p><ol><li>Gogs。<a href="https://gogs.io/。GO语言开发，跨平台，支持docker。" target="_blank" rel="noopener">https://gogs.io/。GO语言开发，跨平台，支持docker。</a></li><li>Gitea。Gogs的社区开发维护版本。<a href="https://gitea.io/zh-cn/。" target="_blank" rel="noopener">https://gitea.io/zh-cn/。</a></li></ol>]]></content>
     
     <summary type="html">
     
