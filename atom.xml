@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-09-12T07:55:04.614Z</updated>
+  <updated>2018-09-29T03:17:56.873Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JDK11已正式发布</title>
+    <link href="https://leicode.com/posts/df008f1/"/>
+    <id>https://leicode.com/posts/df008f1/</id>
+    <published>2018-09-29T03:01:11.000Z</published>
+    <updated>2018-09-29T03:17:56.873Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正式发布"><a href="#正式发布" class="headerlink" title="正式发布"></a>正式发布</h1><p>9月25日，Oracle官方宣布Java11(18.9 LTS)正式发布，可在生产环境中使用！<br>Java11是Oracle在2017年宣布新的JDK发布时间表之后，第一个Long Term Support(LTS)版本，非常值得大家关注。<br>如果说之前的Java9和Java10关注度都比较小，基本都被大家忽略的话，Java11可是绝对不容错过的。<br>作为新版发布路线的第一个LTS版本，其重要性和对后面版本的影响都不言而喻，<br>Oracle直到2023年9月都会为Java 11提供技术支持，而补丁和安全警告等扩展支持将持续到2026年。<br>下一个LTS版本，应该是Java17，要在3年后的2021年才会与大家见面。</p><h1 id="版本支持情况"><a href="#版本支持情况" class="headerlink" title="版本支持情况"></a>版本支持情况</h1><p>Oracle Java SE的支持路线图，感兴趣的同学可以在<a href="https://www.oracle.com/technetwork/java/javase/eol-135779.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/eol-135779.html</a> 查看。<br>对于普通用户和Oracle的商业客户都有些区别，简单了解下就好。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;正式发布&quot;&gt;&lt;a href=&quot;#正式发布&quot; class=&quot;headerlink&quot; title=&quot;正式发布&quot;&gt;&lt;/a&gt;正式发布&lt;/h1&gt;&lt;p&gt;9月25日，Oracle官方宣布Java11(18.9 LTS)正式发布，可在生产环境中使用！&lt;br&gt;Java11是Orac
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>自建Git服务的几个选择</title>
     <link href="https://leicode.com/posts/a9253739/"/>
     <id>https://leicode.com/posts/a9253739/</id>
     <published>2018-09-12T07:38:51.000Z</published>
-    <updated>2018-09-12T07:55:04.614Z</updated>
+    <updated>2018-09-29T03:03:04.310Z</updated>
     
     <content type="html"><![CDATA[<p>两年前比较早的时候，git刚流行起来，私服方案记得只有一个，就是gitlab，gitlab自己提供累死github的公有服务器，也提供自己搭建<br>服务的功能，现在官方还有了docker image，可以说是非常方便了。</p><p>Gitlab的特点：</p><ul><li>优点：功能很全，自带CI持续集成和Issue tracking。</li><li>缺点：比较重，配置要求高。建议独立部署，内存需求比较大。</li></ul><p>最近偶尔看到了几个非常轻量的自建git服务，这里简单记录一下，以后也许会用得到：</p><ol><li>Gogs。<a href="https://gogs.io/。GO语言开发，跨平台，支持docker。" target="_blank" rel="noopener">https://gogs.io/。GO语言开发，跨平台，支持docker。</a></li><li>Gitea。Gogs的社区开发维护版本。<a href="https://gitea.io/zh-cn/。" target="_blank" rel="noopener">https://gitea.io/zh-cn/。</a></li></ol>]]></content>
     
@@ -34,6 +59,8 @@
     
     </summary>
     
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+    
     
       <category term="git" scheme="https://leicode.com/tags/git/"/>
     
@@ -44,7 +71,7 @@
     <link href="https://leicode.com/posts/a62b0c3d/"/>
     <id>https://leicode.com/posts/a62b0c3d/</id>
     <published>2018-09-07T08:21:04.000Z</published>
-    <updated>2018-09-10T06:31:23.125Z</updated>
+    <updated>2018-09-29T03:03:58.818Z</updated>
     
     <content type="html"><![CDATA[<h1 id="静态代码压缩"><a href="#静态代码压缩" class="headerlink" title="静态代码压缩"></a>静态代码压缩</h1><p>因为Blog中都是静态页面，基本都可以压缩优化，针对html，css，js，图片进行。<br>这里没必要用gulp去压缩，配置太繁琐，也没法自动化。<br>直接使用<a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="noopener">hexo-all-minifier</a>这个模块，<br>安装：</p><blockquote><p>npm install hexo-all-minifier –save</p></blockquote><p>增加配置：</p><blockquote><p>all_minifier: true</p></blockquote><p>搞定！</p><h1 id="文章唯一链接"><a href="#文章唯一链接" class="headerlink" title="文章唯一链接"></a>文章唯一链接</h1><p>hexo-abbrlink</p><h1 id="文章字数统计和阅读时长"><a href="#文章字数统计和阅读时长" class="headerlink" title="文章字数统计和阅读时长"></a>文章字数统计和阅读时长</h1><p><a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">hexo-symbols-count-time</a><br>可以替代老的hexo-wordcount。</p><h1 id="SEO-搜索引擎收录和优化"><a href="#SEO-搜索引擎收录和优化" class="headerlink" title="SEO-搜索引擎收录和优化"></a>SEO-搜索引擎收录和优化</h1><p>利用插件生成sitemap，hexo自带的两个插件，百度搜索要使用单独的一个。<br><a id="more"></a><br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save     </span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure><p></p><p>修改根目录中的_config.yml，url必须要修改成对应的，会体现在sitemap.xml里的url里。增加配置项。<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Sitemap</span><br><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br><span class="line">baidusitemap:</span><br><span class="line">  path: baidusitemap.xml</span><br></pre></td></tr></table></figure><p></p><p>之后hexo重新生成部署，就可以看到两个站点地图的xml文件了。</p><h2 id="Google收录"><a href="#Google收录" class="headerlink" title="Google收录"></a>Google收录</h2><p>Google站点平台：<a href="https://www.google.com/webmasters/" target="_blank" rel="noopener">https://www.google.com/webmasters/</a><br>验证站点可以用html文件的方式，html文件放在hexo的source目录后，一定要在开头添加<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p></p><p>这样hexo才可以正确处理该文件。</p><p>之后提交sitemap即可，配置比较简单，不再赘述。</p><p>参考资料：</p><ul><li><a href="http://muyunyun.cn/posts/f55182c5/" target="_blank" rel="noopener">http://muyunyun.cn/posts/f55182c5/</a></li><li><a href="https://blog.csdn.net/sunshine940326/article/details/70936988" target="_blank" rel="noopener">https://blog.csdn.net/sunshine940326/article/details/70936988</a></li></ul>]]></content>
     
@@ -54,6 +81,10 @@
     
     </summary>
     
+      <category term="网站" scheme="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="web" scheme="https://leicode.com/tags/web/"/>
     
   </entry>
   
@@ -438,31 +469,6 @@
       <category term="Gradle" scheme="https://leicode.com/tags/Gradle/"/>
     
       <category term="SonarQube" scheme="https://leicode.com/tags/SonarQube/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>本站开始启用全站Https</title>
-    <link href="https://leicode.com/posts/cf97a194/"/>
-    <id>https://leicode.com/posts/cf97a194/</id>
-    <published>2016-03-04T01:32:44.000Z</published>
-    <updated>2018-09-07T07:18:29.684Z</updated>
-    
-    <content type="html"><![CDATA[<p>从今天起本Blog开始启用全站Https。<br>未来的大趋势嘛，哈哈！</p><p><img src="https://i.loli.net/2018/09/06/5b90c99433408.jpg" alt="30-021604_546.jpg"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;从今天起本Blog开始启用全站Https。&lt;br&gt;未来的大趋势嘛，哈哈！&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/06/5b90c99433408.jpg&quot; alt=&quot;30-021604_546.jpg&quot;&gt;&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="网站" scheme="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
-    
-    
-      <category term="web" scheme="https://leicode.com/tags/web/"/>
     
   </entry>
   
