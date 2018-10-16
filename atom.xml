@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-10-16T07:52:04.018Z</updated>
+  <updated>2018-10-16T12:15:50.823Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CAPTCHA简介与Java实现</title>
+    <link href="https://leicode.com/posts/c8f51018/"/>
+    <id>https://leicode.com/posts/c8f51018/</id>
+    <published>2018-10-16T11:44:32.000Z</published>
+    <updated>2018-10-16T12:15:50.823Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>CAPTCHA(Completely Automated Public Turing test to tell Computers and Humans Apart，简称CAPTCHA)，俗称验证码，是一种区分用户是计算机或人的公共全自动程序。在CAPTCHA测试中，作为服务器的计算机会自动生成一个问题由用户来解答。这个问题可以由计算机生成并评判，但是必须只有人类才能解答。由于计算机无法解答CAPTCHA的问题，所以回答出问题的用户就可以被认为是人类。</p><p>目前验证码被广泛应用于网站登录、注册、防刷等处，用于识别和防止自动化程序恶意获取服务和数据。</p><h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><p>目前大家常见的几类验证码有：</p><ul><li>标准验证码（图片），图片中一般是随机组合的字母和数字，对背景和内容进行扭曲，增加噪点和曲线，使程序难以识别</li><li>根据界面图形，进行鼠标、手指（移动端）交互操作（滑动拼图验证，点选验证）</li><li>No CAPTCHA （Google新一代reCAPTCHA，升级的风险分析技术可以智能无感知的判断人类与机器）</li><li>语音验证（播放一段音频给用户，用户获取信息后提交比对）</li><li>短信、邮箱验证</li></ul><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>采集用户所处环境信息以及操作信息，提交这些信息给后端服务器进行判断。<br>采集的信息多有：</p><ul><li>插件</li><li>User-agent</li><li>屏幕分辨率</li><li>在captcha的<iframe>中进行鼠标、键盘、触摸操作的次数和记录</iframe></li><li>渲染canvas图像</li><li>Cookies</li><li>用户输入内容</li></ul><p>服务端利用的技术，目前高端的验证码服务，大多会引入海量样本数据，引入深度学习来识别机器与人的行为模式。</p><p>Google的reCAPTCHA首先检测客户端环境，判断使用者是否处于人类的操作环境中。如果检测结果在容错范围内则直接通过测试，否则弹出验证码进行二次认证。</p><p>滑动验证的核心并不是简单的拼接成功就可以过，也不是简单的算一下偏移量就能破解。<br>新的滑块验证码方案，验证码后台针对用户产生的行为轨迹数据进行机器学习建模，结合访问频率、地理位置、历史记录等多个维度信息，快速、准确的返回人机判定结果。</p><p>滑动拼图验证码、图中点选验证码、智能无感知等，其背后的原理除了对滑块起始位置的认知、图中文字及其顺序的认知外，实际还会基于在页面上的操作行为、操作轨迹，以及当前设备的指纹、所运行的环境等维度进行大数据分析，并利用有监督和无监督的机器学习手段，不断升级和优化模型，不断提高破解的成本，保证人机识别的效果。</p><h1 id="验证码服务平台"><a href="#验证码服务平台" class="headerlink" title="验证码服务平台"></a>验证码服务平台</h1><p>极验验证 <a href="http://www.geetest.com/type/" target="_blank" rel="noopener">http://www.geetest.com/type/</a><br>网易云 易盾 <a href="http://dun.163.com/trial/sense" target="_blank" rel="noopener">http://dun.163.com/trial/sense</a><br>腾讯验证码 <a href="http://open.captcha.qq.com/cap_web/experience-slidepass.html" target="_blank" rel="noopener">http://open.captcha.qq.com/cap_web/experience-slidepass.html</a><br>Google reCAPTCHA <a href="https://www.google.com/recaptcha/intro/v3beta.html#" target="_blank" rel="noopener">https://www.google.com/recaptcha/intro/v3beta.html#</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;p&gt;CAPTCHA(Completely Automated Public Turing test to tell Computers and 
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="develop" scheme="https://leicode.com/tags/develop/"/>
+    
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
+    
+      <category term="CAPTCHA" scheme="https://leicode.com/tags/CAPTCHA/"/>
+    
+  </entry>
   
   <entry>
     <title>docker attach的使用与正确退出</title>
@@ -436,30 +465,6 @@
     
       <category term="Diary" scheme="https://leicode.com/categories/Diary/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Gradle使用代理服务器</title>
-    <link href="https://leicode.com/posts/4fdca764/"/>
-    <id>https://leicode.com/posts/4fdca764/</id>
-    <published>2016-03-23T01:03:16.000Z</published>
-    <updated>2018-09-07T07:18:29.685Z</updated>
-    
-    <content type="html"><![CDATA[<p>在国内使用Gradle的时候，由于依赖管理时经常需要从mavenCentral（maven中央仓库）和jCenter中下载lib，速度不稳定，有时还会导致build长时间卡住，有一种方法是使用Gradle的Offline模式，但前提是你已经cache了项目的依赖在本地，不然可能会Build失败，另外就是使用代理服务器，也是一种不错的选择。</p><p><strong>在Gradle中使用代理服务器的方法：</strong></p><ol><li><strong>使用以下命令行参数指定代理服务器。</strong><br><pre class="lang:default decode:true">gradle -Dhttp.proxyHost=yourProxy -Dhttp.proxyPort=yourPort -Dhttp.proxyUser=usernameProxy -Dhttp.proxyPassword=yourPassoword</pre><a id="more"></a></li><li><strong>修改Gradle用户配置文件。</strong>可以在GRADLE_USER_HOME下新建文件gradle.properties，然后设置代理。GRADLE_USER_HOME的路径一般如下:<br>/home/&lt;username&gt;/.gradle/ (Linux)<br>/Users/&lt;username&gt;/.gradle/ (Mac)<br>C:\Users\&lt;username&gt;.gradle\ (Windows)<br><pre class="lang:default decode:true"># Http Proxy<br>systemProp.http.proxyHost=<a href="http://www.somehost.org" target="_blank" rel="noopener">www.somehost.org</a><br>systemProp.http.proxyPort=8080<br>systemProp.http.proxyUser=userid<br>systemProp.http.proxyPassword=password<br>systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost</pre></li></ol><h1 id="Https-Proxy"><a href="#Https-Proxy" class="headerlink" title="Https Proxy"></a>Https Proxy</h1><p>systemProp.https.proxyHost=<a href="http://www.somehost.org" target="_blank" rel="noopener">www.somehost.org</a><br>systemProp.https.proxyPort=8080<br>systemProp.https.proxyUser=userid<br>systemProp.https.proxyPassword=password<br>systemProp.https.nonProxyHosts=*.nonproxyrepos.com|localhost<br>参考：</p><ol><li><a href="https://docs.gradle.org/current/userguide/build_environment.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/build_environment.html</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在国内使用Gradle的时候，由于依赖管理时经常需要从mavenCentral（maven中央仓库）和jCenter中下载lib，速度不稳定，有时还会导致build长时间卡住，有一种方法是使用Gradle的Offline模式，但前提是你已经cache了项目的依赖在本地，不然可能会Build失败，另外就是使用代理服务器，也是一种不错的选择。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;在Gradle中使用代理服务器的方法：&lt;/strong&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;strong&gt;使用以下命令行参数指定代理服务器。&lt;/strong&gt;&lt;br&gt;&lt;pre class=&quot;lang:default decode:true&quot;&gt;gradle -Dhttp.proxyHost=yourProxy -Dhttp.proxyPort=yourPort -Dhttp.proxyUser=usernameProxy -Dhttp.proxyPassword=yourPassoword&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="https://leicode.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
-    
-      <category term="Gradle" scheme="https://leicode.com/tags/Gradle/"/>
     
   </entry>
   
