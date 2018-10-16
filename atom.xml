@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-10-09T07:37:57.845Z</updated>
+  <updated>2018-10-16T06:56:20.958Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker attach的使用与正确退出</title>
+    <link href="https://leicode.com/posts/7d17a93a/"/>
+    <id>https://leicode.com/posts/7d17a93a/</id>
+    <published>2018-10-16T06:41:31.000Z</published>
+    <updated>2018-10-16T06:56:20.958Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Sample-Dockerfile"><a href="#Sample-Dockerfile" class="headerlink" title="Sample Dockerfile"></a>Sample Dockerfile</h1><p>后面的讲解，以该Dockerfile构建的镜像为例说明。<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jre-alpine</span><br><span class="line"></span><br><span class="line">MAINTAINER leimingshan</span><br><span class="line"></span><br><span class="line">ADD xxl-sso-server-0.1.1-SNAPSHOT.jar app.jar</span><br><span class="line">EXPOSE 8080</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br></pre></td></tr></table></figure><p></p><h1 id="Detached-vs-foreground"><a href="#Detached-vs-foreground" class="headerlink" title="Detached vs foreground"></a>Detached vs foreground</h1><p>Docker run命令运行一个容器的时候，有一个-d选项</p><blockquote><blockquote><p>-d=false: Detached mode: Run container in the background, print new container id<br>detached的意思是让容器在后台运行，同时与你当前终端的STDIN，STDOUT，STDERR分离，然后告诉你一个容器id。<br>执行该命令之后，我们只会看到一个容器id。</p></blockquote></blockquote><p>默认不指定-d选项的时候，即-d=false，容器在前台运行，此时容器<br>处于attached状态，或者说是foreground前台模式，容器内进程（一般是ENTRYPOINT指定的运行命令）的STDIN，STDOUT，STDERR<br>会与你当前的命令行终端连接，你就可以直接看到容器内进程执行时候的输出，而你的输入也会重定向到容器内进程。</p><p>参考：<a href="https://docs.docker.com/engine/reference/run/#detached-vs-foreground" target="_blank" rel="noopener">https://docs.docker.com/engine/reference/run/#detached-vs-foreground</a></p><h1 id="docker-attach-command"><a href="#docker-attach-command" class="headerlink" title="docker attach command"></a>docker attach command</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Sample-Dockerfile&quot;&gt;&lt;a href=&quot;#Sample-Dockerfile&quot; class=&quot;headerlink&quot; title=&quot;Sample Dockerfile&quot;&gt;&lt;/a&gt;Sample Dockerfile&lt;/h1&gt;&lt;p&gt;后面的讲解，以该Do
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="docker" scheme="https://leicode.com/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Java Unsafe的应用与发展</title>
@@ -438,29 +463,6 @@
       <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
       <category term="Gradle" scheme="https://leicode.com/tags/Gradle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bug Tracker</title>
-    <link href="https://leicode.com/posts/ca051d68/"/>
-    <id>https://leicode.com/posts/ca051d68/</id>
-    <published>2016-03-22T14:20:38.000Z</published>
-    <updated>2018-09-07T07:18:29.684Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在尝试使用一些项目管理工具，之前的文章里提到的代码质量分析工具SonarQube，比较符合使用的期望，效果也不错，还有比较早使用的持续集成工具Jenkins，</p><p>然后是缺陷跟踪工具，Bug Tracker System，比较常用的有：</p><ol><li>Redmine <a href="http://www.redmine.org/" target="_blank" rel="noopener">http://www.redmine.org/</a> 网站本身就是Redmine示例。</li><li>Mantis <a href="http://www.mantisbt.org/" target="_blank" rel="noopener">http://www.mantisbt.org/</a> demo：<a href="http://www.mantisbt.org/bugs/my_view_page.php" target="_blank" rel="noopener">http://www.mantisbt.org/bugs/my_view_page.php</a>。</li><li>Atlassian JIRA <a href="https://www.atlassian.com/software/jira/" target="_blank" rel="noopener">https://www.atlassian.com/software/jira/</a> 应用广泛，有云服务版。</li><li>Bugzilla <a href="https://www.bugzilla.org/" target="_blank" rel="noopener">https://www.bugzilla.org/</a><br>类似的工具还有许多，可以查看wiki百科汇总 <a href="https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems</a>。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最近在尝试使用一些项目管理工具，之前的文章里提到的代码质量分析工具SonarQube，比较符合使用的期望，效果也不错，还有比较早使用的持续集成工具Jenkins，&lt;/p&gt;&lt;p&gt;然后是缺陷跟踪工具，Bug Tracker System，比较常用的有：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;R
-      
-    
-    </summary>
-    
-      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
-    
     
   </entry>
   
