@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://leicode.com/about/index.html</loc>
+    
+    <lastmod>2018-10-19T10:06:07.651Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://leicode.com/posts/725aae6c/</loc>
     
     <lastmod>2018-10-19T05:10:25.554Z</lastmod>
@@ -184,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://leicode.com/posts/68467f3f/</loc>
+    <loc>https://leicode.com/posts/7a61ee38/</loc>
     
     <lastmod>2018-09-07T07:18:29.682Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://leicode.com/posts/7a61ee38/</loc>
+    <loc>https://leicode.com/posts/68467f3f/</loc>
     
     <lastmod>2018-09-07T07:18:29.682Z</lastmod>
     
@@ -415,14 +422,14 @@
   </url>
   
   <url>
-    <loc>https://leicode.com/posts/8b2968b1/</loc>
+    <loc>https://leicode.com/posts/3c688e29/</loc>
     
     <lastmod>2018-09-07T07:18:29.658Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://leicode.com/posts/3c688e29/</loc>
+    <loc>https://leicode.com/posts/8b2968b1/</loc>
     
     <lastmod>2018-09-07T07:18:29.658Z</lastmod>
     
@@ -586,13 +593,6 @@
     <loc>https://leicode.com/404/index.html</loc>
     
     <lastmod>2018-08-30T07:08:25.710Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://leicode.com/about/index.html</loc>
-    
-    <lastmod>2016-10-31T05:01:22.000Z</lastmod>
     
   </url>
   
