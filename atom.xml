@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-10-19T05:10:25.554Z</updated>
+  <updated>2018-10-22T05:15:30.367Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NodeJS - How to update packages by npm</title>
+    <link href="https://leicode.com/posts/595239dd/"/>
+    <id>https://leicode.com/posts/595239dd/</id>
+    <published>2018-10-22T05:06:27.000Z</published>
+    <updated>2018-10-22T05:15:30.367Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="NVM安装新版本node之后的-global-packages-迁移"><a href="#NVM安装新版本node之后的-global-packages-迁移" class="headerlink" title="NVM安装新版本node之后的 global packages 迁移"></a>NVM安装新版本node之后的 global packages 迁移</h1><p>NVM安装新版本node之后，全局的package需要迁移，注意使用以下命令，这样就不用手动一个个安装global package了。<br>例如我今天安装了v8.12.0的node，之前的版本是v8.11.3，那么执行以下命令就可以了。<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nvm install v8.12.0</span><br><span class="line">nvm reinstall-packages v8.11.3  # 把在v8.11.3版本node下安装的全部global package安装到新的node下面</span><br><span class="line">nvm uninstall v8.11.3</span><br><span class="line">nvm install-latest-npm          # 顺便更新一下npm</span><br></pre></td></tr></table></figure><p></p><h1 id="更新-global-packages"><a href="#更新-global-packages" class="headerlink" title="更新 global packages"></a>更新 global packages</h1><p>npm update -g</p><p>参考：<a href="https://docs.npmjs.com/getting-started/updating-global-packages" target="_blank" rel="noopener">https://docs.npmjs.com/getting-started/updating-global-packages</a></p><h1 id="更新-local-packages"><a href="#更新-local-packages" class="headerlink" title="更新 local packages"></a>更新 local packages</h1><p>npm outdated 会列出所有可更新的 node_modules。<br>npm update 更新命令，只能按照package.js中标注的版本号，进行更新，所以每次都要改下package.js中的版本号为最新才能够更新，太麻烦。<br>那还有没有更好的办法呢，当然有，就是借助升级插件npm-check-updates</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check-updates</span><br><span class="line">ncu     # 查看全部需要更新的包和最新版本</span><br><span class="line">ncu -a  # 更新全部依赖到最新版本，并覆盖package.js</span><br></pre></td></tr></table></figure><p>参考：</p><ul><li><a href="https://docs.npmjs.com/getting-started/updating-local-packages" target="_blank" rel="noopener">https://docs.npmjs.com/getting-started/updating-local-packages</a></li><li><a href="https://www.npmjs.com/package/npm-check-updates" target="_blank" rel="noopener">https://www.npmjs.com/package/npm-check-updates</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;NVM安装新版本node之后的-global-packages-迁移&quot;&gt;&lt;a href=&quot;#NVM安装新版本node之后的-global-packages-迁移&quot; class=&quot;headerlink&quot; title=&quot;NVM安装新版本node之后的 global p
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="JavaScript" scheme="https://leicode.com/tags/JavaScript/"/>
+    
+      <category term="NodeJs" scheme="https://leicode.com/tags/NodeJs/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript RSA encrypt 公钥加密</title>
@@ -34,9 +61,9 @@
       <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
-    
       <category term="JavaScript" scheme="https://leicode.com/tags/JavaScript/"/>
+    
+      <category term="Java" scheme="https://leicode.com/tags/Java/"/>
     
       <category term="NodeJs" scheme="https://leicode.com/tags/NodeJs/"/>
     
@@ -449,24 +476,6 @@
     </summary>
     
       <category term="网站" scheme="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Basic Usage</title>
-    <link href="https://leicode.com/posts/f49afeaf/"/>
-    <id>https://leicode.com/posts/f49afeaf/</id>
-    <published>2016-05-18T06:26:50.000Z</published>
-    <updated>2018-09-07T07:18:29.700Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br><a id="more"></a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
     
     
   </entry>
