@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2018-10-23T06:23:20.186Z</updated>
+  <updated>2018-12-25T10:20:15.046Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis Lua script</title>
+    <link href="https://leicode.com/posts/5ba98ff9/"/>
+    <id>https://leicode.com/posts/5ba98ff9/</id>
+    <published>2018-12-25T08:44:15.000Z</published>
+    <updated>2018-12-25T10:20:15.046Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Redis-Lua脚本的几种应用场景"><a href="#Redis-Lua脚本的几种应用场景" class="headerlink" title="Redis Lua脚本的几种应用场景"></a>Redis Lua脚本的几种应用场景</h1><h2 id="批量删除符合某种pattern的keys"><a href="#批量删除符合某种pattern的keys" class="headerlink" title="批量删除符合某种pattern的keys"></a>批量删除符合某种pattern的keys</h2><p>bin/redis-cli eval “return redis.call(“del”,unpack(redis.call(“keys”,ARGV[1])))” 0 “HelloWorld*”<br>该命令会删除所有以HelloWorld开头的keys。</p><h2 id="迁移db-index的lua脚本"><a href="#迁移db-index的lua脚本" class="headerlink" title="迁移db index的lua脚本"></a>迁移db index的lua脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">local result=&#123;&#125;;</span><br><span class="line"></span><br><span class="line">local keys =redis.call(&quot;keys&quot;,&quot;*&quot;);</span><br><span class="line"></span><br><span class="line">for i = 1, #keys do</span><br><span class="line">  local val= redis.call(&quot;move&quot;, keys[i], 0);</span><br><span class="line">end</span><br><span class="line">return  result;</span><br></pre></td></tr></table></figure><p>以上也是很常见的一种脚本范式，先根据需要查询获取到所有的key，再遍历这些key进行想要的操作，例如move, del, rename等等。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Redis-Lua脚本的几种应用场景&quot;&gt;&lt;a href=&quot;#Redis-Lua脚本的几种应用场景&quot; class=&quot;headerlink&quot; title=&quot;Redis Lua脚本的几种应用场景&quot;&gt;&lt;/a&gt;Redis Lua脚本的几种应用场景&lt;/h1&gt;&lt;h2 id=&quot;批
+      
+    
+    </summary>
+    
+      <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="NoSQL" scheme="https://leicode.com/tags/NoSQL/"/>
+    
+      <category term="Redis" scheme="https://leicode.com/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>NodeJS - How to update packages by npm</title>
@@ -451,29 +478,6 @@
     
     
       <category term="Docker" scheme="https://leicode.com/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo启用Https后设置腾讯公益404的问题</title>
-    <link href="https://leicode.com/posts/da5ea02e/"/>
-    <id>https://leicode.com/posts/da5ea02e/</id>
-    <published>2017-08-30T07:12:16.000Z</published>
-    <updated>2018-09-07T07:18:29.690Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h2><p>执行<br>hexo new page 404</p><h2 id="修改source-404-index-md"><a href="#修改source-404-index-md" class="headerlink" title="修改source/404/index.md"></a>修改source/404/index.md</h2><p>一些老的页面会出现问题，因为启用了Https后，去加载Http的样式表和JS会失败，所以要使用以下的页面代码。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 404</span><br><span class="line">date: 2018-08-30 14:40:55</span><br><span class="line">---</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-cn&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">  &lt;title&gt;404&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot; src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot; homePageName=&quot;返回宝贝回家&quot; homePageUrl=&quot;https://www.baobeihuijia.com&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;新建页面&quot;&gt;&lt;a href=&quot;#新建页面&quot; class=&quot;headerlink&quot; title=&quot;新建页面&quot;&gt;&lt;/a&gt;新建页面&lt;/h2&gt;&lt;p&gt;执行&lt;br&gt;hexo new page 404&lt;/p&gt;&lt;h2 id=&quot;修改source-404-index-md&quot;&gt;&lt;a h
-      
-    
-    </summary>
-    
-      <category term="网站" scheme="https://leicode.com/categories/%E7%BD%91%E7%AB%99/"/>
-    
     
   </entry>
   

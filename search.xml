@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[Redis Lua script]]></title>
+      <url>https://leicode.com/posts/5ba98ff9/</url>
+      <content type="html"><![CDATA[<h1 id="Redis-Lua脚本的几种应用场景"><a href="#Redis-Lua脚本的几种应用场景" class="headerlink" title="Redis Lua脚本的几种应用场景"></a>Redis Lua脚本的几种应用场景</h1><h2 id="批量删除符合某种pattern的keys"><a href="#批量删除符合某种pattern的keys" class="headerlink" title="批量删除符合某种pattern的keys"></a>批量删除符合某种pattern的keys</h2><p>bin/redis-cli eval “return redis.call(“del”,unpack(redis.call(“keys”,ARGV[1])))” 0 “HelloWorld*”<br>该命令会删除所有以HelloWorld开头的keys。</p><h2 id="迁移db-index的lua脚本"><a href="#迁移db-index的lua脚本" class="headerlink" title="迁移db index的lua脚本"></a>迁移db index的lua脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">local result=&#123;&#125;;</span><br><span class="line"></span><br><span class="line">local keys =redis.call(&quot;keys&quot;,&quot;*&quot;);</span><br><span class="line"></span><br><span class="line">for i = 1, #keys do</span><br><span class="line">  local val= redis.call(&quot;move&quot;, keys[i], 0);</span><br><span class="line">end</span><br><span class="line">return  result;</span><br></pre></td></tr></table></figure><p>以上也是很常见的一种脚本范式，先根据需要查询获取到所有的key，再遍历这些key进行想要的操作，例如move, del, rename等等。</p>]]></content>
+      
+        <categories>
+            
+            <category> 开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> NoSQL </tag>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[NodeJS - How to update packages by npm]]></title>
       <url>https://leicode.com/posts/595239dd/</url>
       <content type="html"><![CDATA[<h1 id="NVM安装新版本node之后的-global-packages-迁移"><a href="#NVM安装新版本node之后的-global-packages-迁移" class="headerlink" title="NVM安装新版本node之后的 global packages 迁移"></a>NVM安装新版本node之后的 global packages 迁移</h1><p>NVM安装新版本node之后，全局的package需要迁移，注意使用以下命令，这样就不用手动一个个安装global package了。<br>例如我今天安装了v8.12.0的node，之前的版本是v8.11.3，那么执行以下命令就可以了。<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nvm install v8.12.0</span><br><span class="line">nvm reinstall-packages v8.11.3  # 把在v8.11.3版本node下安装的全部global package安装到新的node下面</span><br><span class="line">nvm uninstall v8.11.3</span><br><span class="line">nvm install-latest-npm          # 顺便更新一下npm</span><br></pre></td></tr></table></figure><p></p><a id="more"></a><h1 id="更新-global-packages"><a href="#更新-global-packages" class="headerlink" title="更新 global packages"></a>更新 global packages</h1><p>npm update -g</p><p>参考：<a href="https://docs.npmjs.com/getting-started/updating-global-packages" target="_blank" rel="noopener">https://docs.npmjs.com/getting-started/updating-global-packages</a></p><h1 id="更新-local-packages"><a href="#更新-local-packages" class="headerlink" title="更新 local packages"></a>更新 local packages</h1><p>npm outdated 会列出所有可更新的 node_modules。<br>npm update 更新命令，只能按照package.js中标注的版本号，进行更新，所以每次都要改下package.js中的版本号为最新才能够更新，太麻烦。<br>那还有没有更好的办法呢，当然有，就是借助升级插件npm-check-updates</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check-updates</span><br><span class="line">ncu     # 查看全部需要更新的包和最新版本</span><br><span class="line">ncu -a  # 更新全部依赖到最新版本，并覆盖package.js</span><br></pre></td></tr></table></figure><p>参考：</p><ul><li><a href="https://docs.npmjs.com/getting-started/updating-local-packages" target="_blank" rel="noopener">https://docs.npmjs.com/getting-started/updating-local-packages</a></li><li><a href="https://www.npmjs.com/package/npm-check-updates" target="_blank" rel="noopener">https://www.npmjs.com/package/npm-check-updates</a></li></ul>]]></content>
