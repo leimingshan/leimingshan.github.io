@@ -6,7 +6,7 @@
   <link href="https://leicode.com/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2021-06-25T14:29:02.428Z</updated>
+  <updated>2021-06-25T15:10:54.162Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo upgrade</title>
+    <title>执行力（Executive Ability）</title>
+    <link href="https://leicode.com/posts/ffaefb69/"/>
+    <id>https://leicode.com/posts/ffaefb69/</id>
+    <published>2021-06-25T15:03:22.000Z</published>
+    <updated>2021-06-25T15:10:54.162Z</updated>
+    
+    <content type="html"><![CDATA[<p>每当你稍微感觉自己有点懒惰的时候，想都不要想地放下当下手里所有的事，立刻开始做你最不想做却不得不做的那件事。</p><p>最核心的点在于</p><ol><li>稍有懒惰的萌芽就要立刻放下当下手里的任何事（视频，音乐，社交软件，被窝等等），立刻马上。</li><li>这个过程中脑袋里什么都不要想。因为我们生活中绝大部分需要完成的事情，其中80%的精力都消耗在启动这个环节。所以，当你用一种势不可挡的态度在极短的时间内完成了这80%，剩下20%靠惯性就可以了。<span id="more"></span>永远永远都不要说我从下个礼拜/明天/一小时以后/半小时以后/二十分钟以后/十分钟以后/五分钟以后再开始，就是现在这一秒！否则就真的明日复明日了。</li></ol><p>这个方法有个bonus，就是很刺激。你想像一下上一秒还在娱乐懒惰，这一秒就开始做正经事，这种突如其来的角色反差造成的心灵冲击力足以让你脱胎换骨，等你什么时候习惯这种反差了，你的拖延症就治好了。其实用这个方法不一定能让你高质量地完成所有事，但最珍贵的是通过这样的训练让你养成了一个一直在做优先级最高的事情的习惯。无论你未来励志做科学家，CEO，还是国家主席，养成这个习惯都是你的入门课。</p><p>都看到这了，赶紧放下手机滚去学习吧！</p><p>参考：<a href="https://www.zhihu.com/question/52723910/answer/132211549">https://www.zhihu.com/question/52723910/answer/132211549</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;每当你稍微感觉自己有点懒惰的时候，想都不要想地放下当下手里所有的事，立刻开始做你最不想做却不得不做的那件事。&lt;/p&gt;
+&lt;p&gt;最核心的点在于&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;稍有懒惰的萌芽就要立刻放下当下手里的任何事（视频，音乐，社交软件，被窝等等），立刻马上。&lt;/li&gt;
+&lt;li&gt;这个过程中脑袋里什么都不要想。因为我们生活中绝大部分需要完成的事情，其中80%的精力都消耗在启动这个环节。所以，当你用一种势不可挡的态度在极短的时间内完成了这80%，剩下20%靠惯性就可以了。</summary>
+    
+    
+    
+    
+    <category term="我自己" scheme="https://leicode.com/tags/%E6%88%91%E8%87%AA%E5%B7%B1/"/>
+    
+    <category term="思考" scheme="https://leicode.com/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo升级指南</title>
     <link href="https://leicode.com/posts/d9017f30/"/>
     <id>https://leicode.com/posts/d9017f30/</id>
     <published>2021-06-25T13:58:36.000Z</published>
-    <updated>2021-06-25T14:29:02.428Z</updated>
+    <updated>2021-06-25T15:04:34.212Z</updated>
     
     <content type="html"><![CDATA[<p>太久没回来更新的后果之一，就是整个博客的技术栈已经完全outdate了，需要进行大的升级，NodeJS要升级，Hexo和Next theme都要进行几个大版本的升级。几个简要的步骤记录下吧，用得上的同学自取哦。</p><span id="more"></span><h1 id="Node的升级"><a href="#Node的升级" class="headerlink" title="Node的升级"></a>Node的升级</h1><p>因为之前用的nvm，就比较简单，</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nvm ls-remote</span><br><span class="line">nvm install --lts     #安装最新的lts版本吧，比较推荐</span><br><span class="line">nvm ls                #查看现在安装的哪些版本</span><br><span class="line">nvm uninstall v8.12.0 #找到旧的版本删除掉吧</span><br></pre></td></tr></table></figure><h1 id="Hexo的升级"><a href="#Hexo的升级" class="headerlink" title="Hexo的升级"></a>Hexo的升级</h1><ol><li>全局升级hexo-cli，先hexo version查看当前版本，然后npm install -g hexo-cli，再次hexo version查看是否升级成功。如果hexo不能直接识别运行，改为npx hexo。</li><li>使用npm-check，检查系统中的插件是否有升级的。</li><li>使用npm-upgrade，升级系统中的相关插件。</li><li>npm update -g，检查升级npm本身。</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo version</span><br><span class="line"></span><br><span class="line">npm install -g npm-check</span><br><span class="line">npm-check</span><br><span class="line"></span><br><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br><span class="line"></span><br><span class="line">npm update -g</span><br><span class="line">npm install -g npm</span><br><span class="line"></span><br><span class="line">hexo clean #清理hexo数据并重新生成页面并部署</span><br><span class="line">hexo g -s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>经过以上这些命令，整体翻新就差不多了，theme的升级，我这边是删除了原来的主题目录，重新进行了拉取，注意保留配置文件，重新配置即可，就不详述了。</p>]]></content>
     
@@ -44,17 +69,13 @@
     <link href="https://leicode.com/posts/5dc2f86c/"/>
     <id>https://leicode.com/posts/5dc2f86c/</id>
     <published>2021-06-22T00:57:16.000Z</published>
-    <updated>2021-06-22T01:10:15.790Z</updated>
+    <updated>2021-06-25T15:12:03.180Z</updated>
     
-    <content type="html"><![CDATA[<p>如果提前了解了你所面对的人生，你是否还有勇气前来？</p><p>如果你明知道努力无法改变任何结果，你是否还愿意去努力？</p><p>What’s happened’s happened. Which is an expression of faith in the mechanics of the world. It’s not an excuse to do nothing.<br>发生过的事已经发生了。这是对这个世界运作的信念，而不是袖手旁观的借口。</p><p>愿你在被打击时，记起你的珍贵，抵抗恶意；愿你在迷茫时，坚信你的珍贵，爱你所爱，行你所行，听从你心，无问西东。</p><p>身边的人都很好，没有人有恶意，只是很多时候，我们都处于迷茫之中，拼了命的想找到一个明确的方向，结果到处碰壁，撞的头破血流，倒不如Follow your heart，让你的内心指引你，找到那条属于你自己的道路。</p><p>这句话一定要送给你：爱你所爱，行你所行，听从你心，无问西东。</p>]]></content>
+    <content type="html"><![CDATA[<p>如果提前了解了你所面对的人生，你是否还有勇气前来？</p><p>如果你明知道努力无法改变任何结果，你是否还愿意去努力？</p><span id="more"></span><p>What’s happened’s happened. Which is an expression of faith in the mechanics of the world. It’s not an excuse to do nothing.<br>发生过的事已经发生了。这是对这个世界运作的信念，而不是袖手旁观的借口。</p><p>愿你在被打击时，记起你的珍贵，抵抗恶意；愿你在迷茫时，坚信你的珍贵，爱你所爱，行你所行，听从你心，无问西东。</p><p>身边的人都很好，没有人有恶意，只是很多时候，我们都处于迷茫之中，拼了命的想找到一个明确的方向，结果到处碰壁，撞的头破血流，倒不如Follow your heart，让你的内心指引你，找到那条属于你自己的道路。</p><p>爱你所爱，行你所行，听从你心，无问西东。</p>]]></content>
     
     
-      
-      
     <summary type="html">&lt;p&gt;如果提前了解了你所面对的人生，你是否还有勇气前来？&lt;/p&gt;
-&lt;p&gt;如果你明知道努力无法改变任何结果，你是否还愿意去努力？&lt;/p&gt;
-&lt;p&gt;What’s happened’s happened. Which is an expression of faith in the me</summary>
-      
+&lt;p&gt;如果你明知道努力无法改变任何结果，你是否还愿意去努力？&lt;/p&gt;</summary>
     
     
     
@@ -72,15 +93,13 @@
     <link href="https://leicode.com/posts/1a3b783e/"/>
     <id>https://leicode.com/posts/1a3b783e/</id>
     <published>2021-06-20T04:13:33.000Z</published>
-    <updated>2021-06-20T04:31:02.951Z</updated>
+    <updated>2021-06-25T15:08:20.266Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="我回来了"><a href="#我回来了" class="headerlink" title="我回来了"></a>我回来了</h1><p>不知不觉离开了好久呀，2年半的时间，跟我在蚂蚁工作的时间一样长，这两年经历了很多，其实有很多可以分享记录一下，所以趁现在记忆还清晰，最近会留下一些小思考，记录一下自己的成长吧。</p><p>分享一段罗翔老师的话，读《小王子》有感：<br>在芸芸众生之中，我们看似自己选择。但其实是被命运之手安排。<br>我们爱上了一个人，我们选择了或者说我们被选择了，在一个具体的个体身上投放我们的时间，通过各种的仪式，我驯化了她，她也驯化了我。<br>我们开始经营，在经营的过程中是会被刺伤的，是会流泪的是会痛苦的。</p><p>但是有一天，我们爱上了，那风吹麦浪的声音，我们看到了她的与众不同，正是因为这种美好、我们愿意为我们所驯服的对象负责，即便，让我们像小王子那样，为了找回那朵玫瑰他甚至不惜牺牲自己的生命，也许这就是爱吧。</p><p>爱肯定不是一个单纯的欲望的满足，因为欲望的满足，会让人觉得无限的空虚，爱一定是在一个具体的个体身上。投入你的感情，你的时间，所以感恩，我们能够与我们爱的人相遇，我们也感恩在我们爱的人的身上，我们愿意活出我们的美好。不是吗？</p><p>玫瑰花是我能看见的，这是一个具体，但是看不见美丽，那是抽象的，我们终究一生都是在具体的个体上，我们看见了我们看不见的美好和责任。我们把我们的责任，把我们的幸福放在具体的人身上，虽然具体的人是带刺的，具体的人并不一定有我们想象中那么美好，但是正是因为她没有我们想象中那么美好，所以我们要和她一起来吧那个看不见的圆给画好。</p><p>当你找到那朵玫瑰花，请注意真正的爱，是要用时间，用真心，用责任，用牺牲 去守护。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="我回来了"><a href="#我回来了" class="headerlink" title="我回来了"></a>我回来了</h1><p>不知不觉离开了好久呀，2年半的时间，跟我在蚂蚁工作的时间一样长，这两年经历了很多，其实有很多可以分享记录一下，所以趁现在记忆还清晰，最近会留下一些小思考，记录一下自己的成长吧。</p><p>分享一段罗翔老师的话，读《小王子》有感：<br>在芸芸众生之中，我们看似自己选择。但其实是被命运之手安排。</p><span id="more"></span><p>我们爱上了一个人，我们选择了或者说我们被选择了，在一个具体的个体身上投放我们的时间，通过各种的仪式，我驯化了她，她也驯化了我。<br>我们开始经营，在经营的过程中是会被刺伤的，是会流泪的是会痛苦的。</p><p>但是有一天，我们爱上了，那风吹麦浪的声音，我们看到了她的与众不同，正是因为这种美好、我们愿意为我们所驯服的对象负责，即便，让我们像小王子那样，为了找回那朵玫瑰他甚至不惜牺牲自己的生命，也许这就是爱吧。</p><p>爱肯定不是一个单纯的欲望的满足，因为欲望的满足，会让人觉得无限的空虚，爱一定是在一个具体的个体身上。投入你的感情，你的时间，所以感恩，我们能够与我们爱的人相遇，我们也感恩在我们爱的人的身上，我们愿意活出我们的美好。不是吗？</p><p>玫瑰花是我能看见的，这是一个具体，但是看不见美丽，那是抽象的，我们终究一生都是在具体的个体上，我们看见了我们看不见的美好和责任。我们把我们的责任，把我们的幸福放在具体的人身上，虽然具体的人是带刺的，具体的人并不一定有我们想象中那么美好，但是正是因为她没有我们想象中那么美好，所以我们要和她一起来吧那个看不见的圆给画好。</p><p>当你找到那朵玫瑰花，请注意真正的爱，是要用时间，用真心，用责任，用牺牲 去守护。</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;我回来了&quot;&gt;&lt;a href=&quot;#我回来了&quot; class=&quot;headerlink&quot; title=&quot;我回来了&quot;&gt;&lt;/a&gt;我回来了&lt;/h1&gt;&lt;p&gt;不知不觉离开了好久呀，2年半的时间，跟我在蚂蚁工作的时间一样长，这两年经历了很多，其实有很多可以分享记录一下，所以趁现在记忆</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;我回来了&quot;&gt;&lt;a href=&quot;#我回来了&quot; class=&quot;headerlink&quot; title=&quot;我回来了&quot;&gt;&lt;/a&gt;我回来了&lt;/h1&gt;&lt;p&gt;不知不觉离开了好久呀，2年半的时间，跟我在蚂蚁工作的时间一样长，这两年经历了很多，其实有很多可以分享记录一下，所以趁现在记忆还清晰，最近会留下一些小思考，记录一下自己的成长吧。&lt;/p&gt;
+&lt;p&gt;分享一段罗翔老师的话，读《小王子》有感：&lt;br&gt;在芸芸众生之中，我们看似自己选择。但其实是被命运之手安排。&lt;/p&gt;</summary>
     
     
     
@@ -556,28 +575,6 @@
     <category term="NoSQL" scheme="https://leicode.com/tags/NoSQL/"/>
     
     <category term="Redis" scheme="https://leicode.com/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分布式系统下的唯一ID生成问题</title>
-    <link href="https://leicode.com/posts/8a9934c8/"/>
-    <id>https://leicode.com/posts/8a9934c8/</id>
-    <published>2018-03-06T05:57:14.000Z</published>
-    <updated>2018-09-07T07:18:29.694Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。<br>在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，<br>这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。</p><p>如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适用，多个节点下<br>必然会发生碰撞问题。与此类似，当应用分布在多个节点运行的时候，简单在内存缓存最近的一个ID，也同样不能满足需要。</p><span id="more"></span><h1 id="分布式环境下的解决方案"><a href="#分布式环境下的解决方案" class="headerlink" title="分布式环境下的解决方案"></a>分布式环境下的解决方案</h1><h2 id="中心式"><a href="#中心式" class="headerlink" title="中心式"></a>中心式</h2><h3 id="数据库的中心化自增"><a href="#数据库的中心化自增" class="headerlink" title="数据库的中心化自增"></a>数据库的中心化自增</h3><p><a href="http://code.flickr.net/2010/02/08/ticket-servers-distributed-unique-primary-keys-on-the-cheap/">Flickr的Ticket Server方案</a><br>MySQL的自增显然不能在多库多表的情况下使用，那使用单库单表呢？</p><p>活用MySQL的REPLACE INTO。</p><blockquote><p>REPLACE works exactly like INSERT, except that if an old row in the table has the same value as a new row for a PRIMARY KEY or a UNIQUE index, the old row is deleted before the new row is inserted.</p></blockquote><p>新建两张表，Tickets32 for 32-bit IDs, and Tickets64 for 64-bit IDs.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `Tickets64` (</span><br><span class="line">  `id` bigint(20) unsigned NOT NULL auto_increment,</span><br><span class="line">  `stub` char(1) NOT NULL default &#x27;&#x27;,</span><br><span class="line">  PRIMARY KEY  (`id`),</span><br><span class="line">  UNIQUE KEY `stub` (`stub`)</span><br><span class="line">) ENGINE=MyISAM</span><br></pre></td></tr></table></figure><p>当需要一个新的64bit唯一ID时，执行以下SQL：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REPLACE INTO Tickets64 (stub) VALUES (&#x27;a&#x27;);</span><br><span class="line">SELECT LAST_INSERT_ID();</span><br></pre></td></tr></table></figure><p>因为是单库，怎么解决单点故障问题呢？把ID的数值分成奇数和偶数，在两台数据库服务器上部署。<br>配置如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TicketServer1:</span><br><span class="line">auto-increment-increment = 2</span><br><span class="line">auto-increment-offset = 1</span><br><span class="line"></span><br><span class="line">TicketServer2:</span><br><span class="line">auto-increment-increment = 2</span><br><span class="line">auto-increment-offset = 2</span><br></pre></td></tr></table></figure><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><p>若系统中已经依赖了Redis，使用Redis也是很好的选择，加上现在Redis已经有了集群化的高可用方案。<br>Redis的INCR命令，可以直接获取增加后的值。如果需要定制更复杂点的生成算法，使用lua脚本结合多个命令即可，lua脚本可以保证原子性。<br>缺点就是依赖Redis啦，每次获取都有一次远程调用，如果很担忧效率的话，可以一次获取批量的ID。</p><h3 id="Zookeeper"><a href="#Zookeeper" class="headerlink" title="Zookeeper"></a>Zookeeper</h3><p>zookeeper主要通过其znode数据版本来生成序列号，可以生成32位和64位的数据版本号，客户端可以使用这个版本号来作为唯一的序列号。<br>很少会使用zookeeper来生成唯一ID。性能方面会不太理想，但也算一种思路。</p><h3 id="其他的分布式集群协调器"><a href="#其他的分布式集群协调器" class="headerlink" title="其他的分布式集群协调器"></a>其他的分布式集群协调器</h3><p>在不使用数据库的情况下，通过一个后台服务对外提供高可用的、固定步长标识生成，则需要分布式的集群协调器进行。</p><p>一般的，主流协调器有两类：</p><ul><li>以强一致性为目标的：ZooKeeper为代表</li><li>以最终一致性为目标的：Consul为代表</li></ul><p>ZooKeeper的强一致性，是由Paxos协议保证的；Consul的最终一致性，是由Gossip协议保证的。</p><p>在步长累计型生成算法中，最核心的就是保持一个累计值在整个集群中的「强一致性」。同时，这也会为唯一性标识的生成带来新的形成瓶颈。</p><p>参考：<a href="https://juejin.im/entry/57fe1be1bf22ec0064ad96ce">https://juejin.im/entry/57fe1be1bf22ec0064ad96ce</a></p><h2 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h2><p>Universally unique identifier (UUID)，有时也被称为globally unique identifier(GUID)。<br>拥有RFC标准，应用非常广泛。</p><p>在微软的相关类库中，直接找GUID就可以了。<br>在Java语言中，可以直接使用java.util.UUID类的randomUUID()静态方法，直接可以得到一个类型4的UUID，<br>这也是最常用最简单的生成方法。</p><p>那么什么是类型4呢，是基于伪随机生成UUID的一种方法类型，具体可以学习下UUID的<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Wiki</a>。</p><p>标准UUID的优势：</p><ul><li>各大编程语言自带实现，编码简单，直接使用。没有其他依赖限制。</li><li>性能好。</li><li>全球唯一，碰撞率极小。</li></ul><p>缺点：</p><ul><li>没有顺序性。</li><li>字符串存储，一般需要36个字符表示，比较占用存储空间。</li><li>随机生成，可读性较低。</li><li>用作数据库主键或作为索引的话，查询效率会比较低。<a href="https://medium.com/@varuntayal/re-design-primary-keys-and-ids-9b9776d442b">UUID与自增64bit long ID的数据库效率比较</a></li></ul><p>建议仔细阅读以下文档：<br><a href="http://www.ietf.org/rfc/rfc4122.txt">RFC4122</a><br><a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID Wiki</a></p><h2 id="Snowflake算法"><a href="#Snowflake算法" class="headerlink" title="Snowflake算法"></a>Snowflake算法</h2><p>Twitter贡献的开源分布式ID生成算法，可以生成一个64bit long型ID。<br><img src="https://i.loli.net/2018/09/06/5b90cb6499eff.png" alt="1081851-20161216164125479-1591675346.png"><br>由于该算法依赖于Twitter的一系列基础设施，已经不再维护了。如果要使用的话，可能需要进行一些改造。</p><p><a href="https://github.com/twitter/snowflake">Source code</a><br><a href="https://segmentfault.com/a/1190000011282426">看完这一篇就深入理解了</a></p><p><a href="http://darktea.github.io/notes/2013/12/08/Unique-ID">其他一些变种的flake算法</a></p><h2 id="MongoDB的ObjectId"><a href="#MongoDB的ObjectId" class="headerlink" title="MongoDB的ObjectId"></a>MongoDB的ObjectId</h2><p>和Snowflake算法类似。它设计成轻量型的，不同的机器都能用全局唯一的同种方法方便地生成。<br>MongoDB从一开始就设计用来作为分布式数据库，处理多个节点是一个核心要求，在分布式环境中也很容易应用。</p><p>其他参考文章：<br><a href="https://medium.com/@varuntayal/what-does-it-take-to-generate-cluster-wide-unique-ids-in-a-distributed-system-d505b9eaa46e">What does it take to generate cluster wide unique ID’s in a distributed system</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h1&gt;&lt;p&gt;在一个应用中会产生大量的业务数据，这些数据往往需要一个ID来标记，在关系型数据库中，主键往往就是这个作用。&lt;br&gt;在大多数数据库中，自增的64bit long类型主键，就是用来解决这个问题的。有时，我们必须在应用层控制ID的生成，&lt;br&gt;这时我们就要缓存下最近生成的ID是多少，以此来跟踪生成的序列。&lt;/p&gt;
-&lt;p&gt;如果数据库中的数据做了分片（shard，分库分表），那么在一个表中自增的64bit long主键显然不能适用，多个节点下&lt;br&gt;必然会发生碰撞问题。与此类似，当应用分布在多个节点运行的时候，简单在内存缓存最近的一个ID，也同样不能满足需要。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="开发" scheme="https://leicode.com/categories/%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="develop" scheme="https://leicode.com/tags/develop/"/>
     
   </entry>
   
