@@ -6,7 +6,7 @@
   <link href="https://leicode.com/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2021-07-17T13:43:51.654Z</updated>
+  <updated>2021-07-17T14:19:13.860Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>0702-天津之行</title>
+    <link href="https://leicode.com/posts/1ad46c43/"/>
+    <id>https://leicode.com/posts/1ad46c43/</id>
+    <published>2021-07-17T14:18:28.000Z</published>
+    <updated>2021-07-17T14:19:13.860Z</updated>
+    
+    
+    
+    
+    <category term="我自己" scheme="https://leicode.com/categories/%E6%88%91%E8%87%AA%E5%B7%B1/"/>
+    
+    
+    <category term="我自己" scheme="https://leicode.com/tags/%E6%88%91%E8%87%AA%E5%B7%B1/"/>
+    
+    <category term="旅行" scheme="https://leicode.com/tags/%E6%97%85%E8%A1%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>云南西双版纳攻略</title>
@@ -541,28 +560,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Elasticsearch-nested-query</title>
-    <link href="https://leicode.com/posts/3f81b35b/"/>
-    <id>https://leicode.com/posts/3f81b35b/</id>
-    <published>2018-08-27T05:23:35.000Z</published>
-    <updated>2018-09-07T07:18:29.697Z</updated>
-    
-    <content type="html"><![CDATA[<p>Elasticsearch嵌套查询，具体可参考<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html">Nested Query</a>.</p><p>建议还是要多看多熟悉Elasticsearch的官方文档，比到处去搜强多了。</p><p>简而言之，在对ES doc的多层嵌套对象进行查询的时候，要使用Nested Query，常规查询无效。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;nested&quot; : &#123;</span><br><span class="line">            &quot;path&quot; : &quot;obj&quot;,</span><br><span class="line">            &quot;query&quot; : &#123;</span><br><span class="line">                &quot;bool&quot; : &#123;</span><br><span class="line">                    &quot;must&quot; : [</span><br><span class="line">                        &#123; &quot;match&quot; : &#123;&quot;obj.info.name&quot; : &quot;zhangsan&quot;&#125; &#125;</span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Elasticsearch嵌套查询，具体可参考&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html&quot;&gt;Nested Query</summary>
-      
-    
-    
-    
-    
-    <category term="elasticsearch" scheme="https://leicode.com/tags/elasticsearch/"/>
     
   </entry>
   
