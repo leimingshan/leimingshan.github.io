@@ -3719,4 +3719,21 @@ contents of file abcd
         <tag>我自己</tag>
       </tags>
   </entry>
+  <entry>
+    <title>想分享给你的视频</title>
+    <url>/posts/a032d0c7/</url>
+    <content><![CDATA[<p>祝你有数不尽的鲜花和浪漫</p>
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-RJcePyCgCGzByqyu" src="https://player.bilibili.com/player.html?bvid=BV17U4y1n7He&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-RJcePyCgCGzByqyu").style.height=document.getElementById("mmedia-RJcePyCgCGzByqyu").scrollWidth*0.76+"px";
+    window.onresize = function(){
+      document.getElementById("mmedia-RJcePyCgCGzByqyu").style.height=document.getElementById("mmedia-RJcePyCgCGzByqyu").scrollWidth*0.76+"px";
+    }; </script>
+
+]]></content>
+      <categories>
+        <category>我自己</category>
+      </categories>
+      <tags>
+        <tag>我自己</tag>
+      </tags>
+  </entry>
 </search>
