@@ -159,8 +159,11 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
 <p>暑假也没有具体的安排，现在来看找实习基本是give up了，虽然挺不甘心的，但是时间上已经这样了，也没有办法，还是把时间安排到其他事情上去吧。</p>
 ]]></content>
       <categories>
-        <category>Diary</category>
+        <category>我自己</category>
       </categories>
+      <tags>
+        <tag>我自己</tag>
+      </tags>
   </entry>
   <entry>
     <title>PHP扩展相关</title>
@@ -286,25 +289,6 @@ rake page name=&quot;about.md&quot; //新建一个页面about.md
       <tags>
         <tag>NoSQL</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World 代码示例</title>
-    <url>/posts/9b8316b/</url>
-    <content><![CDATA[<p>在这里测试一下代码显示插件，以下为代码内容：</p>
-<pre title="Hello World" class="font:ubuntu-mono toolbar:1 lang:default decode:true">#include &lt;stdio.h&gt;
-
-int main()
-{
-    printf("Hello Worldn");
-    return 0;
-}
-
-......</pre>
-<p>&nbsp;</p>
-]]></content>
-      <categories>
-        <category>未分类</category>
-      </categories>
   </entry>
   <entry>
     <title>响应式设计的免费测试工具</title>
@@ -1928,8 +1912,11 @@ systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost</li>
 <p>再后来的项目，大部分的经历就转到Java语言项目和Java Web方面了，也接触了一些项目的框架，修改功能代码等。独当一面的是另外一个基于大数据的演示性项目，将来会把这个搭建在服务器上。这个项目里，我独立完成了项目的Java Web后台设计，使用了包括Spring，Struts，MongoDB，Morphia等技术，独立设计前台HTML和JS等，使用了Bootstrap，Echarts，JQuery，Semantic-ui等。项目的时间比较久，后来还有一些改进方案没来得及实施，但是从我的角度来说，是我的一个大作品。</p>
 ]]></content>
       <categories>
-        <category>Diary</category>
+        <category>我自己</category>
       </categories>
+      <tags>
+        <tag>我自己</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo启用Https后设置腾讯公益404的问题</title>
@@ -3638,32 +3625,32 @@ contents of file abcd
 <p>本来此行目的是去66 LiveHouse看棱镜的演出，所以基本都是在附近跑跑看看，周五的下午早早从北京南出发，直奔天津站。</p>
 <h1 id="路线"><a href="#路线" class="headerlink" title="路线"></a>路线</h1><ol>
 <li>天津站地铁到和平路，先去了旁边的中心公园。</li>
-<li>往北走到海河边，是天津的WFC-环球金融中心。我们是在北京的WFC办公，所以也去看了下，时间问题，没有上去。全国的3个WFC，重庆的那个是最高的，那次跟团队outing到顶上去看了夜景。相比之下北京的WFC就是最小巧的了。</li>
+<li>往北走到海河边，是天津的WFC-环球金融中心。我们是在北京的WFC办公，所以也去看了下，时间问题，没有上去。全国的3个WFC，重庆的那个是最高的，那次跟团队outing到顶上去看了夜景。相比之下北京的WFC就是最小巧的了。<span id="more"></span></li>
 <li>沿着海河走了一会儿，随便拍拍照，挺舒服的。</li>
 <li>走累了，还有点热，去了天河城购物中心，找了星巴克歇了会儿，补充下能量。</li>
-<li>时间差不多，就走着去66 LiveHouse啦。<span id="more"></span></li>
+<li>时间差不多，就走着去66 LiveHouse啦。</li>
 </ol>
 <h1 id="LiveHouse"><a href="#LiveHouse" class="headerlink" title="LiveHouse"></a>LiveHouse</h1><p>第一次去看喜欢乐队的Live，体验非常好。<br>VIP票和普通票是排两个队，但即使是VIP票，也要提前去，我感觉VIP票也要很多很多，建议提前2个小时吧，我是提前1个小时，看视频，已经比较靠后了。。。<br>没有经验的是算错了时间，每个乐队大概半个小时的表演，但是中间切换的时候大概还需要15分钟，所以22点的时候，离结束还早，但是我必须要去赶火车了。。。<br>所以最后房东的猫的演出，错过了一大半，买的还是VIP票，好心疼票钱。</p>
 <h1 id="视频列表"><a href="#视频列表" class="headerlink" title="视频列表"></a>视频列表</h1><p>建议跳转到B站可以看4K超清哦！<br>棱镜-20210702天津LIVE-成为彼此宇宙的终极浪漫</p>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-mbGxTpqsidfbAUaX" src="https://player.bilibili.com/player.html?bvid=BV1RX4y1c73i&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-mbGxTpqsidfbAUaX").style.height=document.getElementById("mmedia-mbGxTpqsidfbAUaX").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-yKimRcLfveeCoKTU" src="https://player.bilibili.com/player.html?bvid=BV1RX4y1c73i&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-yKimRcLfveeCoKTU").style.height=document.getElementById("mmedia-yKimRcLfveeCoKTU").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-mbGxTpqsidfbAUaX").style.height=document.getElementById("mmedia-mbGxTpqsidfbAUaX").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-yKimRcLfveeCoKTU").style.height=document.getElementById("mmedia-yKimRcLfveeCoKTU").scrollWidth*0.76+"px";
     }; </script>
 <p>【棱镜】这是我一生中最勇敢的瞬间【20210702天津LIVE】</p>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-xtadsWxDqWEujdBw" src="https://player.bilibili.com/player.html?bvid=BV1iK4y1g7yH&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-xtadsWxDqWEujdBw").style.height=document.getElementById("mmedia-xtadsWxDqWEujdBw").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-BPdJXkWjUIROBFQq" src="https://player.bilibili.com/player.html?bvid=BV1iK4y1g7yH&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-BPdJXkWjUIROBFQq").style.height=document.getElementById("mmedia-BPdJXkWjUIROBFQq").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-xtadsWxDqWEujdBw").style.height=document.getElementById("mmedia-xtadsWxDqWEujdBw").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-BPdJXkWjUIROBFQq").style.height=document.getElementById("mmedia-BPdJXkWjUIROBFQq").scrollWidth*0.76+"px";
     }; </script>
 <p>棱镜-20210702天津LIVE-总有一天你会出现在我身边</p>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-WjYmAaQYDaParthp" src="https://player.bilibili.com/player.html?bvid=BV1Lw411Z7er&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-WjYmAaQYDaParthp").style.height=document.getElementById("mmedia-WjYmAaQYDaParthp").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-dLHmCOtjnNiUBliR" src="https://player.bilibili.com/player.html?bvid=BV1Lw411Z7er&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-dLHmCOtjnNiUBliR").style.height=document.getElementById("mmedia-dLHmCOtjnNiUBliR").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-WjYmAaQYDaParthp").style.height=document.getElementById("mmedia-WjYmAaQYDaParthp").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-dLHmCOtjnNiUBliR").style.height=document.getElementById("mmedia-dLHmCOtjnNiUBliR").scrollWidth*0.76+"px";
     }; </script>
 
 <p>这里转一个视频吧，毕竟没在现场。。。最后说一句，小黑好可爱！<br>【房东的猫】7.2天津 房东的猫现场合集</p>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-wVzwhkZiVgWiTgMM" src="https://player.bilibili.com/player.html?bvid=BV1Gw411Z7zR&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-wVzwhkZiVgWiTgMM").style.height=document.getElementById("mmedia-wVzwhkZiVgWiTgMM").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-vaZqzqcTlZPCesQa" src="https://player.bilibili.com/player.html?bvid=BV1Gw411Z7zR&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-vaZqzqcTlZPCesQa").style.height=document.getElementById("mmedia-vaZqzqcTlZPCesQa").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-wVzwhkZiVgWiTgMM").style.height=document.getElementById("mmedia-wVzwhkZiVgWiTgMM").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-vaZqzqcTlZPCesQa").style.height=document.getElementById("mmedia-vaZqzqcTlZPCesQa").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -3694,7 +3681,7 @@ contents of file abcd
 <span id="more"></span>
 <p>随便找一台数码相机，上面一堆图标、参数，就很难说都能弄清楚，其次，各个镜头，不同焦段的使用与熟悉程度，擅长拍哪种风格，又是一大类问题。</p>
 <p>近期去了两个地方，奥森北园拍向日葵，小区的花圃。北京天气近来实在糟糕，整整三周都是阴雨天，计划的日落还一直无法拍成。</p>
-<p>简单总结一下前两次的各种问题吧：<br>1，广角的运用。在奥森，拍大片向日葵，本来广角是比较合适的，但是对于人特别多的情况，就不合适了，会导致照片内容太杂。可见，广角更适合外出旅游，拍星空，或者宽阔的风景。<br>2，光圈大小活用。第一次在奥森，基本全程都使用最大光圈，其实是不对的，首先白天进光量充足，可以适当调整到F8左右，以获取一个较佳画质，其次，大光圈会造成焦平面较小，虚化较大，<br>那么会导致处于不同层次的花，只有对焦处的清楚，其他都模糊，可能与实际创作意图不符。<br>3，ISO6000-1W左右基本都是可以接受的，对于高端或者较新的相机，这个档位的ISO都不会有太多噪点。<br>4，前期很重要，尤其是现在后期能力不强的时候。尽量保证照片的内容干净。<br>5，构图构图构图，要有自己的想法。第一想法往往就是最普通的，大家都会那么拍，平平无奇的。所以还是需要多看多想。<br>6，活用前景。</p>
+<p>简单总结一下前两次的各种问题吧：<br>1，广角的运用。在奥森，拍大片向日葵，本来广角是比较合适的，但是对于人特别多的情况，就不合适了，会导致照片内容太杂。可见，广角更适合外出旅游，拍星空，或者宽阔的风景。<br>2，光圈大小活用。第一次在奥森，基本全程都使用最大光圈，其实是不对的，首先白天进光量充足，可以适当调整到F8左右，以获取一个较佳画质，其次，大光圈会造成焦平面较小，虚化较大，<br>那么会导致处于不同层次的花，只有对焦处的清楚，其他都模糊，可能与实际创作意图不符。<br>3，ISO6000-1W左右基本都是可以接受的，对于高端或者较新的相机，这个档位的ISO都不会有太多噪点。<br>4，前期很重要，尤其是现在后期能力不强的时候。尽量保证照片的内容干净。<br>5，构图构图构图，要有自己的想法。第一想法往往就是最普通的，大家都会那么拍，平平无奇的。所以还是需要多看多想。<br>6，学会活用前景。你的照片不要千篇一律。</p>
 ]]></content>
       <categories>
         <category>摄影</category>
@@ -3702,6 +3689,17 @@ contents of file abcd
       <tags>
         <tag>我自己</tag>
         <tag>摄影</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>End-Of-Summer</title>
+    <url>/posts/193466f9/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>我自己</category>
+      </categories>
+      <tags>
+        <tag>我自己</tag>
       </tags>
   </entry>
 </search>
