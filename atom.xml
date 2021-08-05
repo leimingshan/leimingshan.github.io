@@ -6,7 +6,7 @@
   <link href="https://leicode.com/atom.xml" rel="self"/>
   
   <link href="https://leicode.com/"/>
-  <updated>2021-08-03T15:52:49.135Z</updated>
+  <updated>2021-08-05T12:58:51.355Z</updated>
   <id>https://leicode.com/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>是你喜欢的夏天吧</title>
+    <link href="https://leicode.com/posts/ff5db0be/"/>
+    <id>https://leicode.com/posts/ff5db0be/</id>
+    <published>2021-08-05T12:32:37.000Z</published>
+    <updated>2021-08-05T12:58:51.355Z</updated>
+    
+    <content type="html"><![CDATA[<p>BGM:《纯纯的夏天》<br>素材:吉卜力系列作品</p><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-gTiOpkdakmBmMHzg" src="https://player.bilibili.com/player.html?bvid=BV1Kp4y1v75k&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-gTiOpkdakmBmMHzg").style.height=document.getElementById("mmedia-gTiOpkdakmBmMHzg").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-gTiOpkdakmBmMHzg").style.height=document.getElementById("mmedia-gTiOpkdakmBmMHzg").scrollWidth*0.76+"px";    }; </script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;BGM:《纯纯的夏天》&lt;br&gt;素材:吉卜力系列作品&lt;/p&gt;
+&lt;style&gt;.bbplayer{width: 100%; max-width: 850px; margin: auto}&lt;/style&gt;&lt;div class=&quot;bbplayer&quot;&gt;&lt;iframe class=&quot;b</summary>
+      
+    
+    
+    
+    <category term="我自己" scheme="https://leicode.com/categories/%E6%88%91%E8%87%AA%E5%B7%B1/"/>
+    
+    
+    <category term="我自己" scheme="https://leicode.com/tags/%E6%88%91%E8%87%AA%E5%B7%B1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>想分享给你的视频</title>
     <link href="https://leicode.com/posts/a032d0c7/"/>
     <id>https://leicode.com/posts/a032d0c7/</id>
     <published>2021-08-04T15:51:25.000Z</published>
-    <updated>2021-08-03T15:52:49.135Z</updated>
+    <updated>2021-08-05T12:34:42.494Z</updated>
     
-    <content type="html"><![CDATA[<p>祝你有数不尽的鲜花和浪漫</p><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-RJcePyCgCGzByqyu" src="https://player.bilibili.com/player.html?bvid=BV17U4y1n7He&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-RJcePyCgCGzByqyu").style.height=document.getElementById("mmedia-RJcePyCgCGzByqyu").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-RJcePyCgCGzByqyu").style.height=document.getElementById("mmedia-RJcePyCgCGzByqyu").scrollWidth*0.76+"px";    }; </script>]]></content>
+    <content type="html"><![CDATA[<p>祝你有数不尽的鲜花和浪漫</p><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-yFURbgfGfBeciBKF" src="https://player.bilibili.com/player.html?bvid=BV17U4y1n7He&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-yFURbgfGfBeciBKF").style.height=document.getElementById("mmedia-yFURbgfGfBeciBKF").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-yFURbgfGfBeciBKF").style.height=document.getElementById("mmedia-yFURbgfGfBeciBKF").scrollWidth*0.76+"px";    }; </script><p>最后，也祝愿我吧！</p>]]></content>
     
     
       
@@ -511,30 +536,6 @@
 &lt;li&gt;com.sun.nio.file.{ExtendedCopyOption,ExtendedOpenOption, ExtendedWatchEventModifier,SensitivityWatchEventModifier}&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;这些类在以后的版本中可能被移除或封装。而非关键类例如sun.misc.BASE64Encoder和sun.misc.BASE64Decoder则直接被移除了。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Java" scheme="https://leicode.com/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://leicode.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JDK11已正式发布</title>
-    <link href="https://leicode.com/posts/df008f1/"/>
-    <id>https://leicode.com/posts/df008f1/</id>
-    <published>2018-09-29T03:01:11.000Z</published>
-    <updated>2018-09-29T08:13:08.893Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="正式发布"><a href="#正式发布" class="headerlink" title="正式发布"></a>正式发布</h1><p>9月25日，Oracle官方宣布Java11(18.9 LTS)正式发布，可在生产环境中使用！<br>Java11是Oracle在2017年宣布新的JDK发布时间表之后，第一个长期支持 - Long Term Support(LTS)版本，非常值得大家关注。<br>如果说之前的Java9和Java10关注度都比较小，基本都被大家忽略的话，Java11可是绝对不容错过的。<br>作为新版发布路线的第一个LTS版本，其重要性和对后面版本的影响都不言而喻，<br>Oracle直到2023年9月都会为Java 11提供技术支持，而补丁和安全警告等扩展支持将持续到2026年。<br>LTS版本每三年发布一次，根据后续的发布计划，下一个LTS版本，应该是Java17，要在3年后的2021年才会与大家见面。</p><p>为了更快地迭代，以及跟进社区反馈，自2018年起，Java的版本发布周期变更为每六个月一次 —— 每半年发布一个大版本，每个季度发布一个中间特性版本，并且承诺不会跳票。<br>通过这样的方式，开发团队可以把一些关键特性尽早合并到JDK之中，以快速得到开发者反馈，在一定程度上避免出现像Java 9这样两次被迫延迟发布的窘况。</p><p>按照官方的说法，新的发布周期会严格遵循时间点，将于每年的3月份和9月份发布。所以Java 11的版本号是18.9(LTS)。</p><p>不过与Java 9和Java 10这两个被称为“功能性版本”不同（两者均只提供半年的技术支持），Java 11不仅提供了长期支持服务，还将作为Java平台的参考实现，并技术支持到2023年9月。</p><span id="more"></span><h1 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h1><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html">https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html</a> Oracle的商业许可<br><a href="http://jdk.java.net/11">http://jdk.java.net/11</a> OpenJDK, GPLv2 with the Classpath Exception</p><h1 id="License"><a href="#License" class="headerlink" title="License"></a>License</h1><p>在Oracle JDK11的下载页面，有明显的提示信息，指出了Oracle JDK11的<a href="https://www.oracle.com/technetwork/java/javase/terms/license/javase-license.html">许可证</a>情况，需要注意的是</p><blockquote><blockquote><p>You may not:<br>  use the Programs for any data processing or any commercial, production, or internal business purposes other than developing, testing, prototyping, and demonstrating your Application;</p></blockquote></blockquote><p>不允许进行数据处理、商用或在产线使用。只可以用于开发、测试、原型、和应用的演示用途。Oracle JDK已经是商业版本，不是随意免费使用的，若要用在产线环境，需要取得相应授权。</p><p>OpenJDK版本应该是基于GPLv2许可的，也是许多Linux发行版默认使用的，看来以后要拥抱OpenJDK了。</p><h1 id="技术文档"><a href="#技术文档" class="headerlink" title="技术文档"></a>技术文档</h1><p><a href="https://docs.oracle.com/en/java/javase/11/">https://docs.oracle.com/en/java/javase/11/</a></p><h1 id="版本支持情况"><a href="#版本支持情况" class="headerlink" title="版本支持情况"></a>版本支持情况</h1><p>Oracle Java SE的支持路线图，感兴趣的同学可以在<a href="https://www.oracle.com/technetwork/java/javase/eol-135779.html">https://www.oracle.com/technetwork/java/javase/eol-135779.html</a> 查看。<br>对于普通用户和Oracle的商业客户都有些区别，简单了解下就好。</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;正式发布&quot;&gt;&lt;a href=&quot;#正式发布&quot; class=&quot;headerlink&quot; title=&quot;正式发布&quot;&gt;&lt;/a&gt;正式发布&lt;/h1&gt;&lt;p&gt;9月25日，Oracle官方宣布Java11(18.9 LTS)正式发布，可在生产环境中使用！&lt;br&gt;Java11是Oracle在2017年宣布新的JDK发布时间表之后，第一个长期支持 - Long Term Support(LTS)版本，非常值得大家关注。&lt;br&gt;如果说之前的Java9和Java10关注度都比较小，基本都被大家忽略的话，Java11可是绝对不容错过的。&lt;br&gt;作为新版发布路线的第一个LTS版本，其重要性和对后面版本的影响都不言而喻，&lt;br&gt;Oracle直到2023年9月都会为Java 11提供技术支持，而补丁和安全警告等扩展支持将持续到2026年。&lt;br&gt;LTS版本每三年发布一次，根据后续的发布计划，下一个LTS版本，应该是Java17，要在3年后的2021年才会与大家见面。&lt;/p&gt;
-&lt;p&gt;为了更快地迭代，以及跟进社区反馈，自2018年起，Java的版本发布周期变更为每六个月一次 —— 每半年发布一个大版本，每个季度发布一个中间特性版本，并且承诺不会跳票。&lt;br&gt;通过这样的方式，开发团队可以把一些关键特性尽早合并到JDK之中，以快速得到开发者反馈，在一定程度上避免出现像Java 9这样两次被迫延迟发布的窘况。&lt;/p&gt;
-&lt;p&gt;按照官方的说法，新的发布周期会严格遵循时间点，将于每年的3月份和9月份发布。所以Java 11的版本号是18.9(LTS)。&lt;/p&gt;
-&lt;p&gt;不过与Java 9和Java 10这两个被称为“功能性版本”不同（两者均只提供半年的技术支持），Java 11不仅提供了长期支持服务，还将作为Java平台的参考实现，并技术支持到2023年9月。&lt;/p&gt;</summary>
     
     
     

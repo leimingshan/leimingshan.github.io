@@ -3723,11 +3723,28 @@ contents of file abcd
     <title>想分享给你的视频</title>
     <url>/posts/a032d0c7/</url>
     <content><![CDATA[<p>祝你有数不尽的鲜花和浪漫</p>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-RJcePyCgCGzByqyu" src="https://player.bilibili.com/player.html?bvid=BV17U4y1n7He&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-RJcePyCgCGzByqyu").style.height=document.getElementById("mmedia-RJcePyCgCGzByqyu").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-yFURbgfGfBeciBKF" src="https://player.bilibili.com/player.html?bvid=BV17U4y1n7He&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-yFURbgfGfBeciBKF").style.height=document.getElementById("mmedia-yFURbgfGfBeciBKF").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-RJcePyCgCGzByqyu").style.height=document.getElementById("mmedia-RJcePyCgCGzByqyu").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-yFURbgfGfBeciBKF").style.height=document.getElementById("mmedia-yFURbgfGfBeciBKF").scrollWidth*0.76+"px";
     }; </script>
 
+<p>最后，也祝愿我吧！</p>
+]]></content>
+      <categories>
+        <category>我自己</category>
+      </categories>
+      <tags>
+        <tag>我自己</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>是你喜欢的夏天吧</title>
+    <url>/posts/ff5db0be/</url>
+    <content><![CDATA[<p>BGM:《纯纯的夏天》<br>素材:吉卜力系列作品</p>
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-gTiOpkdakmBmMHzg" src="https://player.bilibili.com/player.html?bvid=BV1Kp4y1v75k&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-gTiOpkdakmBmMHzg").style.height=document.getElementById("mmedia-gTiOpkdakmBmMHzg").scrollWidth*0.76+"px";
+    window.onresize = function(){
+      document.getElementById("mmedia-gTiOpkdakmBmMHzg").style.height=document.getElementById("mmedia-gTiOpkdakmBmMHzg").scrollWidth*0.76+"px";
+    }; </script>
 ]]></content>
       <categories>
         <category>我自己</category>
